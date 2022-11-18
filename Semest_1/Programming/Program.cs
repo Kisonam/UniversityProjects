@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 
 namespace Project1_Radovskyi61986
 {
@@ -15,13 +16,13 @@ namespace Project1_Radovskyi61986
                 Console.WriteLine("\n\n\tProgram \"Project1_Radovskyi61986\" umożliwia wielokrotne wielokrotne\n" +
                     "\t obliczanie wartości wybranych wielkości matematycznych");
 
-                Console.WriteLine("\n\nMENU  funkcjonalne  programu:");
+                Console.WriteLine("\n\n\tMENU  funkcjonalne  programu:");
 
-                Console.WriteLine("\nA. Laboratorium Nr 1: Kalkulator obliczeń");
-                Console.WriteLine("B. Project Nr 1: Kalkulator obliczeń");
-                Console.WriteLine("X. Zakończenie (wyjście z) programu");
+                Console.WriteLine("\n\tA. Laboratorium Nr 1: Kalkulator obliczeń");
+                Console.WriteLine("\n\tB. Project Nr 1: Kalkulator obliczeń");
+                Console.WriteLine("\n\tX. Zakończenie (wyjście z) programu");
 
-                Console.Write("\n\nNaciśnięciem odpowiedniego klawisza wybierz jedną z oferowanych funkcjolność:");
+                Console.Write("\n\n\tNaciśnięciem odpowiedniego klawisza wybierz jedną z oferowanych funkcjolność:");
 
 
                 WybranaFunkcjonalniość = Console.ReadKey();
@@ -76,6 +77,7 @@ namespace Project1_Radovskyi61986
                 switch (WybranaFunkcjonalniość.Key)
                 {
                     case ConsoleKey.A:
+                        Console.Clear();
                         // sekwencja instrukcji onliczenia sumy wyrazów ciągu liczbowego
                         Console.WriteLine("\n\n\tWYBRANO: A. Obliczenie sumy wyrazów" +
                             " ciągu liczbowego");
@@ -105,6 +107,7 @@ namespace Project1_Radovskyi61986
                             $" n = {n} jest równa: {Suma,8:G2}");
                         break;
                     case ConsoleKey.B:
+                        Console.Clear();
                         // sekwencja instrukcji onliczenia iloczynu wyrazów ciągu liczbowego
                         Console.WriteLine("\n\n\tWYBRANO: B. Obliczenie iloczynu wyrazów ciągu liczbowego");
                         /* dodatkowe uściślenia:
@@ -133,6 +136,7 @@ namespace Project1_Radovskyi61986
 
                         break;
                     case ConsoleKey.C:
+                        Console.Clear();
                         // sekwencja instrukcji obliczania średniej arytmetycznej wyrazów ciągu liczbowego
                         Console.WriteLine("\n\n\tWYBRANO: C. Obliczenie średniej wyrazów arytmetycznej ciągu liczbowego");
                         /* dodatkowe uściślenia:
@@ -166,6 +170,7 @@ namespace Project1_Radovskyi61986
                             $"n = {n} jest równa: {ŚredniaArytmetyczna,8:G}");
                         break;
                     case ConsoleKey.D:
+                        Console.Clear();
                         Console.WriteLine("\n\n\tWYBRANO: D. Wyznaczanie pierwiastków równania kwadratowego");
                         // deklaracje zmiennych programu
                         float a, b, c;
@@ -176,6 +181,7 @@ namespace Project1_Radovskyi61986
 
                         break;
                     case ConsoleKey.E:
+                        Console.Clear();
                         Console.WriteLine("\n\n\tWYBRANO: E. Obliczanie wartości wielomianu n-tego stopnia");
                         float Wx; // Obliczona wartość wielomianu
                         float X; // wczytana wartość zmiennej niezależnej: typu float
@@ -196,6 +202,7 @@ namespace Project1_Radovskyi61986
                             $"dla zmiennej niezależnej X = {X,6:G}, jest równa: {Wx,8:G}");
                         break;
                     case ConsoleKey.F:
+                        Console.Clear();
                         // potwierdzenie wyboru funkcjonalniści F.
                         Console.WriteLine("\n\n\tWYBRANO: F. Konwersja liczby z systemu dziesiętnego na dwójkowy");
                         /* dekomponujemy zadanie obsługi funkcjonalniści F.
@@ -250,7 +257,7 @@ namespace Project1_Radovskyi61986
                 Console.WriteLine("\n\n\t\tProjekt Nr 1: Kalkulator obliczeń");
 
                 Console.WriteLine("\n\n MENU funkcjonalne Kalkulatora");
-                Console.WriteLine(" A. Obliczenie średniej harmomicznej wyrażow ciągu liczbowego");
+                Console.WriteLine(" A. Obliczenie średniej harmonicznej wyrażow ciągu liczbowego");
                 Console.WriteLine(" B. Obliczenie średniej kwadratowej wyrażow ciągu liczbowego");
                 Console.WriteLine(" C. Obliczenie średniej potęgowej (średniej uogólnionej)" +
                     " wyrażow ciągu liczbowego");
@@ -277,11 +284,11 @@ namespace Project1_Radovskyi61986
                             Console.WriteLine("\n\n\tWYBRANO:  A. Obliczenie średniej harmomicznej " +
                                 "wyrażow ciągu liczbowego");
 
-                            float Śr = 0; // deklaracje zmiennej średniej harmomicznej i n liczb
-                            int n; // deklaracje zmiennej liczb
+                            double arŚrednia; // deklaracje zmiennej średniej harmomicznej i n liczb
+                            int arN; // deklaracje zmiennej liczb
 
                             Console.Write("\n\tPodaj liczność n liczb: ");
-                            while (!int.TryParse(Console.ReadLine(), out n))
+                            while (!int.TryParse(Console.ReadLine(), out arN))
                             {
                                 Console.WriteLine("\n\tERROR: w zapisie " +
                                                 "wystąpił niedozwolony znak!!!");
@@ -289,10 +296,10 @@ namespace Project1_Radovskyi61986
                                 Console.Write("\n\tPodaj ponownie n: ");
                             }
 
-                            Śr = ObliczenieŚredniejHarmomicznej(out Śr, n);
+                            arŚrednia = ObliczenieŚredniejHarmomicznej(arN);
                             
                             Console.WriteLine("\n\tWYNIKI OBLICZEŃ: obliczona Średnia harmoniczna" +
-                           $" licznośc n = {n} , jest równa: {Śr}");
+                           $" licznośc n = {arN} , jest równa: {arŚrednia, 1:F}");
 
                             Console.ReadKey();
 
@@ -352,7 +359,7 @@ namespace Project1_Radovskyi61986
                             Console.ReadKey();
                         }
                         break;
-                    case ConsoleKey.E: //
+                    case ConsoleKey.E: 
                         {
                             Console.Clear();
 
@@ -362,16 +369,15 @@ namespace Project1_Radovskyi61986
                             Console.WriteLine("\n\tPodaj illość składników: ");
                             int n = Convert.ToInt32(Console.ReadLine());
 
-                            float result = ObliczenieCenyJednostki(n);
+                            double result = ObliczenieCenyJednostki(n);
 
                             Console.WriteLine("\n\tWYNIKI OBLICZEŃ: ceny jednostki paszy " +
                                               $"n = {n} jest równa: {result, 1:F}");
 
-
                             Console.ReadKey();
                         }
                         break;
-                    case ConsoleKey.F: //
+                    case ConsoleKey.F: 
                         {
                             Console.Clear();
 
@@ -396,12 +402,17 @@ namespace Project1_Radovskyi61986
                                 $"dla zmiennej niezależnej X = {X,6:G}, jest równa: {Wx,8:G}");
                         }
                         break;
-                    case ConsoleKey.G: //
+                    case ConsoleKey.G:
                         {
+                            Console.Clear();
                             Console.WriteLine("\n\n\tWYBRANO: Konwersja liczby całkowitej zapisanej znakowo w systemie liczbowym o podanej\n" +
                                 " podstawie liczenia na wartość i jej wypisanie znakowo w innym systemie liczbowym\n" +
                                 "  o podanej podstawie liczenia");
 
+                            Console.WriteLine("\n\tWybrano: Konwersja liczby całkowitej zapisanej znakowo w systemie liczbowym o podanej \n\t\tpodstawie liczenia na wartość i jej wypisanie znakowo w innym systemie liczbowym");
+                            string X = KonwersjaLiczby();
+                            Console.WriteLine("\n\tWyniki: " + X);
+                            Console.ReadKey();
 
                         }
                         break;
@@ -410,7 +421,7 @@ namespace Project1_Radovskyi61986
             } while (WybranaFunkcjonalniość.Key != ConsoleKey.X);
         }
         #endregion
-        //deklaracje metod dla potreb projektowanego programu: Projekt Nr 1
+
         #region Deklaracje metod obsługi funkcjonalności Kalkulator laboratoryjnego
         private static void SumaWyrazówCiąguLiczbowego(out float suma, out ushort n)
         {
@@ -871,95 +882,171 @@ namespace Project1_Radovskyi61986
         }
         #endregion
         #region  Deklaracje metod obsługi funkcjonalności Kalkulator Projectowego Nr1
-        static float ObliczenieŚredniejHarmomicznej(out float Śr, int n)
+        static double ObliczenieŚredniejHarmomicznej(int n)
         {
-            int liczba;
-            Śr = 0;
+            double arLiczba;
+            double arŚrednia = 0;
 
-            for (int i = 0; i <= n; i++)
+            for (int i = 0; i < n; i++)
             {
                 Console.Write($"\n\tPodaj {i}-j element liczb: ");
-                liczba = Convert.ToInt32(Console.ReadLine());
+                arLiczba = Convert.ToInt32(Console.ReadLine());
 
-                Śr += (1 / liczba);
+                arŚrednia += (1 / arLiczba);
             }
-            Śr = n / Śr;
-            return Śr;
-        } // -
+            return n / arŚrednia;
+        }
         static double ŚredniaKwadratowaCiągu(int n)
         {
-            double a = 0;
-            double pow = 2;
+            double ara = 0;
+            double arPow = 2;
 
             for (int i = 0; i < n; i++)
             {
                 Console.Write($"\n\tPodaj a {i + 1} :");
-                a += Math.Pow(Convert.ToDouble(Console.ReadLine()), pow);
+                ara += Math.Pow(Convert.ToDouble(Console.ReadLine()), arPow);
             }
 
-            double result = Math.Sqrt(a / n);
+            double arResult = Math.Sqrt(ara / n);
 
-            return result;
+            return arResult;
 
-        } // +
-        static double ŚredniaPotęgowaCiągu(int n, double b) // +
+        } 
+        static double ŚredniaPotęgowaCiągu(int n, double b) 
         {
-            double a = 0;
+            double ara = 0;
 
             for (int i = 0; i < n; i++)
             {
                 Console.Write($"\n\tPodaj a {i + 1} :");
-                a += Math.Pow(Convert.ToDouble(Console.ReadLine()), b);
+                ara += Math.Pow(Convert.ToDouble(Console.ReadLine()), b);
 
             }
-            double result = Math.Pow((a / n), 1 / b);
+            double arResult = Math.Pow((ara / n), 1 / b);
 
-            return result;
+            return arResult;
         }
-        static double ŚredniaGeometrycznaCiągu(int n) // +
+        static double ŚredniaGeometrycznaCiągu(int n) 
         {
 
-            double multiplying = 1;
-            double result;
+            double arMultiplying = 1;
+            double arResult;
 
             for (int i = 0; i < n; i++)
             {
                 Console.Write($"\n\tPodaj dodatni liczby a{i + 1}: ");
-                multiplying *= Convert.ToDouble(Console.ReadLine());
+                arMultiplying *= Convert.ToDouble(Console.ReadLine());
             }
 
-            result = Math.Pow(multiplying, 1.0 / n);
+            arResult = Math.Pow(arMultiplying, 1.0 / n);
 
-            return result;
+            return arResult;
 
         }
-        static float ObliczenieCenyJednostki(int n)
+        static double ObliczenieCenyJednostki(int n)
         {
 
-            float cena;
-            float liczbaKg;
+            double arCena;
+            double arliczbaKg;
 
-            float c = 0;
-            float m = 0;
+            double arc = 0;
+            double arm = 0;
 
             for (int i = 0; i < n; i++)
             {
                 Console.Write($"\n\tPodaj cenu składnika {i + 1}-go: ");
-                cena = Convert.ToInt32(Console.ReadLine());
+                arCena = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write($"\n\tPodaj liczbu Kg {i + 1}-go: ");
-                liczbaKg = Convert.ToInt32(Console.ReadLine());
+                arliczbaKg = Convert.ToInt32(Console.ReadLine());
 
-                float cc = cena * liczbaKg;
-                Console.WriteLine($"\n\tCena całego {i + 1}-go składnika: {cc} ");
+                double arCM = arCena * arliczbaKg;
+                Console.WriteLine($"\n\tCena całego {i + 1}-go składnika: {arCM} ");
 
 
-                c += cena * liczbaKg;// c = c + (cena * liczbuKg)
-                m += liczbaKg;
+                arc += arCena * arliczbaKg;// c = c + (cena * liczbuKg)
+                arm += arliczbaKg;
             }
 
-            return c / m; 
-        }// +
+            return arc / arm; 
+        }
+        static string KonwersjaLiczby()
+        {
+            byte arPierwszaSystema;
+            byte arKoniec;
+            string arLiczba;
+
+            // Prosimy wpisać 
+
+            Console.Write("\n\tWpisz liczbę: ");
+            arLiczba = Console.ReadLine();
+
+            if (arLiczba == string.Empty)
+            {
+                return "\n\tError: w zapisie wystąpił niedozwolony znak! ";
+            }
+
+            Console.Write("\n\tWprowadź system początkowy: ");
+            while (!byte.TryParse(Console.ReadLine(), out arPierwszaSystema))
+            {
+                Console.Write("\n\tError: w zapisie wystąpił niedozwolony znak! ");
+                Console.Write("\n\tWprowadź system początkowy: ");
+            }
+
+            Console.Write("\n\tWprowadź system końcowy: ");
+            while (!byte.TryParse(Console.ReadLine(), out arKoniec))
+            {
+                Console.Write("\n\tError: w zapisie wystąpił niedozwolony znak! ");
+                Console.Write("\n\tWprowadź system końcowy: ");
+            }
+
+            List<char> arZestawZnaków = new List<char>() { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+
+            if (arPierwszaSystema > 16 || arPierwszaSystema < 2 || arKoniec < 2 || arKoniec > 16) 
+                return "\n\tBłąd: niewłaściwy system liczbowy";
+
+            bool arIsNegative = arLiczba[0] == '-';
+
+            if (arIsNegative) arLiczba = arLiczba.Remove(0, 1);
+                foreach (char Item in arLiczba)
+                    if (!arZestawZnaków.Contains(Item) || arZestawZnaków.IndexOf(Item) >= arPierwszaSystema) 
+                        return "\n\tBłąd: Niewłaściwa liczba";
+
+            if (arPierwszaSystema == arKoniec) 
+                return arLiczba;
+
+            ulong arS10 = 0;
+
+            if (arPierwszaSystema != 10)
+                for (byte i = 0; i < arLiczba.Length; i++) arS10 += (ulong)arZestawZnaków.IndexOf(arLiczba[i]) * LićWartości(arPierwszaSystema, arLiczba.Length - 1 - i);
+            else 
+                arS10 = ulong.Parse(arLiczba);
+
+            string arWyniki = string.Empty;
+
+            if (arKoniec != 10)
+            {
+                do
+                {
+                    byte arRemainder = (byte)(arS10 % arKoniec);
+                    arWyniki = arZestawZnaków[arRemainder] + arWyniki;
+                    arS10 /= arKoniec;
+                } 
+                while (arS10 != 0);
+            }
+            else arWyniki = arS10.ToString();
+            return (arIsNegative ? "-" : string.Empty) + arWyniki;
+        }
+        static ulong LićWartości(ulong X, int Moc)
+        {
+            ulong arWartość = 1;
+            while (Moc != 0)
+            {
+                arWartość *= X;
+                Moc--;
+            }
+            return arWartość;
+        }
 
         #endregion
     }
