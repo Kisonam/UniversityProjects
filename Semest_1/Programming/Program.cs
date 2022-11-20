@@ -65,7 +65,7 @@ namespace Project1_Radovskyi61986
                 Console.WriteLine("\n\tC. Obliczenie średniej wyrazów arytmetycznej ciągu liczbowego");
                 Console.WriteLine("\n\tD. Wyznaczanie pierwiastków równania kwadratowego");
                 Console.WriteLine("\n\tE. Obliczanie wartości wielomianu n-tego stopnia");
-                Console.WriteLine("\n\tF. Konwersja liczby z systemu dziesiętnego na dwójkowy");
+                Console.WriteLine("\n\tF. Konwersja liczb");
                 Console.WriteLine("\n\tX. Zakończenie (wyjście z) Kalkulatora obliczeń z zajęć laboratorynych");
 
                 Console.Write("\n\n\tNaćiśnięciem odpowidniego klawisza (A,B," +
@@ -204,36 +204,9 @@ namespace Project1_Radovskyi61986
                     case ConsoleKey.F:
                         Console.Clear();
                         // potwierdzenie wyboru funkcjonalniści F.
-                        Console.WriteLine("\n\n\tWYBRANO: F. Konwersja liczby z systemu dziesiętnego na dwójkowy");
-                        /* dekomponujemy zadanie obsługi funkcjonalniści F.
-                           1) konwersja znakowego zapisu liczby naturalnej (ushort) w systemie dziesiętnym na wartość
-                           2) konwersja wartości liczby naturalnej (ushort) na znakowy zapis liczby w systemie dwójkowym*/
-                        // realizacja komponentu ad 1)
-                        string ZZL; // ZZL - Znakowy Zapis Liczby
-                                    // deklaracja zmiennej dla przechowania wartości liczby po konwersji
-                        ushort LiczbaPoKonwersji;
-                        // wczytanie liczby znakowej do konwersji na wartość
-                        Console.Write("\n\n\tPodaj liczbę (w systemie dziesiętnym) do konwersji: ");
-
-                        // wczytanie liczby do konwersji
-                        ZZL = Console.ReadLine();
-                        // usunięcie zbędnych "białych znaków" (spacja, znak tabulacji )
-                        ZZL = ZZL.Trim(); //123
-                                          // konwersja znakowego zapisu liczby na wartość przez wywołanie metody
-
-                        LiczbaPoKonwersji = KonwersjaZnakowejLiczbyNaWartość(ZZL);
-                        // dla celów testoych wypisujemy liczbę po konwersji przy użyciu metody WriteLine
-                        Console.WriteLine("\n\n\tTRACE: Liczba po konwersji: " + ZZL.ToString());
-
-                        //realizacja komponentu ad 2.
-                        ushort LiczbaDoKonwersji = LiczbaPoKonwersji;
-                        // Komwersja wartości (liczby ushort) na znakowy zapis w systemie dwójkowym
-                        KonwersacjaLiczbyNaturalnejNaBinarna(LiczbaDoKonwersji, out ZZL);
-
-                        // wypisanie wyników konwersji
-                        Console.WriteLine("\n\n\tWYNIK KONWERSJI: Wartość liczby po konwersji ze znakowego " +
-                            $"jej zapisu w dziesiętnym systemie liczbowym: {LiczbaPoKonwersji}, która po konwersji na system " +
-                            $"dwójkowy (binarny) ma następujący zapis znakowy: {ZZL}");
+                        Console.WriteLine("\n\n\tWYBRANO: F. Konwersja liczb");
+                        KonwerterLiczb();
+                        
                         break;
                     default:
                         // jest błąd: Użytkownik nacisnął "zły" klawisz
@@ -311,12 +284,12 @@ namespace Project1_Radovskyi61986
 
                             Console.WriteLine("\n\n\tWYBRANO:  B. Obliczenie średniej kwadratowej wyrażow ciągu liczbowego");
 
-                            Console.WriteLine("\n\tPodaj ile liczb chcesz użyć do średniej kwadratowej:");
+                            Console.Write("\n\tPodaj ile liczb chcesz użyć do średniej kwadratowej:");
                             int n = Convert.ToInt32(Console.ReadLine());
                             double result = ŚredniaKwadratowaCiągu(n);
 
                             Console.WriteLine("\n\tWYNIKI OBLICZEŃ: średniej kwadratowej wyrażow ciągu liczbowego " +
-                                $"n = {n} jest równa: {result}");
+                                $"n = {n} jest równa: {result,1:F}");
 
                             Console.ReadKey();
 
@@ -330,14 +303,14 @@ namespace Project1_Radovskyi61986
                                 " wyrażow ciągu liczbowego");
 
                             Console.Write("\n\tPodaj ile liczb chcesz użyć do średniej kwadratowej:");
-                            int n = Convert.ToInt32(Console.ReadLine());
+                            int arn = Convert.ToInt32(Console.ReadLine());
                             Console.Write("\n\tPodaj stopień korzenia:");
-                            double b = Convert.ToDouble(Console.ReadLine());
+                            double arb = Convert.ToDouble(Console.ReadLine());
 
-                            double result = ŚredniaPotęgowaCiągu(n, b);
+                            double arresult = ŚredniaPotęgowaCiągu(arn, arb);
 
                             Console.WriteLine("\n\tWYNIKI OBLICZEŃ: średniej potęgowej wyrażow ciągu liczbowego " +
-                                                $"n = {n} jest równa: {result}");
+                                                $"n = {arn} jest równa: {arresult,1:F}");
 
                             Console.ReadKey();
                         }
@@ -351,10 +324,10 @@ namespace Project1_Radovskyi61986
                             Console.Write("\n\tPodaj ile liczb chcesz użyć do średniej geometrycznej: ");
                             int n = Convert.ToInt32(Console.ReadLine());
 
-                            double result = ŚredniaGeometrycznaCiągu(n);
+                            double arresult = ŚredniaGeometrycznaCiągu(n);
 
                             Console.WriteLine("\n\tWYNIKI OBLICZEŃ: średniej geometrycznej wyrażow ciągu liczbowego " +
-                                $"n = {n} jest równa: {result,1:F}");
+                                $"n = {n} jest równa: {arresult,1:F}");
 
                             Console.ReadKey();
                         }
@@ -369,10 +342,10 @@ namespace Project1_Radovskyi61986
                             Console.WriteLine("\n\tPodaj illość składników: ");
                             int n = Convert.ToInt32(Console.ReadLine());
 
-                            double result = ObliczenieCenyJednostki(n);
+                            double arresult = ObliczenieCenyJednostki(n);
 
                             Console.WriteLine("\n\tWYNIKI OBLICZEŃ: ceny jednostki paszy " +
-                                              $"n = {n} jest równa: {result, 1:F}");
+                                              $"n = {n} jest równa: {arresult, 1:F}");
 
                             Console.ReadKey();
                         }
@@ -400,16 +373,19 @@ namespace Project1_Radovskyi61986
                             // wypisanie wyniku obliczeń w najbardziej natacji (naukowiej lub stałopozycyjnej)
                             Console.WriteLine($"\n\n\tWYNIKI: obliczona wartość wielomianu n = {n}-ego stopnia " +
                                 $"dla zmiennej niezależnej X = {X,6:G}, jest równa: {Wx,8:G}");
+
+                            Console.ReadKey();
                         }
                         break;
                     case ConsoleKey.G:
                         {
                             Console.Clear();
-                            Console.WriteLine("\n\n\tWYBRANO: Konwersja liczby całkowitej zapisanej znakowo w systemie liczbowym o podanej\n" +
+                            Console.WriteLine("\n\n\tWYBRANO:G. Konwersja liczby całkowitej zapisanej znakowo w systemie liczbowym o podanej\n" +
                                 " podstawie liczenia na wartość i jej wypisanie znakowo w innym systemie liczbowym\n" +
                                 "  o podanej podstawie liczenia");
 
-                            Console.WriteLine("\n\tWybrano: Konwersja liczby całkowitej zapisanej znakowo w systemie liczbowym o podanej \n\t\tpodstawie liczenia na wartość i jej wypisanie znakowo w innym systemie liczbowym");
+                            Console.WriteLine("\n\tWybrano: Konwersja liczby całkowitej zapisanej znakowo w systemie liczbowym o podanej " +
+                                "\n\t\tpodstawie liczenia na wartość i jej wypisanie znakowo w innym systemie liczbowym");
                             string X = KonwersjaLiczby();
                             Console.WriteLine("\n\tWyniki: " + X);
                             Console.ReadKey();
@@ -619,20 +595,37 @@ namespace Project1_Radovskyi61986
                 //rozpoznanie kodu naciśniętego klawisza
                 if (WybranaFunkcjonalność.Key == ConsoleKey.A)
                 {
-                    //deklaracja zmiennych dla przechowania wyników
-                    string ZZLD, ZZLB;
-                    // wcytanie liczby do konwersji
-                    Console.Write("\n\tPodaj znakowy zapis liczby (w systemie szisiętnym) do konwersji: ");
-                    ZZLD = Console.ReadLine();
-                    //wywołanie metody dla konwersji liczby ZZLD na liczbę ZZLB
-                    KonwersjaLiczbyZZLDnaLiczbęZZLB(ZZLD, out ZZLB);
-                    // wypisanie wyniku konwersji
-                    /*Console.WriteLine("\n\n\tWYNIK KONWERSJI: wczytana znakowo liczba do konwersji: " +
-                        $"{ZZLD} jest rónoważna (pod względem wartości) znakowemu zapisowi tej liczby " +
-                        $"w systemie dwójkowym(binarnym): {ZZLB}");*/
-                    // chwilowe zatrzymanie programu
-                    Console.WriteLine("\n\n\tDla kontynacji działania programu naciśnij dowolny klawisz");
-                    Console.ReadLine();
+                    /* dekomponujemy zadanie obsługi funkcjonalniści F.
+                           1) konwersja znakowego zapisu liczby naturalnej (ushort) w systemie dziesiętnym na wartość
+                           2) konwersja wartości liczby naturalnej (ushort) na znakowy zapis liczby w systemie dwójkowym*/
+                    // realizacja komponentu ad 1)
+                    string ZZL; // ZZL - Znakowy Zapis Liczby
+                                // deklaracja zmiennej dla przechowania wartości liczby po konwersji
+                    ushort LiczbaPoKonwersji;
+                    // wczytanie liczby znakowej do konwersji na wartość
+                    Console.Write("\n\n\tPodaj liczbę (w systemie dziesiętnym) do konwersji: ");
+
+                    // wczytanie liczby do konwersji
+                    ZZL = Console.ReadLine();
+                    // usunięcie zbędnych "białych znaków" (spacja, znak tabulacji )
+                    ZZL = ZZL.Trim(); //123
+                                      // konwersja znakowego zapisu liczby na wartość przez wywołanie metody
+
+                    LiczbaPoKonwersji = KonwersjaZnakowejLiczbyNaWartość(ZZL);
+                    // dla celów testoych wypisujemy liczbę po konwersji przy użyciu metody WriteLine
+                    Console.WriteLine("\n\n\tTRACE: Liczba po konwersji: " + ZZL.ToString());
+
+                    //realizacja komponentu ad 2.
+                    ushort LiczbaDoKonwersji = LiczbaPoKonwersji;
+                    // Komwersja wartości (liczby ushort) na znakowy zapis w systemie dwójkowym
+                    KonwersacjaLiczbyNaturalnejNaBinarna(LiczbaDoKonwersji, out ZZL);
+
+                    // wypisanie wyników konwersji
+                    Console.WriteLine("\n\n\tWYNIK KONWERSJI: Wartość liczby po konwersji ze znakowego " +
+                        $"jej zapisu w dziesiętnym systemie liczbowym: {LiczbaPoKonwersji}, która po konwersji na system " +
+                        $"dwójkowy (binarny) ma następujący zapis znakowy: {ZZL}");
+
+                    Console.ReadKey();
                 }
                 else if (WybranaFunkcjonalność.Key == ConsoleKey.B)
                 {/*B. Konwersja liczby naturalnej (w sustemie szesnastkowej " +
@@ -761,12 +754,6 @@ namespace Project1_Radovskyi61986
 
             } while (WybranaFunkcjonalność.Key != ConsoleKey.X);
         }
-
-        private static void KonwersjaLiczbyZZLDnaLiczbęZZLB(string zZLD, out string zZLB)
-        {
-            throw new NotImplementedException();
-        }
-
         private static ushort KonwersjaZnakowejLiczbyNaWartość(string ZZL)
         {
             //deklaracje
@@ -903,7 +890,7 @@ namespace Project1_Radovskyi61986
 
             for (int i = 0; i < n; i++)
             {
-                Console.Write($"\n\tPodaj a {i + 1} :");
+                Console.Write($"\n\tPodaj a {i} :");
                 ara += Math.Pow(Convert.ToDouble(Console.ReadLine()), arPow);
             }
 
@@ -918,23 +905,22 @@ namespace Project1_Radovskyi61986
 
             for (int i = 0; i < n; i++)
             {
-                Console.Write($"\n\tPodaj a {i + 1} :");
+                Console.Write($"\n\tPodaj a {i} :");
                 ara += Math.Pow(Convert.ToDouble(Console.ReadLine()), b);
 
             }
             double arResult = Math.Pow((ara / n), 1 / b);
 
-            return arResult;
+            return arResult;    
         }
         static double ŚredniaGeometrycznaCiągu(int n) 
         {
-
             double arMultiplying = 1;
             double arResult;
 
             for (int i = 0; i < n; i++)
             {
-                Console.Write($"\n\tPodaj dodatni liczby a{i + 1}: ");
+                Console.Write($"\n\tPodaj dodatni liczby a{i}: ");
                 arMultiplying *= Convert.ToDouble(Console.ReadLine());
             }
 
@@ -945,7 +931,6 @@ namespace Project1_Radovskyi61986
         }
         static double ObliczenieCenyJednostki(int n)
         {
-
             double arCena;
             double arliczbaKg;
 
@@ -954,20 +939,19 @@ namespace Project1_Radovskyi61986
 
             for (int i = 0; i < n; i++)
             {
-                Console.Write($"\n\tPodaj cenu składnika {i + 1}-go: ");
+                Console.Write($"\n\tPodaj cenu składnika {i}-go: ");
                 arCena = Convert.ToInt32(Console.ReadLine());
 
-                Console.Write($"\n\tPodaj liczbu Kg {i + 1}-go: ");
+                Console.Write($"\n\tPodaj liczbu Kg {i}-go: ");
                 arliczbaKg = Convert.ToInt32(Console.ReadLine());
 
                 double arCM = arCena * arliczbaKg;
-                Console.WriteLine($"\n\tCena całego {i + 1}-go składnika: {arCM} ");
+                Console.WriteLine($"\n\tCena całego {i}-go składnika: {arCM} ");
 
 
-                arc += arCena * arliczbaKg;// c = c + (cena * liczbuKg)
+                arc += arCena * arliczbaKg;
                 arm += arliczbaKg;
             }
-
             return arc / arm; 
         }
         static string KonwersjaLiczby()
@@ -976,7 +960,6 @@ namespace Project1_Radovskyi61986
             byte arKoniec;
             string arLiczba;
 
-            // Prosimy wpisać 
 
             Console.Write("\n\tWpisz liczbę: ");
             arLiczba = Console.ReadLine();
@@ -1047,7 +1030,6 @@ namespace Project1_Radovskyi61986
             }
             return arWartość;
         }
-
         #endregion
     }
 }
