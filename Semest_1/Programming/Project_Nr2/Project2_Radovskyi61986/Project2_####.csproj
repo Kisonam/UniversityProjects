@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A230F35F-3F24-474C-9312-93DE918BFE0D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Project2_Radovskyi61986</RootNamespace>
-    <AssemblyName>Project2_Radovskyi61986</AssemblyName>
+    <RootNamespace>Project2_####</RootNamespace>
+    <AssemblyName>Project2_####</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
