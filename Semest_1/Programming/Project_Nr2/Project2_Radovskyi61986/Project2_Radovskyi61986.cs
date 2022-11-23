@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project2_Radovskyi61986
+namespace Project2_№№№№
 {
-    public partial class Project2_Radovskyi61986 : Form
+    public partial class Project2_№№№№ : Form
     {
-        public Project2_Radovskyi61986() // konstruktor klasy 
+        public Project2_№№№№() // konstruktor klasy 
         {
             InitializeComponent();
         }
