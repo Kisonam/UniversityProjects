@@ -23,27 +23,27 @@ namespace Project2_Radovskyi61986
                 "formularz i powrócić do formularza głuwnego", this.Text,
                 MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3);
             // rozpoznanie decyzji użytkownika programu
-            if (OlnoMassage == DialogResult.Yes)
-            {
-                e.Cancel = true;
+//             if (OlnoMassage == DialogResult.Yes)    ---Wrong!---
+//             {
+//                 e.Cancel = true;
 
-                foreach (Form Formukaez in Application.OpenForms)
-                {
-                    if (Formukaez.Name == "Project2_Radovskyi61986")
-                    {
-                        this.Hide();
+//                 foreach (Form Formukaez in Application.OpenForms)
+//                 {
+//                     if (Formukaez.Name == "Project2_Radovskyi61986")
+//                     {
+//                         this.Hide();
 
-                        Formukaez.Show();
+//                         Formukaez.Show();
 
-                        return;
-                    }
-                    Project2_Radovskyi61986 FormularzPr = new Project2_Radovskyi61986();
-                    this.Hide();
-                    FormularzPr.Show();
-                }
-            }
-            else
-                e.Cancle = false;
+//                         return;
+//                     }
+//                     Project2_Radovskyi61986 FormularzPr = new Project2_Radovskyi61986();
+//                     this.Hide();
+//                     FormularzPr.Show();
+//                 }
+//             }
+//             else
+//                 e.Cancle = false;
         }
     }
 }
