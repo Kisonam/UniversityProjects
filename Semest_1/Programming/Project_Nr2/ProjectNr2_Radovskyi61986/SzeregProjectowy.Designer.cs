@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.txtH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtG = new System.Windows.Forms.TextBox();
@@ -57,9 +57,28 @@
             this.Analizator = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zapisanieTablicyTWSWPlikuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.odczytanieTablicyTWSZPlikuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ustalanieAtrybutówFormularzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ustalanieKoloruTłaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ustalenieKoloruLiterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ustalenieRozmiaruToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zmianaAtrybutówWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zmianaKoloruLiniiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zmianaTypuWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zmianaGrubościLiniiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zmianaCzionkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnResetu = new System.Windows.Forms.Button();
+            this.btnWizualizacjaGraficzna = new System.Windows.Forms.Button();
+            this.btnWizualizacjaTabelaryczna = new System.Windows.Forms.Button();
+            this.buttonObliczWartośćSzeregu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTWS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtWykresSzeregu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtH
@@ -205,8 +224,8 @@
             // 
             // WartośćX
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.WartośćX.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.WartośćX.DefaultCellStyle = dataGridViewCellStyle40;
             this.WartośćX.HeaderText = "Warość zmiennej X";
             this.WartośćX.MinimumWidth = 8;
             this.WartośćX.Name = "WartośćX";
@@ -214,8 +233,8 @@
             // 
             // WartośćSzeregu
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.WartośćSzeregu.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.WartośćSzeregu.DefaultCellStyle = dataGridViewCellStyle41;
             this.WartośćSzeregu.HeaderText = "Obliczona wartość szeregu ";
             this.WartośćSzeregu.MinimumWidth = 8;
             this.WartośćSzeregu.Name = "WartośćSzeregu";
@@ -223,8 +242,8 @@
             // 
             // Licznikyrazów
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Licznikyrazów.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Licznikyrazów.DefaultCellStyle = dataGridViewCellStyle42;
             this.Licznikyrazów.HeaderText = "Licznik zsumowanych wyrazów";
             this.Licznikyrazów.MinimumWidth = 8;
             this.Licznikyrazów.Name = "Licznikyrazów";
@@ -232,16 +251,16 @@
             // 
             // chtWykresSzeregu
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chtWykresSzeregu.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chtWykresSzeregu.Legends.Add(legend2);
+            chartArea14.Name = "ChartArea1";
+            this.chtWykresSzeregu.ChartAreas.Add(chartArea14);
+            legend14.Name = "Legend1";
+            this.chtWykresSzeregu.Legends.Add(legend14);
             this.chtWykresSzeregu.Location = new System.Drawing.Point(328, 95);
             this.chtWykresSzeregu.Name = "chtWykresSzeregu";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chtWykresSzeregu.Series.Add(series2);
+            series14.ChartArea = "ChartArea1";
+            series14.Legend = "Legend1";
+            series14.Name = "Series1";
+            this.chtWykresSzeregu.Series.Add(series14);
             this.chtWykresSzeregu.Size = new System.Drawing.Size(643, 543);
             this.chtWykresSzeregu.TabIndex = 32;
             this.chtWykresSzeregu.Text = "Wykres Szeregu Potęgowego";
@@ -270,17 +289,174 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.plikToolStripMenuItem,
+            this.ustalanieAtrybutówFormularzaToolStripMenuItem,
+            this.zmianaAtrybutówWykresuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1239, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1286, 24);
             this.menuStrip1.TabIndex = 34;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // plikToolStripMenuItem
+            // 
+            this.plikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zapisanieTablicyTWSWPlikuToolStripMenuItem,
+            this.odczytanieTablicyTWSZPlikuToolStripMenuItem,
+            this.restartToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
+            this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.plikToolStripMenuItem.Text = "Plik";
+            // 
+            // zapisanieTablicyTWSWPlikuToolStripMenuItem
+            // 
+            this.zapisanieTablicyTWSWPlikuToolStripMenuItem.Name = "zapisanieTablicyTWSWPlikuToolStripMenuItem";
+            this.zapisanieTablicyTWSWPlikuToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.zapisanieTablicyTWSWPlikuToolStripMenuItem.Text = "Zapisanie tablicy TWS w pliku";
+            this.zapisanieTablicyTWSWPlikuToolStripMenuItem.Click += new System.EventHandler(this.zapisanieTablicyTWSWPlikuToolStripMenuItem_Click);
+            // 
+            // odczytanieTablicyTWSZPlikuToolStripMenuItem
+            // 
+            this.odczytanieTablicyTWSZPlikuToolStripMenuItem.Name = "odczytanieTablicyTWSZPlikuToolStripMenuItem";
+            this.odczytanieTablicyTWSZPlikuToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.odczytanieTablicyTWSZPlikuToolStripMenuItem.Text = "Odczytanie tablicy TWS z pliku";
+            this.odczytanieTablicyTWSZPlikuToolStripMenuItem.Click += new System.EventHandler(this.odczytanieTablicyTWSZPlikuToolStripMenuItem_Click);
+            // 
+            // restartToolStripMenuItem
+            // 
+            this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
+            this.restartToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.restartToolStripMenuItem.Text = "Restart";
+            this.restartToolStripMenuItem.Click += new System.EventHandler(this.restartToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // ustalanieAtrybutówFormularzaToolStripMenuItem
+            // 
+            this.ustalanieAtrybutówFormularzaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ustalanieKoloruTłaToolStripMenuItem,
+            this.ustalenieKoloruLiterToolStripMenuItem,
+            this.ustalenieRozmiaruToolStripMenuItem});
+            this.ustalanieAtrybutówFormularzaToolStripMenuItem.Name = "ustalanieAtrybutówFormularzaToolStripMenuItem";
+            this.ustalanieAtrybutówFormularzaToolStripMenuItem.Size = new System.Drawing.Size(184, 20);
+            this.ustalanieAtrybutówFormularzaToolStripMenuItem.Text = "Ustalanie atrybutów formularza";
+            // 
+            // ustalanieKoloruTłaToolStripMenuItem
+            // 
+            this.ustalanieKoloruTłaToolStripMenuItem.Name = "ustalanieKoloruTłaToolStripMenuItem";
+            this.ustalanieKoloruTłaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.ustalanieKoloruTłaToolStripMenuItem.Text = "Ustalenie koloru tła";
+            this.ustalanieKoloruTłaToolStripMenuItem.Click += new System.EventHandler(this.ustalanieKoloruTłaToolStripMenuItem_Click);
+            // 
+            // ustalenieKoloruLiterToolStripMenuItem
+            // 
+            this.ustalenieKoloruLiterToolStripMenuItem.Name = "ustalenieKoloruLiterToolStripMenuItem";
+            this.ustalenieKoloruLiterToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.ustalenieKoloruLiterToolStripMenuItem.Text = "Ustalenie koloru liter";
+            this.ustalenieKoloruLiterToolStripMenuItem.Click += new System.EventHandler(this.ustalenieKoloruLiterToolStripMenuItem_Click);
+            // 
+            // ustalenieRozmiaruToolStripMenuItem
+            // 
+            this.ustalenieRozmiaruToolStripMenuItem.Name = "ustalenieRozmiaruToolStripMenuItem";
+            this.ustalenieRozmiaruToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.ustalenieRozmiaruToolStripMenuItem.Text = "Ustalenie rozmiaru ";
+            // 
+            // zmianaAtrybutówWykresuToolStripMenuItem
+            // 
+            this.zmianaAtrybutówWykresuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zmianaKoloruLiniiToolStripMenuItem,
+            this.zmianaTypuWykresuToolStripMenuItem,
+            this.zmianaGrubościLiniiToolStripMenuItem,
+            this.zmianaCzionkiToolStripMenuItem});
+            this.zmianaAtrybutówWykresuToolStripMenuItem.Name = "zmianaAtrybutówWykresuToolStripMenuItem";
+            this.zmianaAtrybutówWykresuToolStripMenuItem.Size = new System.Drawing.Size(162, 20);
+            this.zmianaAtrybutówWykresuToolStripMenuItem.Text = "Zmiana atrybutów wykresu";
+            // 
+            // zmianaKoloruLiniiToolStripMenuItem
+            // 
+            this.zmianaKoloruLiniiToolStripMenuItem.Name = "zmianaKoloruLiniiToolStripMenuItem";
+            this.zmianaKoloruLiniiToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.zmianaKoloruLiniiToolStripMenuItem.Text = "Zmiana koloru linii";
+            // 
+            // zmianaTypuWykresuToolStripMenuItem
+            // 
+            this.zmianaTypuWykresuToolStripMenuItem.Name = "zmianaTypuWykresuToolStripMenuItem";
+            this.zmianaTypuWykresuToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.zmianaTypuWykresuToolStripMenuItem.Text = "Zmiana typu wykresu";
+            // 
+            // zmianaGrubościLiniiToolStripMenuItem
+            // 
+            this.zmianaGrubościLiniiToolStripMenuItem.Name = "zmianaGrubościLiniiToolStripMenuItem";
+            this.zmianaGrubościLiniiToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.zmianaGrubościLiniiToolStripMenuItem.Text = "Zmiana grubości linii";
+            // 
+            // zmianaCzionkiToolStripMenuItem
+            // 
+            this.zmianaCzionkiToolStripMenuItem.Name = "zmianaCzionkiToolStripMenuItem";
+            this.zmianaCzionkiToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.zmianaCzionkiToolStripMenuItem.Text = "Zmiana Czionki";
+            this.zmianaCzionkiToolStripMenuItem.Click += new System.EventHandler(this.zmianaCzionkiToolStripMenuItem_Click);
+            // 
+            // btnResetu
+            // 
+            this.btnResetu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnResetu.Location = new System.Drawing.Point(1035, 450);
+            this.btnResetu.Name = "btnResetu";
+            this.btnResetu.Size = new System.Drawing.Size(180, 34);
+            this.btnResetu.TabIndex = 39;
+            this.btnResetu.Text = "Reset";
+            this.btnResetu.UseVisualStyleBackColor = true;
+            this.btnResetu.Click += new System.EventHandler(this.btnResetu_Click);
+            // 
+            // btnWizualizacjaGraficzna
+            // 
+            this.btnWizualizacjaGraficzna.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnWizualizacjaGraficzna.Location = new System.Drawing.Point(1035, 395);
+            this.btnWizualizacjaGraficzna.Name = "btnWizualizacjaGraficzna";
+            this.btnWizualizacjaGraficzna.Size = new System.Drawing.Size(180, 49);
+            this.btnWizualizacjaGraficzna.TabIndex = 38;
+            this.btnWizualizacjaGraficzna.Text = "Wizualizacja graficzna zmian wartości szeregu potęgowego";
+            this.btnWizualizacjaGraficzna.UseVisualStyleBackColor = true;
+            this.btnWizualizacjaGraficzna.Click += new System.EventHandler(this.btnWizualizacjaGraficzna_Click);
+            // 
+            // btnWizualizacjaTabelaryczna
+            // 
+            this.btnWizualizacjaTabelaryczna.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnWizualizacjaTabelaryczna.Location = new System.Drawing.Point(1035, 319);
+            this.btnWizualizacjaTabelaryczna.Name = "btnWizualizacjaTabelaryczna";
+            this.btnWizualizacjaTabelaryczna.Size = new System.Drawing.Size(180, 66);
+            this.btnWizualizacjaTabelaryczna.TabIndex = 36;
+            this.btnWizualizacjaTabelaryczna.Text = "Tabelaryczna wizualizacja\r\nzmian wartości szeregu\r\npotęgowego";
+            this.btnWizualizacjaTabelaryczna.UseVisualStyleBackColor = true;
+            this.btnWizualizacjaTabelaryczna.Click += new System.EventHandler(this.btnWizualizacjaTabelaryczna_Click);
+            // 
+            // buttonObliczWartośćSzeregu
+            // 
+            this.buttonObliczWartośćSzeregu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonObliczWartośćSzeregu.Location = new System.Drawing.Point(1035, 248);
+            this.buttonObliczWartośćSzeregu.Name = "buttonObliczWartośćSzeregu";
+            this.buttonObliczWartośćSzeregu.Size = new System.Drawing.Size(180, 65);
+            this.buttonObliczWartośćSzeregu.TabIndex = 35;
+            this.buttonObliczWartośćSzeregu.Text = "Oblicz wartość szeregu";
+            this.buttonObliczWartośćSzeregu.UseVisualStyleBackColor = true;
+            this.buttonObliczWartośćSzeregu.Click += new System.EventHandler(this.buttonObliczWartośćSzeregu_Click);
             // 
             // SzeregProjectowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 699);
+            this.ClientSize = new System.Drawing.Size(1286, 649);
+            this.Controls.Add(this.btnResetu);
+            this.Controls.Add(this.btnWizualizacjaGraficzna);
+            this.Controls.Add(this.btnWizualizacjaTabelaryczna);
+            this.Controls.Add(this.buttonObliczWartośćSzeregu);
             this.Controls.Add(this.Analizator);
             this.Controls.Add(this.chtWykresSzeregu);
             this.Controls.Add(this.dgvTWS);
@@ -302,9 +478,13 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SzeregProjectowy";
             this.Text = "SzeregProjectowy";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SzeregProjectowy_FormClosing);
+            this.Load += new System.EventHandler(this.SzeregProjectowy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTWS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtWykresSzeregu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,5 +514,23 @@
         private System.Windows.Forms.Label Analizator;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zapisanieTablicyTWSWPlikuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem odczytanieTablicyTWSZPlikuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ustalanieAtrybutówFormularzaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ustalanieKoloruTłaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ustalenieKoloruLiterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ustalenieRozmiaruToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zmianaAtrybutówWykresuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zmianaKoloruLiniiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zmianaTypuWykresuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zmianaGrubościLiniiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zmianaCzionkiToolStripMenuItem;
+        private System.Windows.Forms.Button btnResetu;
+        private System.Windows.Forms.Button btnWizualizacjaGraficzna;
+        private System.Windows.Forms.Button btnWizualizacjaTabelaryczna;
+        private System.Windows.Forms.Button buttonObliczWartośćSzeregu;
     }
 }

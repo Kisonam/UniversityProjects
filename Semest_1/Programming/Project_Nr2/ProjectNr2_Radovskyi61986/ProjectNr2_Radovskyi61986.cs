@@ -38,11 +38,6 @@ namespace ProjectNr2_Radovskyi61986
             this.Hide();
         }
 
-        private void ProjectNr2_Radovskyi61986_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
-        }
-
         private void ProjectNr2_Radovskyi61986_FormClosing(object sender, FormClosingEventArgs e)
         {
             /* utworzenie okna dialogowego dla spytania Użytkownika, czy 

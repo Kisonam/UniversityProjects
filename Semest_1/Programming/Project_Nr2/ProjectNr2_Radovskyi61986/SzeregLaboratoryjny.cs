@@ -50,86 +50,12 @@ namespace ProjectNr2_Radovskyi61986
             }
             else
                 e.Cancel = true;
-        }
+        } //+
 
-        private void Analizator_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SzeregLaboratoryjny_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonObliczWartośćSzeregu_Click(object sender, EventArgs e)
-        {
-            // "zgaszanie" kontrolki errorProvider, która mogła wcześniej zapalona
-            errorProvider1.Dispose();
-            // pobranie danych wejściowych
-            float X, Eps;
-            // pobranie wartości zmiennej niezależnej X
-            if (!Pobierz_X_Eps(out X,out Eps)) // (!Pobierz_X_Eps())
-            {
-                errorProvider1.SetError(txtX, "ERROR: w zapisie wartości zmiennej X" +
-                    " wystapił niedozwolony znak ");
-                // przerwanie dalszej obcługi zdarzenia Click od przycisku poleceń: buttonObliczWartośćSzeregu_Click
-                return;
-            }
-            // ustawienie stanu braku aktywności kontrolki txtX
-            {
-                // będziemy tutaj gdy nie było błędu
-                // pobranie danych wejściowych
-                // pobranie dokładności obliczeń Eps
-                //if (!float.TryParse(textEps.Text, out Eps))
-                //{
-                //    errorProvider1.SetError(textEps, "ERROR: w zapisie dokładności obliczeń Eps" +
-                //        " wystapił niedozwolony znak ");
-                //    // przerwanie dalszej obcługi zdarzenia Click od przycisku poleceń: buttonObliczWartośćSzeregu_Click
-                //    return;
-                //}
-                //// sprawdzenie warunku wejściowego dla Eps
-                //if ((Eps <= 0.0f) || (Eps >=+1.0f))
-                //{
-                //    errorProvider1.SetError(textEps, "ERROR: wartość dokładności obliczeń Eps" +
-                //      " musi spełniać warunek wejściowy: 0.0 < Eps < 1.0");
-                //    // przerwanie dalszej obcługi zdarzenia Click od przycisku poleceń: buttonObliczWartośćSzeregu_Click
-                //    return;
-                //}
-                //// ustawienie stanu braku aktywności kontrolki textEps
-                //textEps.Enabled = false;
-                // będziemy tutaj gdy nie było błędu
-                // deklaracje zmiennych dla przechowania wyniku obliczeń
-             }
-
-            float SumaSzeregu;
-            ushort N; // licznik zsumowanych wyrazów szeregu
-            // obliczenie wartości szeregu, czyli wywołanie metody ObliczenieSumySzereguPotęngowego(float X, float Eps, out ushort LicznikWyrazów)
-            SumaSzeregu = ObliczenieSumySzereguPotęngowego(X, Eps, out N);
-            //wypisanie wyniku obliczeń
-            txtSumaSzeregu.Text = SumaSzeregu.ToString();
-            txtLicznikWyrazów.Text = N.ToString();
-
-        }
         private void btnResetu_Click(object sender, EventArgs e)
         {
             Application.Restart();
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        } //+
 
         private void btnWizualizacjaTabelaryczna_Click(object sender, EventArgs e)
         {
@@ -174,7 +100,7 @@ namespace ProjectNr2_Radovskyi61986
             dgvTWS.Visible = true;
             // ustawienie stanu braku aktywności dla przycisku poleceń: btnWizualizacjaTabelaryczna
             btnWizualizacjaTabelaryczna.Enabled = false;
-        }
+        } //+
         private void btnWizualizacjaGraficzna_Click(object sender, EventArgs e)
         {
             // "zgaszanie" kontrolki errorProvider, która mogła wcześniej zapalona
@@ -206,7 +132,7 @@ namespace ProjectNr2_Radovskyi61986
             dgvTWS.Visible = false;
             chtWykresSzeregu.Visible = true;
             btnWizualizacjaGraficzna.Enabled = false;
-        }
+        } //+
 
         #region Metody pomocnicze dla obsługi przycisków funkcjonalnych
         bool Pobierz_X_Eps(out float X, out float Eps)
@@ -244,7 +170,7 @@ namespace ProjectNr2_Radovskyi61986
             // zwrotne przekazanie informacji o braku  błędu
             return true;
 
-        }
+        } //+
 
         float ObliczenieSumySzereguPotęngowego(float X, float Eps, out ushort LicznikWyrazów)
         {
@@ -262,7 +188,7 @@ namespace ProjectNr2_Radovskyi61986
             } while (Math.Abs(w) > Eps);
             //zwrot wyniku
             return S;
-        }
+        } //+
 
         bool Pobranie_Eps_Xd_Xg_h(out float Xd, out float Xg, out float h, out float Eps)
         {// makieta programowa 
@@ -341,7 +267,7 @@ namespace ProjectNr2_Radovskyi61986
 
 
             return true;
-        }
+        } // +
 
         void TablicowanieWartościSzeregu(float Xd,float  Xg,float h, float Eps, out float[,] TWS)
         {
@@ -360,7 +286,7 @@ namespace ProjectNr2_Radovskyi61986
                 TWS[i, 1] = ObliczenieSumySzereguPotęngowego(X, Eps,out LicznikZsumowanychWyrazów);
                 TWS[i, 2] = LicznikZsumowanychWyrazów;
             }
-        }
+        } // +
 
         void WpisanieWynikówDoKontrolkiDataGridView(float[,] TWS,DataGridView dgvTWS)
         {
@@ -378,7 +304,7 @@ namespace ProjectNr2_Radovskyi61986
                 // wpisanie licznika zsumowanych wyrazów
                 dgvTWS.Rows[i].Cells[2].Value = string.Format($"{TWS[i, 2]:G}");
             }
-        }
+        } // +
 
         void WpisanieWynikówDoKontrolkiChart(float[,]TWS, Chart chtWykresSzeregu)
         {
@@ -428,10 +354,59 @@ namespace ProjectNr2_Radovskyi61986
             {
                 chtWykresSzeregu.Series[0].Points.AddXY(TWS[i, 0], TWS[i, 1]);
             }
-        }
-
+        } // +
 
         #endregion
+
+        private void buttonObliczWartośćSzeregu_Click(object sender, EventArgs e)
+        {
+            // "zgaszanie" kontrolki errorProvider, która mogła wcześniej zapalona
+            errorProvider1.Dispose();
+            // pobranie danych wejściowych
+            float X, Eps;
+            // pobranie wartości zmiennej niezależnej X
+            if (!Pobierz_X_Eps(out X, out Eps)) // (!Pobierz_X_Eps())
+            {
+                errorProvider1.SetError(txtX, "ERROR: w zapisie wartości zmiennej X" +
+                    " wystapił niedozwolony znak ");
+                // przerwanie dalszej obcługi zdarzenia Click od przycisku poleceń: buttonObliczWartośćSzeregu_Click
+                return;
+            }
+            // ustawienie stanu braku aktywności kontrolki txtX
+            {
+                // będziemy tutaj gdy nie było błędu
+                // pobranie danych wejściowych
+                // pobranie dokładności obliczeń Eps
+                if (!float.TryParse(textEps.Text, out Eps))
+                {
+                    errorProvider1.SetError(textEps, "ERROR: w zapisie dokładności obliczeń Eps" +
+                        " wystapił niedozwolony znak ");
+                    // przerwanie dalszej obcługi zdarzenia Click od przycisku poleceń: buttonObliczWartośćSzeregu_Click
+                    return;
+                }
+                //// sprawdzenie warunku wejściowego dla Eps
+                if ((Eps <= 0.0f) || (Eps >= +1.0f))
+                {
+                    errorProvider1.SetError(textEps, "ERROR: wartość dokładności obliczeń Eps" +
+                      " musi spełniać warunek wejściowy: 0.0 < Eps < 1.0");
+                    // przerwanie dalszej obcługi zdarzenia Click od przycisku poleceń: buttonObliczWartośćSzeregu_Click
+                    return;
+                }
+                //// ustawienie stanu braku aktywności kontrolki textEps
+                textEps.Enabled = false;
+                // będziemy tutaj gdy nie było błędu
+                // deklaracje zmiennych dla przechowania wyniku obliczeń
+            }
+
+            float SumaSzeregu;
+            ushort N; // licznik zsumowanych wyrazów szeregu
+            // obliczenie wartości szeregu, czyli wywołanie metody ObliczenieSumySzereguPotęngowego(float X, float Eps, out ushort LicznikWyrazów)
+            SumaSzeregu = ObliczenieSumySzereguPotęngowego(X, Eps, out N);
+            //wypisanie wyniku obliczeń
+            txtSumaSzeregu.Text = SumaSzeregu.ToString();
+            txtLicznikWyrazów.Text = N.ToString();
+
+        } //+
 
         private void restartToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -495,7 +470,7 @@ namespace ProjectNr2_Radovskyi61986
             }
             else
                 MessageBox.Show("UWAGA!");
-        }
+        } //+
 
         private void ustalanieKoloruTłaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -508,7 +483,7 @@ namespace ProjectNr2_Radovskyi61986
                 this.BackColor = PaleteVolume.Color;
             //
             PaleteVolume.Dispose();
-        }
+        } // +
 
         private void zmianaCzionkiToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -517,7 +492,7 @@ namespace ProjectNr2_Radovskyi61986
             if (OknoCzionki.ShowDialog() == DialogResult.OK)
                 this.Font = OknoCzionki.Font;
             OknoCzionki.Dispose();
-        }
+        } //+
 
         private void odczytanieTablicyTWSZPlikuToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -615,36 +590,31 @@ namespace ProjectNr2_Radovskyi61986
 
 
 
-        }
+        } // +
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        } //+
 
         private void ustalenieKoloruLiterToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ColorDialog PaleteVolume = new ColorDialog();
+            PaleteVolume.Color = this.ForeColor;
+            if (PaleteVolume.ShowDialog() == DialogResult.OK)
+                this.ForeColor = PaleteVolume.Color;
 
-        }
+            PaleteVolume.Dispose();
+        } //+
 
         private void ustalenieRozmiaruToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void zmianaKoloruLiniiToolStripMenuItem_Click(object sender, EventArgs e)
+        private void txtLicznikWyrazów_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void zmianaGrubościLiniiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void zmianaTypuWykresuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 

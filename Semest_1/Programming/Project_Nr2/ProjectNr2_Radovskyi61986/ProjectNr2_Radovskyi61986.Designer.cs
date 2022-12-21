@@ -65,7 +65,6 @@
             this.Name = "ProjectNr2_Radovskyi61986";
             this.Text = "Kalkulator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProjectNr2_Radovskyi61986_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ProjectNr2_Radovskyi61986_FormClosed);
             this.Load += new System.EventHandler(this.ProjectNr2_Radovskyi61986_Load);
             this.ResumeLayout(false);
 
