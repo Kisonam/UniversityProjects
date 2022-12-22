@@ -36,17 +36,18 @@ namespace ProjectNr2_Radovskyi61986
                         // wyjście z metody obsługi zdarzenia FormClosing
                         return;
                     }
-                    /* gdy "będziemy tutaj" to będzie to oznaczało, że ktoś
+                    
+                }
+                /* gdy "będziemy tutaj" to będzie to oznaczało, że ktoś
                        skasował formularz główny, ale nie było na nim żadnych 
                        wyników obliczeń, tylko przyciki poleceń, to możemy go
                        odtworzyć; bez sygnalizacji błędu */
-                    // utworzenie nowego egzemplarza formularza głównego
-                    ProjectNr2_Radovskyi61986 FormularzProjectuNr2 = new ProjectNr2_Radovskyi61986();
-                    // ukrycie bieżącego formularza głównego
-                    FormularzProjectuNr2.Show();
-                     // ukrycie bieżącego formularza
-                        this.Hide();
-                }
+                // utworzenie nowego egzemplarza formularza głównego
+                ProjectNr2_Radovskyi61986 FormularzProjectuNr2 = new ProjectNr2_Radovskyi61986();
+                // ukrycie bieżącego formularza głównego
+                FormularzProjectuNr2.Show();
+                // ukrycie bieżącego formularza
+                this.Hide();
             }
             else
                 e.Cancel = true;

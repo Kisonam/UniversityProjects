@@ -35,7 +35,7 @@
             // LaboratoriumBtn
             // 
             this.LaboratoriumBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LaboratoriumBtn.Location = new System.Drawing.Point(71, 208);
+            this.LaboratoriumBtn.Location = new System.Drawing.Point(68, 127);
             this.LaboratoriumBtn.Name = "LaboratoriumBtn";
             this.LaboratoriumBtn.Size = new System.Drawing.Size(381, 115);
             this.LaboratoriumBtn.TabIndex = 0;
@@ -46,7 +46,7 @@
             // ProjectBtn
             // 
             this.ProjectBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ProjectBtn.Location = new System.Drawing.Point(579, 208);
+            this.ProjectBtn.Location = new System.Drawing.Point(576, 127);
             this.ProjectBtn.Name = "ProjectBtn";
             this.ProjectBtn.Size = new System.Drawing.Size(381, 115);
             this.ProjectBtn.TabIndex = 1;
@@ -59,7 +59,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1052, 557);
+            this.ClientSize = new System.Drawing.Size(1040, 324);
             this.Controls.Add(this.ProjectBtn);
             this.Controls.Add(this.LaboratoriumBtn);
             this.Name = "ProjectNr2_Radovskyi61986";

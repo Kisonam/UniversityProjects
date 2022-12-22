@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.txtH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtG = new System.Windows.Forms.TextBox();
@@ -218,14 +218,14 @@
             this.Licznikyrazów});
             this.dgvTWS.Location = new System.Drawing.Point(328, 95);
             this.dgvTWS.Name = "dgvTWS";
-            this.dgvTWS.Size = new System.Drawing.Size(643, 543);
+            this.dgvTWS.Size = new System.Drawing.Size(643, 527);
             this.dgvTWS.TabIndex = 31;
             this.dgvTWS.Visible = false;
             // 
             // WartośćX
             // 
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.WartośćX.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.WartośćX.DefaultCellStyle = dataGridViewCellStyle4;
             this.WartośćX.HeaderText = "Warość zmiennej X";
             this.WartośćX.MinimumWidth = 8;
             this.WartośćX.Name = "WartośćX";
@@ -233,8 +233,8 @@
             // 
             // WartośćSzeregu
             // 
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.WartośćSzeregu.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.WartośćSzeregu.DefaultCellStyle = dataGridViewCellStyle5;
             this.WartośćSzeregu.HeaderText = "Obliczona wartość szeregu ";
             this.WartośćSzeregu.MinimumWidth = 8;
             this.WartośćSzeregu.Name = "WartośćSzeregu";
@@ -242,8 +242,8 @@
             // 
             // Licznikyrazów
             // 
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Licznikyrazów.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Licznikyrazów.DefaultCellStyle = dataGridViewCellStyle6;
             this.Licznikyrazów.HeaderText = "Licznik zsumowanych wyrazów";
             this.Licznikyrazów.MinimumWidth = 8;
             this.Licznikyrazów.Name = "Licznikyrazów";
@@ -251,17 +251,17 @@
             // 
             // chtWykresSzeregu
             // 
-            chartArea14.Name = "ChartArea1";
-            this.chtWykresSzeregu.ChartAreas.Add(chartArea14);
-            legend14.Name = "Legend1";
-            this.chtWykresSzeregu.Legends.Add(legend14);
+            chartArea2.Name = "ChartArea1";
+            this.chtWykresSzeregu.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chtWykresSzeregu.Legends.Add(legend2);
             this.chtWykresSzeregu.Location = new System.Drawing.Point(328, 95);
             this.chtWykresSzeregu.Name = "chtWykresSzeregu";
-            series14.ChartArea = "ChartArea1";
-            series14.Legend = "Legend1";
-            series14.Name = "Series1";
-            this.chtWykresSzeregu.Series.Add(series14);
-            this.chtWykresSzeregu.Size = new System.Drawing.Size(643, 543);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chtWykresSzeregu.Series.Add(series2);
+            this.chtWykresSzeregu.Size = new System.Drawing.Size(643, 527);
             this.chtWykresSzeregu.TabIndex = 32;
             this.chtWykresSzeregu.Text = "Wykres Szeregu Potęgowego";
             this.chtWykresSzeregu.Visible = false;
@@ -295,7 +295,7 @@
             this.zmianaAtrybutówWykresuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1286, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1236, 24);
             this.menuStrip1.TabIndex = 34;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -367,6 +367,7 @@
             this.ustalenieRozmiaruToolStripMenuItem.Name = "ustalenieRozmiaruToolStripMenuItem";
             this.ustalenieRozmiaruToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.ustalenieRozmiaruToolStripMenuItem.Text = "Ustalenie rozmiaru ";
+            this.ustalenieRozmiaruToolStripMenuItem.Click += new System.EventHandler(this.ustalenieRozmiaruToolStripMenuItem_Click);
             // 
             // zmianaAtrybutówWykresuToolStripMenuItem
             // 
@@ -384,6 +385,7 @@
             this.zmianaKoloruLiniiToolStripMenuItem.Name = "zmianaKoloruLiniiToolStripMenuItem";
             this.zmianaKoloruLiniiToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.zmianaKoloruLiniiToolStripMenuItem.Text = "Zmiana koloru linii";
+            this.zmianaKoloruLiniiToolStripMenuItem.Click += new System.EventHandler(this.zmianaKoloruLiniiToolStripMenuItem_Click);
             // 
             // zmianaTypuWykresuToolStripMenuItem
             // 
@@ -401,7 +403,7 @@
             // 
             this.zmianaCzionkiToolStripMenuItem.Name = "zmianaCzionkiToolStripMenuItem";
             this.zmianaCzionkiToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.zmianaCzionkiToolStripMenuItem.Text = "Zmiana Czionki";
+            this.zmianaCzionkiToolStripMenuItem.Text = "Zmiana czionki";
             this.zmianaCzionkiToolStripMenuItem.Click += new System.EventHandler(this.zmianaCzionkiToolStripMenuItem_Click);
             // 
             // btnResetu
@@ -452,7 +454,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 649);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1236, 649);
             this.Controls.Add(this.btnResetu);
             this.Controls.Add(this.btnWizualizacjaGraficzna);
             this.Controls.Add(this.btnWizualizacjaTabelaryczna);

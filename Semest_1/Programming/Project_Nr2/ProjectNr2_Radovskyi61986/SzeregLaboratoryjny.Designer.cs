@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Analizator = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtX = new System.Windows.Forms.TextBox();
@@ -53,7 +53,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnWizualizacjaGraficzna = new System.Windows.Forms.Button();
             this.btnResetu = new System.Windows.Forms.Button();
             this.dgvTWS = new System.Windows.Forms.DataGridView();
@@ -89,7 +88,7 @@
             this.Analizator.AutoSize = true;
             this.Analizator.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Analizator.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Analizator.Location = new System.Drawing.Point(450, 76);
+            this.Analizator.Location = new System.Drawing.Point(457, 42);
             this.Analizator.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.Analizator.Name = "Analizator";
             this.Analizator.Size = new System.Drawing.Size(437, 26);
@@ -253,20 +252,10 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Przyrost h zmian \r\nwartości zmiennej X";
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(1117, 419);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 66);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Wuizualizacja szeregu wartoci ";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnWizualizacjaGraficzna
             // 
             this.btnWizualizacjaGraficzna.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnWizualizacjaGraficzna.Location = new System.Drawing.Point(1117, 491);
+            this.btnWizualizacjaGraficzna.Location = new System.Drawing.Point(1117, 421);
             this.btnWizualizacjaGraficzna.Name = "btnWizualizacjaGraficzna";
             this.btnWizualizacjaGraficzna.Size = new System.Drawing.Size(180, 49);
             this.btnWizualizacjaGraficzna.TabIndex = 18;
@@ -277,7 +266,7 @@
             // btnResetu
             // 
             this.btnResetu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnResetu.Location = new System.Drawing.Point(1117, 546);
+            this.btnResetu.Location = new System.Drawing.Point(1117, 476);
             this.btnResetu.Name = "btnResetu";
             this.btnResetu.Size = new System.Drawing.Size(180, 34);
             this.btnResetu.TabIndex = 19;
@@ -300,8 +289,8 @@
             // 
             // WartośćX
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.WartośćX.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.WartośćX.DefaultCellStyle = dataGridViewCellStyle16;
             this.WartośćX.HeaderText = "Warość zmiennej X";
             this.WartośćX.MinimumWidth = 8;
             this.WartośćX.Name = "WartośćX";
@@ -309,8 +298,8 @@
             // 
             // WartośćSzeregu
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.WartośćSzeregu.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.WartośćSzeregu.DefaultCellStyle = dataGridViewCellStyle17;
             this.WartośćSzeregu.HeaderText = "Obliczona wartość szeregu ";
             this.WartośćSzeregu.MinimumWidth = 8;
             this.WartośćSzeregu.Name = "WartośćSzeregu";
@@ -318,8 +307,8 @@
             // 
             // Licznikyrazów
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Licznikyrazów.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Licznikyrazów.DefaultCellStyle = dataGridViewCellStyle18;
             this.Licznikyrazów.HeaderText = "Licznik zsumowanych wyrazów";
             this.Licznikyrazów.MinimumWidth = 8;
             this.Licznikyrazów.Name = "Licznikyrazów";
@@ -327,16 +316,16 @@
             // 
             // chtWykresSzeregu
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chtWykresSzeregu.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chtWykresSzeregu.Legends.Add(legend4);
+            chartArea6.Name = "ChartArea1";
+            this.chtWykresSzeregu.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chtWykresSzeregu.Legends.Add(legend6);
             this.chtWykresSzeregu.Location = new System.Drawing.Point(354, 115);
             this.chtWykresSzeregu.Name = "chtWykresSzeregu";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chtWykresSzeregu.Series.Add(series4);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chtWykresSzeregu.Series.Add(series6);
             this.chtWykresSzeregu.Size = new System.Drawing.Size(643, 543);
             this.chtWykresSzeregu.TabIndex = 23;
             this.chtWykresSzeregu.Text = "Wykres Szeregu Potęgowego";
@@ -351,7 +340,7 @@
             this.zmianaAtrybutówWykresuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1360, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1366, 24);
             this.menuStrip1.TabIndex = 24;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -467,12 +456,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1360, 676);
+            this.ClientSize = new System.Drawing.Size(1366, 674);
             this.Controls.Add(this.chtWykresSzeregu);
             this.Controls.Add(this.dgvTWS);
             this.Controls.Add(this.btnResetu);
             this.Controls.Add(this.btnWizualizacjaGraficzna);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtH);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtG);
@@ -527,7 +515,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnResetu;
         private System.Windows.Forms.Button btnWizualizacjaGraficzna;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvTWS;
         private System.Windows.Forms.DataGridViewTextBoxColumn WartośćX;
         private System.Windows.Forms.DataGridViewTextBoxColumn WartośćSzeregu;

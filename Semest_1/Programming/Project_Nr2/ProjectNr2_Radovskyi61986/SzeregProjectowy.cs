@@ -14,9 +14,9 @@ namespace ProjectNr2_Radovskyi61986
     public partial class SzeregProjectowy : Form
     {
         // deklaracja zminnej tablicowej (referencyjnej)
-        float[,] TWS;
-        const float DgPrzedziauX = float.MinValue;
-        const float GgPrzedziauX = float.MaxValue;
+        float[,] arTWS;
+        const float arDgPrzedziauX = float.MinValue;
+        const float arGgPrzedziauX = float.MaxValue;
         public SzeregProjectowy()
         {
             InitializeComponent();
@@ -34,75 +34,63 @@ namespace ProjectNr2_Radovskyi61986
 
         private void SzeregProjectowy_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult OknoMessage = MessageBox.Show("Czy rzechywicie chcesz zakąć ten " +
+            DialogResult arOknoMessage = MessageBox.Show("Czy rzechywicie chcesz zakąć ten " +
               "formularz i powrócić do formularza głuwnego", this.Text,
               MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3);
             // rozpoznanie decyzji użytkownika programu
-            if (OknoMessage == DialogResult.Yes)
+            if (arOknoMessage == DialogResult.Yes)
             {
                 e.Cancel = false;
 
-                foreach (Form Formularz in Application.OpenForms)
+                foreach (Form arFormularz in Application.OpenForms)
                 {
-                    if (Formularz.Name == "Project2_Radovskyi61986")
+                    if (arFormularz.Name == "Project2_Radovskyi61986")
                     { // ukrycie bieżącego formularza
                         this.Hide();
                         // odsłonięcie znalezionego głównego formularza
-                        Formularz.Show();
+                        arFormularz.Show();
                         // wyjście z metody obsługi zdarzenia FormClosing
                         return;
-                    }
-                    /* gdy "będziemy tutaj" to będzie to oznaczało, że ktoś
+                    } 
+                }
+                /* gdy "będziemy tutaj" to będzie to oznaczało, że ktoś
                        skasował formularz główny, ale nie było na nim żadnych 
                        wyników obliczeń, tylko przyciki poleceń, to możemy go
                        odtworzyć; bez sygnalizacji błędu */
-                    // utworzenie nowego egzemplarza formularza głównego
-                    ProjectNr2_Radovskyi61986 FormularzProjectuNr2 = new ProjectNr2_Radovskyi61986();
-                    // ukrycie bieżącego formularza głównego
-                    FormularzProjectuNr2.Show();
-                    // ukrycie bieżącego formularza
-                    this.Hide();
-                }
+                // utworzenie nowego egzemplarza formularza głównego
+                ProjectNr2_Radovskyi61986 arFormularzProjectuNr2 = new ProjectNr2_Radovskyi61986();
+                // ukrycie bieżącego formularza głównego
+                arFormularzProjectuNr2.Show();
+                // ukrycie bieżącego formularza
+                this.Hide();
             }
             else
                 e.Cancel = true;
         }
 
         #region Metody pomocnicze dla obsługi przycisków funkcjonalnych
-        float ObliczenieSumySzereguPotęngowego(float X, float Eps, out ushort LicznikWyrazów)
+        float ObliczenieSumySzereguPotęngowego(float arX, float arEps, out ushort arLicznikWyrazów)
         {
-            //// obliczamy sume szeregu, tak jak powyżej
-            //// ustalenie poczatkowego stanu obliczeń iteracyjnych
-
-            //// powtarzanie obliczania sum szęsciowych szeregu
-            //do
-            //{
-            //    LicznikWyrazów++; // numer kolejnego wyrazu szeregu
-            //    S += w; // kolejna suma szeregu
-            //    w = w * (-1) * X / LicznikWyrazów; // kolejna wartość wyrazu szeregu
-            //} while (Math.Abs(w) > Eps);  
-            ////zwrot wyniku
-
-
-            float S = 0; // suma szeregu
-            LicznikWyrazów = 1; // licznik wyrazów szeregu
-            float w = 1.0f; // wyraz szeregu
+            float arS = 0; // suma szeregu
+            arLicznikWyrazów = 1; // licznik wyrazów szeregu
+            float arw = 1.0f; // wyraz szeregu
 
             do
             {
-                LicznikWyrazów++;
-                S += w;
-                w = ((float)Math.Pow(X - 2, LicznikWyrazów)) / ((LicznikWyrazów + 5) * (float)Math.Pow(3, LicznikWyrazów));
-            } while (Math.Abs(w) > Eps);
+                arS += arw;
+                arLicznikWyrazów++;
+                arw = (float)Math.Pow(arX - 2, arLicznikWyrazów) / ((arLicznikWyrazów + 5) * (float)Math.Pow(3, arLicznikWyrazów));
+                //arw = arw * (arX - 2) / ((arLicznikWyrazów + 5) * 3); 
+            } while (Math.Abs(arw) > arEps);
 
-            return S;
+            return arS;
         }
 
-        bool Pobierz_X_Eps(out float X, out float Eps)
+        bool Pobierz_X_Eps(out float arX, out float arEps)
         { // dla potezeb technicznych
-            X = Eps = 0.0f;
+            arX = arEps = 0.0f;
             // pobranie wartości zmiennej niezależnej X
-            if (!float.TryParse(txtX.Text, out X))
+            if (!float.TryParse(txtX.Text, out arX))
             {// był błąd
                 errorProvider1.SetError(txtX, "ERROR: w zapisie wartości zmiennej X" +
                     " wystapił niedozwolony znak ");
@@ -114,7 +102,7 @@ namespace ProjectNr2_Radovskyi61986
             // ustawienie stanu braku aktywności dla kontrolki 'txtX'
             txtX.Enabled = false;
 
-            if (!float.TryParse(textEps.Text, out Eps))
+            if (!float.TryParse(textEps.Text, out arEps))
             {
                 errorProvider1.SetError(textEps, "ERROR: w zapisie dokładności obliczeń Eps" +
                     " wystapił niedozwolony znak ");
@@ -122,7 +110,7 @@ namespace ProjectNr2_Radovskyi61986
                 return false;
             }
             // sprawdzenie warunku wejściowego dla Eps
-            if ((Eps <= 0.0f) || (Eps >= +1.0f))
+            if ((arEps <= 0.0f) || (arEps >= +1.0f))
             {
                 errorProvider1.SetError(textEps, "ERROR: wartość dokładności obliczeń Eps" +
                   " musi spełniać warunek wejściowy: 0.0 < Eps < 1.0");
@@ -135,17 +123,17 @@ namespace ProjectNr2_Radovskyi61986
 
         }
 
-        bool Pobranie_Eps_Xd_Xg_h(out float Xd, out float Xg, out float h, out float Eps)
+        bool Pobranie_Eps_Xd_Xg_h(out float arXd, out float arXg, out float arh, out float arEps)
         {// makieta programowa 
-            Xd = Xg = h = Eps = 0;
-            if (!float.TryParse(txtD.Text, out Xd))
+            arXd = arXg = arh = arEps = 0;
+            if (!float.TryParse(txtD.Text, out arXd))
             {
                 errorProvider1.SetError(txtD, "ERROR: w zapisie Xd wystąpił niedozwolony znak");
                 // przerwanie pobirania danych
                 return false;
             }
             // sprawdzenie pobirania danych 
-            if ((Xd < DgPrzedziauX) || (Xd > GgPrzedziauX))
+            if ((arXd < arDgPrzedziauX) || (arXd > arGgPrzedziauX))
             {// błąd, poprawnie Xd nie należy do przedżiału zbieżniści
                 errorProvider1.SetError(txtD, "ERROR: podane Xd nie należe przedziału " +
                     "zbiżności szeregu: MaxValue > Xd > MinValue");
@@ -153,14 +141,14 @@ namespace ProjectNr2_Radovskyi61986
                 return false;
             }
             // pobranie Xg
-            if (!float.TryParse(txtG.Text, out Xg))
+            if (!float.TryParse(txtG.Text, out arXg))
             {
                 errorProvider1.SetError(txtD, "ERROR: w zapisie Xg wystąpił niedozwolony znak");
                 // przerwanie pobirania danych
                 return false;
             }
 
-            if ((Xg < DgPrzedziauX) || (Xg > GgPrzedziauX))
+            if ((arXg < arDgPrzedziauX) || (arXg > arGgPrzedziauX))
             {// błąd, poprawnie Xd nie należy do przedżiału zbieżniści
                 errorProvider1.SetError(txtG, "ERROR: podane Xg nie należe przedziału " +
                     "zbiżności szeregu: MaxValue > Xg > MinValue");
@@ -168,7 +156,7 @@ namespace ProjectNr2_Radovskyi61986
                 return false;
             }
             // spawdzenie poprawności kolejności zapisu granice
-            if (Xg < Xd)
+            if (arXg < arXd)
             {
                 errorProvider1.SetError(txtG, "ERROR: granice przedziału zostały zapisane odwrotnie: " +
                    "musi być spełniony tzw. warunek wejściowy: Xd <= Xg");
@@ -178,20 +166,20 @@ namespace ProjectNr2_Radovskyi61986
             txtD.Enabled = false;
             txtG.Enabled = false;
             // pobranie przyrost h zmian wartości zmiennej niezale znaj X
-            if (!float.TryParse(txtH.Text, out h))
+            if (!float.TryParse(txtH.Text, out arh))
             {
                 errorProvider1.SetError(txtH, "ERROR: w zapisie wystąpił niedozwolony znak");
                 return false;
             }
             // sprawdzenie tzw. warunku wejściowego 
-            if (h >= (Xg - Xd))
+            if (arh >= (arXg - arXd))
             {
                 errorProvider1.SetError(txtH, "ERROR: podana wartość 'h' nie spełnia warunku wejściowego: h < (Xg - Xd)");
 
                 return false;
             }
             //
-            if (!float.TryParse(textEps.Text, out Eps))
+            if (!float.TryParse(textEps.Text, out arEps))
             {// jest błąd, to go sygnalizacja
                 errorProvider1.SetError(textEps, "ERROR: w zapisie dokładności obliczeń Eps " +
                     "wystąpił niedozwolony znak");
@@ -199,7 +187,7 @@ namespace ProjectNr2_Radovskyi61986
                 return false;
             }
             // sprawdzenie tzw. warunku wiejściowego dla dokładności
-            if ((Eps < 0.0f) || (Eps > 1.0f))
+            if ((arEps < 0.0f) || (arEps > 1.0f))
             {
 
                 errorProvider1.SetError(textEps, "ERROR: podana dokładność obliczeń Eps " +
@@ -210,90 +198,90 @@ namespace ProjectNr2_Radovskyi61986
             return true;
         }
 
-        void TablicowanieWartościSzeregu(float Xd, float Xg, float h, float Eps, out float[,] TWS)
+        void TablicowanieWartościSzeregu(float arXd, float arXg, float arh, float arEps, out float[,] arTWS)
         {
             // dla utworzenia egzamplarza tablicy TWS musimy określić liczbę jej wierszy
-            int n = (int)((Xg - Xd) / h + 1);
+            int n = (int)((arXg - arXd) / arh + 1);
             // utworzenie egzemplarza tablicy TWS
-            TWS = new float[n + 1, 3];
+            arTWS = new float[n + 1, 3];
             // stablicowanie wartości szeregu
             // deklaracja zmiennych pomocniczych
             float X;
             int i; // numer podprzedziału
             ushort LicznikZsumowanychWyrazów;
-            for (X = Xd, i = 0; i < TWS.GetLength(0); i++, X = Xd + i * h) // nie tak: X = X +h;
+            for (X = arXd, i = 0; i < arTWS.GetLength(0); i++, X = arXd + i * arh) // nie tak: X = X +h;
             {
-                TWS[i, 0] = X;
-                TWS[i, 1] = ObliczenieSumySzereguPotęngowego(X, Eps, out LicznikZsumowanychWyrazów);
-                TWS[i, 2] = LicznikZsumowanychWyrazów;
+                arTWS[i, 0] = X;
+                arTWS[i, 1] = ObliczenieSumySzereguPotęngowego(X, arEps, out LicznikZsumowanychWyrazów);
+                arTWS[i, 2] = LicznikZsumowanychWyrazów;
             }
         }
 
-        void WpisanieWynikówDoKontrolkiDataGridView(float[,] TWS, DataGridView dgvTWS)
+        void WpisanieWynikówDoKontrolkiDataGridView(float[,] arTWS, DataGridView ardgvTWS)
         {
             // wyzerowanie wierszy kontrolki DataGridView
-            dgvTWS.Rows.Clear();
+            ardgvTWS.Rows.Clear();
             // wpisywanie kolejnych wierszy tablicy TWS do kontrolki dvgTWS
-            for (int i = 0; i < TWS.GetLength(0); i++)
+            for (int i = 0; i < arTWS.GetLength(0); i++)
             {
                 // dodanie nowego wiersza
-                dgvTWS.Rows.Add();
+                ardgvTWS.Rows.Add();
                 // wpisanie wartości X
-                dgvTWS.Rows[i].Cells[0].Value = string.Format($"{TWS[i, 0]:0.00}");
+                ardgvTWS.Rows[i].Cells[0].Value = string.Format($"{arTWS[i, 0]:00}");
                 // wpisanie wartości szeregu
-                dgvTWS.Rows[i].Cells[1].Value = string.Format($"{TWS[i, 1]:0.0000}");
+                ardgvTWS.Rows[i].Cells[1].Value = string.Format($"{arTWS[i, 1]:0.000}");
                 // wpisanie licznika zsumowanych wyrazów
-                dgvTWS.Rows[i].Cells[2].Value = string.Format($"{TWS[i, 2]:G}");
+                ardgvTWS.Rows[i].Cells[2].Value = string.Format($"{(int)arTWS[i, 2]}");
             }
         }
 
-        void WpisanieWynikówDoKontrolkiChart(float[,] TWS, Chart chtWykresSzeregu)
+        void WpisanieWynikówDoKontrolkiChart(float[,] arTWS, Chart archtWykresSzeregu)
         {
             // 1.formatowanie (ustawienie atrybutów) kontrolki Chart, obramowanie kontrolki Chart
-            chtWykresSzeregu.BorderlineWidth = 2;
-            chtWykresSzeregu.BorderlineColor = Color.Red;
-            chtWykresSzeregu.BorderlineDashStyle = ChartDashStyle.DashDotDot;
+            archtWykresSzeregu.BorderlineWidth = 2;
+            archtWykresSzeregu.BorderlineColor = Color.Red;
+            archtWykresSzeregu.BorderlineDashStyle = ChartDashStyle.DashDotDot;
             // skonfigurowanie kontrolki Chart
             // ustalenie tytułu wykresu
-            chtWykresSzeregu.Titles.Add("Wykres zmian wartości szeregu S(x)");
+            archtWykresSzeregu.Titles.Add("Wykres zmian wartości szeregu S(x)");
             // umieszczenie legendy pod wykresem
-            chtWykresSzeregu.Legends.FindByName("Legend1").Docking = Docking.Bottom;
+            archtWykresSzeregu.Legends.FindByName("Legend1").Docking = Docking.Bottom;
             //ustawienie koloru tła 
-            chtWykresSzeregu.BackColor = Color.LightSkyBlue;
-            chtWykresSzeregu.ChartAreas[0].AxisX.Title = "Wartości X";
-            chtWykresSzeregu.ChartAreas[0].AxisY.Title = "Wartości S(x)";
+            archtWykresSzeregu.BackColor = Color.LightSkyBlue;
+            archtWykresSzeregu.ChartAreas[0].AxisX.Title = "Wartości X";
+            archtWykresSzeregu.ChartAreas[0].AxisY.Title = "Wartości S(x)";
             // sformatowanie opisu osi X (kontrolki Chart)
-            chtWykresSzeregu.ChartAreas[0].AxisX.LabelStyle.Format = "{0:f2}";
-            chtWykresSzeregu.ChartAreas[0].AxisY.LabelStyle.Format = "{0:f2}";
+            archtWykresSzeregu.ChartAreas[0].AxisX.LabelStyle.Format = "{0:f2}";
+            archtWykresSzeregu.ChartAreas[0].AxisY.LabelStyle.Format = "{0:f2}";
             // 2.formatowanie serii danych dodanej do kontrolki Chart,
             // "wyzerowanie"serii danych kontrolki Chart
-            chtWykresSzeregu.Series.Clear();
+            archtWykresSzeregu.Series.Clear();
             //dodanie nowej serii danych
-            chtWykresSzeregu.Series.Add("Seria 0");
+            archtWykresSzeregu.Series.Add("Seria 0");
             // ustalenie nazw osi układu współezędnych
-            chtWykresSzeregu.Series[0].XValueMember = "X";
-            chtWykresSzeregu.Series[0].XValueMember = "Y";
+            archtWykresSzeregu.Series[0].XValueMember = "X";
+            archtWykresSzeregu.Series[0].XValueMember = "Y";
             // ustalenie widoczności legendy
-            chtWykresSzeregu.Series[0].IsVisibleInLegend = true;
+            archtWykresSzeregu.Series[0].IsVisibleInLegend = true;
             // ustalenie nazwy legendy (opisu linii wykresu)
-            chtWykresSzeregu.Series[0].Name = "Wartości szeregu potęgowego S(X)"; // legenda
+            archtWykresSzeregu.Series[0].Name = "Wartości szeregu potęgowego S(X)"; // legenda
             // ustalenie typu wykresu
-            chtWykresSzeregu.Series[0].ChartType = SeriesChartType.Line; // liniowy
+            archtWykresSzeregu.Series[0].ChartType = SeriesChartType.Line; // liniowy
             // ustawienie koloru linii 
-            chtWykresSzeregu.Series[0].Color = Color.Black;
+            archtWykresSzeregu.Series[0].Color = Color.Black;
             //ustawienie stylu linii 
-            chtWykresSzeregu.Series[0].BorderDashStyle = ChartDashStyle.Solid;
+            archtWykresSzeregu.Series[0].BorderDashStyle = ChartDashStyle.Solid;
             // ustalenie grubości linii
-            chtWykresSzeregu.Series[0].BorderWidth = 1;
+            archtWykresSzeregu.Series[0].BorderWidth = 1;
 
             /* 3. wpisania współrzędnych (X oraz Y) linii wykresu 
              szeregu (na podstawie zapisanych w tablicy TWS) */
             /* dodanie do serii danych (kontrolki Chart) współrzędnych
                punktów wykresu (wartości X oraz Wartości Y, czyli 
                wartości szeregu: S (X) */
-            for (int i = 0; i < TWS.GetLength(0); i++)
+            for (int i = 0; i < arTWS.GetLength(0); i++)
             {
-                chtWykresSzeregu.Series[0].Points.AddXY(TWS[i, 0], TWS[i, 1]);
+                archtWykresSzeregu.Series[0].Points.AddXY(arTWS[i, 0], arTWS[i, 1]);
             }
         }
         #endregion
@@ -304,9 +292,9 @@ namespace ProjectNr2_Radovskyi61986
             // "zgaszanie" kontrolki errorProvider, która mogła wcześniej zapalona
             errorProvider1.Dispose();
             // pobranie danych wejściowych
-            float X, Eps;
+            float arX, arEps;
             // pobranie wartości zmiennej niezależnej X
-            if (!Pobierz_X_Eps(out X, out Eps)) // (!Pobierz_X_Eps())
+            if (!Pobierz_X_Eps(out arX, out arEps)) // (!Pobierz_X_Eps())
             {
                 errorProvider1.SetError(txtX, "ERROR: w zapisie wartości zmiennej X" +
                     " wystapił niedozwolony znak ");
@@ -318,7 +306,7 @@ namespace ProjectNr2_Radovskyi61986
                 // będziemy tutaj gdy nie było błędu
                 // pobranie danych wejściowych
                 // pobranie dokładności obliczeń Eps
-                if (!float.TryParse(textEps.Text, out Eps))
+                if (!float.TryParse(textEps.Text, out arEps))
                 {
                     errorProvider1.SetError(textEps, "ERROR: w zapisie dokładności obliczeń Eps" +
                         " wystapił niedozwolony znak ");
@@ -326,7 +314,7 @@ namespace ProjectNr2_Radovskyi61986
                     return;
                 }
                 //// sprawdzenie warunku wejściowego dla Eps
-                if ((Eps <= 0.0f) || (Eps >= +1.0f))
+                if ((arEps <= 0.0f) || (arEps >= +1.0f))
                 {
                     errorProvider1.SetError(textEps, "ERROR: wartość dokładności obliczeń Eps" +
                       " musi spełniać warunek wejściowy: 0.0 < Eps < 1.0");
@@ -339,13 +327,13 @@ namespace ProjectNr2_Radovskyi61986
                 // deklaracje zmiennych dla przechowania wyniku obliczeń
             }
 
-            float SumaSzeregu;
-            ushort N; // licznik zsumowanych wyrazów szeregu
+            float arSumaSzeregu;
+            ushort arN; // licznik zsumowanych wyrazów szeregu
             // obliczenie wartości szeregu, czyli wywołanie metody ObliczenieSumySzereguPotęngowego(float X, float Eps, out ushort LicznikWyrazów)
-            SumaSzeregu = ObliczenieSumySzereguPotęngowego(X, Eps, out N);
+            arSumaSzeregu = ObliczenieSumySzereguPotęngowego(arX, arEps, out arN);
             //wypisanie wyniku obliczeń
-            txtSumaSzeregu.Text = SumaSzeregu.ToString();
-            txtLicznikWyrazów.Text = N.ToString();
+            txtSumaSzeregu.Text = arSumaSzeregu.ToString();
+            txtLicznikWyrazów.Text = arN.ToString();
         }
 
         private void odczytanieTablicyTWSZPlikuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -356,7 +344,7 @@ namespace ProjectNr2_Radovskyi61986
             errorProvider1.Dispose();
             /* sprawdzenie, czy zmienna referencyjna ma wartość null 
              (tzw. Pusta referencja do egzamplarza tablicy )*/
-            if (!(TWS is null))
+            if (!(arTWS is null))
             {/* poinformowanie Użytkownika, że egzemlarza tablicy TWS 
               już jest utworzony i czy ma być skasowana dla wczytania elementów tablicy TWS z pliku ma być kontynuowane*/
                 DialogResult OknoMessage = MessageBox.Show("UWAGA: egzemplarza tablicy TWS już istnieje! \r\nCzy bieżący egzemplarz tablicy TWS ma być skasowany i w jego miejsce ma być utworzony nowy egzemlarz, do krótkego mają zostać 'wczytane' elementy TWS z pliku? " +
@@ -365,7 +353,7 @@ namespace ProjectNr2_Radovskyi61986
                     "Okno ostrzeżenia", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 // rozpoznanie wybrango przycisku poleceń w oknie dialogowym 'MessageBox'
                 if (OknoMessage == DialogResult.Yes)
-                    TWS = null; /* przypisanie wartości 'null' zmiennej
+                    arTWS = null; /* przypisanie wartości 'null' zmiennej
                                    referencyjnej jest sygnałem dla CLR, że 
                                    egzemplarz tablicy przypisany zmiennej
                                    referencyjnej TWS jest już niepotrzebny i 
@@ -379,50 +367,50 @@ namespace ProjectNr2_Radovskyi61986
                 }
             }
             // utworzenie egzemplarza okna dialowego dla wyboru pliku do odczytu
-            OpenFileDialog OknoWyboruPlikuDoOdczytania = new OpenFileDialog();
+            OpenFileDialog arOknoWyboruPlikuDoOdczytania = new OpenFileDialog();
             //ustawienie filtru  
-            OknoWyboruPlikuDoOdczytania.Filter = "txtfiles (*.txt)|*.txt|All files (*.*)|*.*";
+            arOknoWyboruPlikuDoOdczytania.Filter = "txtfiles (*.txt)|*.txt|All files (*.*)|*.*";
             // ustawienie  filtru domyślenego 
-            OknoWyboruPlikuDoOdczytania.FilterIndex = 1;
-            OknoWyboruPlikuDoOdczytania.RestoreDirectory = true;
+            arOknoWyboruPlikuDoOdczytania.FilterIndex = 1;
+            arOknoWyboruPlikuDoOdczytania.RestoreDirectory = true;
             //
-            OknoWyboruPlikuDoOdczytania.InitialDirectory = "D:\\";
+            arOknoWyboruPlikuDoOdczytania.InitialDirectory = "D:\\";
             // wyświetlenie okna dialowego i sprawdzenie wyboru pliku
-            OknoWyboruPlikuDoOdczytania.Title = "Wybór pliku dla odczytu TWS (Tablica Wartości Szeegu)";
+            arOknoWyboruPlikuDoOdczytania.Title = "Wybór pliku dla odczytu TWS (Tablica Wartości Szeegu)";
 
-            if (OknoWyboruPlikuDoOdczytania.ShowDialog() == DialogResult.OK)
+            if (arOknoWyboruPlikuDoOdczytania.ShowDialog() == DialogResult.OK)
             {
-                string WierszDanych; /* dla prechowania wiersza danych
+                string arWierszDanych; /* dla prechowania wiersza danych
                                         (łańcucha znaków) wczytanch z pliku znakowego*/
-                string[] DaneWiersa;
-                ushort LicznikWierszy;
-                System.IO.StreamReader PlikZnakowy = new System.IO.StreamReader(OknoWyboruPlikuDoOdczytania.FileName);
-                LicznikWierszy = 0;
-                while (!((WierszDanych = PlikZnakowy.ReadLine()) is null))
+                string[] arDaneWiersa;
+                ushort arLicznikWierszy;
+                System.IO.StreamReader arPlikZnakowy = new System.IO.StreamReader(arOknoWyboruPlikuDoOdczytania.FileName);
+                arLicznikWierszy = 0;
+                while (!((arWierszDanych = arPlikZnakowy.ReadLine()) is null))
                 {
-                    LicznikWierszy++;
-                    PlikZnakowy.Close();
-                    TWS = new float[LicznikWierszy, 3];
-                    PlikZnakowy = new System.IO.StreamReader(OknoWyboruPlikuDoOdczytania.FileName);
+                    arLicznikWierszy++;
+                    arPlikZnakowy.Close();
+                    arTWS = new float[arLicznikWierszy, 3];
+                    arPlikZnakowy = new System.IO.StreamReader(arOknoWyboruPlikuDoOdczytania.FileName);
                     try
                     {
-                        int NrWiersza = 0;
-                        while (!((WierszDanych = PlikZnakowy.ReadLine()) is null))
+                        int arNrWiersza = 0;
+                        while (!((arWierszDanych = arPlikZnakowy.ReadLine()) is null))
                         {
-                            DaneWiersa = WierszDanych.Split(';');
+                            arDaneWiersa = arWierszDanych.Split(';');
                             /* wczytanie 'spacji' z poszczególnych "części"
                                wczytanego wiersza danych*/
-                            DaneWiersa[0].Trim();
-                            DaneWiersa[1].Trim();
-                            DaneWiersa[2].Trim();
+                            arDaneWiersa[0].Trim();
+                            arDaneWiersa[1].Trim();
+                            arDaneWiersa[2].Trim();
 
-                            TWS[NrWiersza, 0] = float.Parse(DaneWiersa[0]);
-                            TWS[NrWiersza, 1] = float.Parse(DaneWiersa[1]);
-                            TWS[NrWiersza, 2] = float.Parse(DaneWiersa[2]);
-                            NrWiersza++;
+                            arTWS[arNrWiersza, 0] = float.Parse(arDaneWiersa[0]);
+                            arTWS[arNrWiersza, 1] = float.Parse(arDaneWiersa[1]);
+                            arTWS[arNrWiersza, 2] = float.Parse(arDaneWiersa[2]);
+                            arNrWiersza++;
 
                         }
-                        WpisanieWynikówDoKontrolkiDataGridView(TWS, dgvTWS); // ref błąd
+                        WpisanieWynikówDoKontrolkiDataGridView(arTWS, dgvTWS); // ref błąd
                         chtWykresSzeregu.Visible = false;
                         dgvTWS.Visible = true;
                     }
@@ -433,64 +421,61 @@ namespace ProjectNr2_Radovskyi61986
                     }
                     finally
                     {
-                        PlikZnakowy.Close();
-                        PlikZnakowy.Dispose();
+                        arPlikZnakowy.Close();
+                        arPlikZnakowy.Dispose();
                     }
                 }
-            }
+            } 
             else
             {
                 MessageBox.Show("Plik do odczytu tablicy TWS nie został wybrany i obsługa polecenia: 'Odczytanie stablicowanego szeregu z pliku' nie może być zrealizowana");
             }
-
-
-
         }
 
         private void zapisanieTablicyTWSWPlikuToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             // sprawdzenie, czy egzemplarz tablicy TWS został już utworzony ( z wpisaniem stablicowanych wartości szeregu)
-            if (TWS is null)
+            if (arTWS is null)
             {
                 // egzemplarz tablicy TWS nie został jeszcze utworzony, to musimy go utworzyć
                 //deklaracja zmiennych dla przechowania pobranych danych z formularza
-                float Xd, Xg, h, Eps;
-                if (!Pobranie_Eps_Xd_Xg_h(out Xd, out Xg, out h, out Eps))
+                float arXd, arXg, arh, arEps;
+                if (!Pobranie_Eps_Xd_Xg_h(out arXd, out arXg, out arh, out arEps))
                 { // wizualizacja komunikatu o przyczynie braku realizacji wybranej pozucji
                     MessageBox.Show("UWAGA: wybrana pozycja Menu nie może byc zrealizowana " +
                         "ze względu na błąd w danych wejściowych");
                     return;
                 }
                 // stablicowanie wartości szeregu S(X)
-                TablicowanieWartościSzeregu(Xd, Xg, h, Eps, out TWS);
+                TablicowanieWartościSzeregu(arXd, arXg, arh, arEps, out arTWS);
             }
             // egzemplarz tablicy już jest i szereg został stablicowany
             // zapisanie tablicy TWS w pliku
             // deklaracja i utworzenie egzemplarza okna dialowego dla wyboru pliku
-            SaveFileDialog OknoWyboruPlikuDoZapisu = new SaveFileDialog();
+            SaveFileDialog arOknoWyboruPlikuDoZapisu = new SaveFileDialog();
             // skonfigurowanie OknoWyboruPlikuDoZapisu
-            OknoWyboruPlikuDoZapisu.Filter = "txtfiles (*.txt)|*.txt|All files (*.*)|*.*";
-            OknoWyboruPlikuDoZapisu.FilterIndex = 1;
+            arOknoWyboruPlikuDoZapisu.Filter = "txtfiles (*.txt)|*.txt|All files (*.*)|*.*";
+            arOknoWyboruPlikuDoZapisu.FilterIndex = 1;
             //
-            OknoWyboruPlikuDoZapisu.RestoreDirectory = true;
+            arOknoWyboruPlikuDoZapisu.RestoreDirectory = true;
             //
-            OknoWyboruPlikuDoZapisu.InitialDirectory = "D:\\";
+            arOknoWyboruPlikuDoZapisu.InitialDirectory = "D:\\";
             //
-            OknoWyboruPlikuDoZapisu.Title = "Wybór pliku dla zapisanie tablicy TWS ()Tablica Wartości Szeegu)";
+            arOknoWyboruPlikuDoZapisu.Title = "Wybór pliku dla zapisanie tablicy TWS ()Tablica Wartości Szeegu)";
             //
-            if (OknoWyboruPlikuDoZapisu.ShowDialog() == DialogResult.OK)
+            if (arOknoWyboruPlikuDoZapisu.ShowDialog() == DialogResult.OK)
             {
-                System.IO.StreamWriter PlikZnakowy = new System.IO.StreamWriter(OknoWyboruPlikuDoZapisu.FileName);
+                System.IO.StreamWriter PlikZnakowy = new System.IO.StreamWriter(arOknoWyboruPlikuDoZapisu.FileName);
                 try
                 {
-                    for (int i = 0; i < TWS.GetLength(0); i++)
+                    for (int i = 0; i < arTWS.GetLength(0); i++)
                     {
-                        PlikZnakowy.Write(TWS[i, 0].ToString());
+                        PlikZnakowy.Write(arTWS[i, 0].ToString());
                         PlikZnakowy.Write(";");
-                        PlikZnakowy.Write(TWS[i, 1].ToString());
+                        PlikZnakowy.Write(arTWS[i, 1].ToString());
                         PlikZnakowy.Write(";");
-                        PlikZnakowy.WriteLine(TWS[i, 2].ToString());
+                        PlikZnakowy.WriteLine(arTWS[i, 2].ToString());
 
                     }
                 }
@@ -512,9 +497,9 @@ namespace ProjectNr2_Radovskyi61986
             // "zgaszanie" kontrolki errorProvider, która mogła wcześniej zapalona
             errorProvider1.Dispose();
 
-            float Eps, Xd, Xg, h;
+            float arEps, arXd, arXg, arh;
 
-            if (!Pobranie_Eps_Xd_Xg_h(out Xd, out Xg, out h, out Eps))
+            if (!Pobranie_Eps_Xd_Xg_h(out arXd, out arXg, out arh, out arEps))
             {
                 errorProvider1.SetError(btnWizualizacjaTabelaryczna, "ERROR: przy pobieraniu " +
                     "danych wejściowych wykryto błąd i dlatego ta funkcjonalność nie może " +
@@ -526,14 +511,14 @@ namespace ProjectNr2_Radovskyi61986
             // 2) talicowanie wartości szeregu w predzieale: [Xd, Sg]
             /* sprawdzenie czy egzemplarz tablicy TWS został już utworzony i szereg
                został stablicowany*/
-            if (TWS is null)
+            if (arTWS is null)
             {
                 // egzemplarz tablicy TWS nie został jeszcze utworzony i szereg nie został stablicowany
                 // utworzenie egzemplarza i stablicowanie szeregu
-                TablicowanieWartościSzeregu(Xd, Xg, h, Eps, out TWS);
+                TablicowanieWartościSzeregu(arXd, arXg, arh, arEps, out arTWS);
             }
             // 3) Wpisanie wyników tablicowania do kontrolki Char
-            WpisanieWynikówDoKontrolkiChart(TWS, chtWykresSzeregu);
+            WpisanieWynikówDoKontrolkiChart(arTWS, chtWykresSzeregu);
             // 4) ukrycie i obsłonięcie kontrolek dla potrzeb obsługowanego przycisku poleceń
             dgvTWS.Visible = false;
             chtWykresSzeregu.Visible = true;
@@ -551,9 +536,9 @@ namespace ProjectNr2_Radovskyi61986
             // 3) Przepisanie danych z TWS (Tablicz wartościSzeregu) do  kontrolki DataGridVie
             // ad 1)
             // deklaracje zmiennych dla przechowania pobranych danych wejściowych z formularza
-            float Eps, Xd, Xg, h;
+            float arEps, arXd, arXg, arh;
 
-            if (!Pobranie_Eps_Xd_Xg_h(out Xd, out Xg, out h, out Eps))
+            if (!Pobranie_Eps_Xd_Xg_h(out arXd, out arXg, out arh, out arEps))
             {
                 errorProvider1.SetError(btnWizualizacjaTabelaryczna, "ERROR: przy pobieraniu " +
                     "danych wejściowych wykryto błąd i dlatego ta funkcjonalność nie może " +
@@ -565,15 +550,15 @@ namespace ProjectNr2_Radovskyi61986
             // 2) talicowanie wartości szeregu w predzieale: [Xd, Sg]
             /* sprawdzenie czy egzemplarz tablicy TWS został już utworzony i szereg
                został stablicowany*/
-            if (TWS is null)
+            if (arTWS is null)
             {
                 // egzemplarz tablicy TWS nie został jeszcze utworzony i szereg nie został stablicowany
                 // utworzenie egzemplarza i stablicowanie szeregu
-                TablicowanieWartościSzeregu(Xd, Xg, h, Eps, out TWS);
+                TablicowanieWartościSzeregu(arXd, arXg, arh, arEps, out arTWS);
             }
             /* 3) wpisanie do kontrolki DataGridView (o name: dgvTWS) stablicowanych
                   wartości szeregu w przedziale: [Xd, Xg] */
-            WpisanieWynikówDoKontrolkiDataGridView(TWS, dgvTWS);
+            WpisanieWynikówDoKontrolkiDataGridView(arTWS, dgvTWS);
 
             //4) obsłomięcie i ukrycie kontrolek oraz ustawienie stany braku aktywno
 
@@ -603,34 +588,48 @@ namespace ProjectNr2_Radovskyi61986
 
         private void zmianaCzionkiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FontDialog OknoCzionki = new FontDialog();
-            OknoCzionki.Font = this.Font;
-            if (OknoCzionki.ShowDialog() == DialogResult.OK)
-                this.Font = OknoCzionki.Font;
-            OknoCzionki.Dispose();
+            FontDialog arOknoCzionki = new FontDialog();
+            arOknoCzionki.Font = this.Font;
+            if (arOknoCzionki.ShowDialog() == DialogResult.OK)
+                this.Font = arOknoCzionki.Font;
+            arOknoCzionki.Dispose();
         }
 
         private void ustalanieKoloruTłaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // utworzenie egzemplarza palay kolorów
-            ColorDialog PaleteVolume = new ColorDialog();
+            ColorDialog arPaleteVolume = new ColorDialog();
             // zaznachenie w PalećiColoró aktualnego koloru tłą formularza 
-            PaleteVolume.Color = this.BackColor;
+            arPaleteVolume.Color = this.BackColor;
             // wuswietlenie PaletyVolume i "odczytanie" wyboru koloru jakigo...
-            if (PaleteVolume.ShowDialog() == DialogResult.OK)
-                this.BackColor = PaleteVolume.Color;
+            if (arPaleteVolume.ShowDialog() == DialogResult.OK)
+                this.BackColor = arPaleteVolume.Color;
             //
-            PaleteVolume.Dispose();
+            arPaleteVolume.Dispose();
         }
 
         private void ustalenieKoloruLiterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ColorDialog PaleteVolume = new ColorDialog();
-            PaleteVolume.Color = this.ForeColor;
-            if (PaleteVolume.ShowDialog() == DialogResult.OK)
-                this.ForeColor = PaleteVolume.Color;
+            ColorDialog arPaleteVolume = new ColorDialog();
+            arPaleteVolume.Color = this.ForeColor;
+            if (arPaleteVolume.ShowDialog() == DialogResult.OK)
+                this.ForeColor = arPaleteVolume.Color;
 
-            PaleteVolume.Dispose();
+            arPaleteVolume.Dispose();
+        }
+
+        private void zmianaKoloruLiniiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            ColorDialog arPaleteVolume = new ColorDialog();
+            arPaleteVolume.Color = this.BackColor;
+            if (arPaleteVolume.ShowDialog() == DialogResult.OK)
+                chtWykresSzeregu.BorderlineColor = this.BackColor;
+        }
+
+        private void ustalenieRozmiaruToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
