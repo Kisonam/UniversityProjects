@@ -1,0 +1,13 @@
+D:\Vistula\Wprowadzenie do programowania (CII1SP002CI)\Semestr 1\InWork\Project3_Radovskyi61986\bin\Debug\Project3_Radovskyi61986.exe.config
+D:\Vistula\Wprowadzenie do programowania (CII1SP002CI)\Semestr 1\InWork\Project3_Radovskyi61986\bin\Debug\Project3_Radovskyi61986.exe
+D:\Vistula\Wprowadzenie do programowania (CII1SP002CI)\Semestr 1\InWork\Project3_Radovskyi61986\bin\Debug\Project3_Radovskyi61986.pdb
+D:\Vistula\Wprowadzenie do programowania (CII1SP002CI)\Semestr 1\InWork\Project3_Radovskyi61986\obj\Debug\Project3_Radovskyi61986.csproj.AssemblyReference.cache
+D:\Vistula\Wprowadzenie do programowania (CII1SP002CI)\Semestr 1\InWork\Project3_Radovskyi61986\obj\Debug\Project3_Radovskyi61986.csproj.SuggestedBindingRedirects.cache
+D:\Vistula\Wprowadzenie do programowania (CII1SP002CI)\Semestr 1\InWork\Project3_Radovskyi61986\obj\Debug\Project3_Radovskyi61986.FormularzStartowy.resources
+D:\Vistula\Wprowadzenie do programowania (CII1SP002CI)\Semestr 1\InWork\Project3_Radovskyi61986\obj\Debug\Project3_Radovskyi61986.Properties.Resources.resources
+D:\Vistula\Wprowadzenie do programowania (CII1SP002CI)\Semestr 1\InWork\Project3_Radovskyi61986\obj\Debug\Project3_Radovskyi61986.csproj.GenerateResource.cache
+D:\Vistula\Wprowadzenie do programowania (CII1SP002CI)\Semestr 1\InWork\Project3_Radovskyi61986\obj\Debug\Project3_Radovskyi61986.csproj.CoreCompileInputs.cache
+D:\Vistula\Wprowadzenie do programowania (CII1SP002CI)\Semestr 1\InWork\Project3_Radovskyi61986\obj\Debug\Project3_Radovskyi61986.exe
+D:\Vistula\Wprowadzenie do programowania (CII1SP002CI)\Semestr 1\InWork\Project3_Radovskyi61986\obj\Debug\Project3_Radovskyi61986.pdb
+D:\Vistula\Wprowadzenie do programowania (CII1SP002CI)\Semestr 1\InWork\Project3_Radovskyi61986\obj\Debug\Project3_Radovskyi61986.Laboratoryjny_Radovskyi61986.resources
+D:\Vistula\Wprowadzenie do programowania (CII1SP002CI)\Semestr 1\InWork\Project3_Radovskyi61986\obj\Debug\Project3_Radovskyi61986.Projectowy_Radovskyi61986.resources
