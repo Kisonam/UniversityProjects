@@ -28,16 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pbRisownica = new System.Windows.Forms.PictureBox();
             this.gbWybórKrzywych = new System.Windows.Forms.GroupBox();
+            this.rdbGwiazdaWieloramienna = new System.Windows.Forms.RadioButton();
+            this.rdbWielokatWypelniony = new System.Windows.Forms.RadioButton();
+            this.rdbWielokatForemny = new System.Windows.Forms.RadioButton();
             this.rdbLiniaKreślena = new System.Windows.Forms.RadioButton();
             this.rdbLiniaProsta = new System.Windows.Forms.RadioButton();
             this.rdbPunkt = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lblX = new System.Windows.Forms.Label();
             this.lblY = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lblLiczba = new System.Windows.Forms.Label();
+            this.NumU = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pbRisownica)).BeginInit();
             this.gbWybórKrzywych.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumU)).BeginInit();
             this.SuspendLayout();
             // 
             // pbRisownica
@@ -53,6 +61,11 @@
             // 
             // gbWybórKrzywych
             // 
+            this.gbWybórKrzywych.Controls.Add(this.NumU);
+            this.gbWybórKrzywych.Controls.Add(this.rdbGwiazdaWieloramienna);
+            this.gbWybórKrzywych.Controls.Add(this.lblLiczba);
+            this.gbWybórKrzywych.Controls.Add(this.rdbWielokatWypelniony);
+            this.gbWybórKrzywych.Controls.Add(this.rdbWielokatForemny);
             this.gbWybórKrzywych.Controls.Add(this.rdbLiniaKreślena);
             this.gbWybórKrzywych.Controls.Add(this.rdbLiniaProsta);
             this.gbWybórKrzywych.Controls.Add(this.rdbPunkt);
@@ -62,7 +75,41 @@
             this.gbWybórKrzywych.Size = new System.Drawing.Size(286, 560);
             this.gbWybórKrzywych.TabIndex = 1;
             this.gbWybórKrzywych.TabStop = false;
-            this.gbWybórKrzywych.Text = "W";
+            this.gbWybórKrzywych.Text = "Wybierz (zaznacz) krzywą geometryczną";
+            // 
+            // rdbGwiazdaWieloramienna
+            // 
+            this.rdbGwiazdaWieloramienna.AutoSize = true;
+            this.rdbGwiazdaWieloramienna.Location = new System.Drawing.Point(7, 205);
+            this.rdbGwiazdaWieloramienna.Name = "rdbGwiazdaWieloramienna";
+            this.rdbGwiazdaWieloramienna.Size = new System.Drawing.Size(184, 23);
+            this.rdbGwiazdaWieloramienna.TabIndex = 5;
+            this.rdbGwiazdaWieloramienna.TabStop = true;
+            this.rdbGwiazdaWieloramienna.Text = "Gwiazda Wieloramienna\r\n";
+            this.rdbGwiazdaWieloramienna.UseVisualStyleBackColor = true;
+            // 
+            // rdbWielokatWypelniony
+            // 
+            this.rdbWielokatWypelniony.AutoSize = true;
+            this.rdbWielokatWypelniony.Location = new System.Drawing.Point(7, 176);
+            this.rdbWielokatWypelniony.Name = "rdbWielokatWypelniony";
+            this.rdbWielokatWypelniony.Size = new System.Drawing.Size(159, 23);
+            this.rdbWielokatWypelniony.TabIndex = 4;
+            this.rdbWielokatWypelniony.TabStop = true;
+            this.rdbWielokatWypelniony.Text = "Wielokąt wypelniony";
+            this.rdbWielokatWypelniony.UseVisualStyleBackColor = true;
+            // 
+            // rdbWielokatForemny
+            // 
+            this.rdbWielokatForemny.AutoSize = true;
+            this.rdbWielokatForemny.Location = new System.Drawing.Point(7, 147);
+            this.rdbWielokatForemny.Name = "rdbWielokatForemny";
+            this.rdbWielokatForemny.Size = new System.Drawing.Size(139, 23);
+            this.rdbWielokatForemny.TabIndex = 3;
+            this.rdbWielokatForemny.TabStop = true;
+            this.rdbWielokatForemny.Text = "Wielokąt foremny";
+            this.rdbWielokatForemny.UseVisualStyleBackColor = true;
+            this.rdbWielokatForemny.CheckedChanged += new System.EventHandler(this.rdbWielokatForemny_CheckedChanged);
             // 
             // rdbLiniaKreślena
             // 
@@ -101,7 +148,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(64, 9);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(249, 21);
             this.label1.TabIndex = 2;
@@ -111,7 +158,7 @@
             // 
             this.lblX.AutoSize = true;
             this.lblX.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblX.Location = new System.Drawing.Point(328, 9);
+            this.lblX.Location = new System.Drawing.Point(315, 9);
             this.lblX.Name = "lblX";
             this.lblX.Size = new System.Drawing.Size(23, 21);
             this.lblX.TabIndex = 3;
@@ -126,6 +173,27 @@
             this.lblY.Size = new System.Drawing.Size(23, 21);
             this.lblY.TabIndex = 4;
             this.lblY.Text = "Y";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // lblLiczba
+            // 
+            this.lblLiczba.AutoSize = true;
+            this.lblLiczba.Location = new System.Drawing.Point(186, 157);
+            this.lblLiczba.Name = "lblLiczba";
+            this.lblLiczba.Size = new System.Drawing.Size(101, 19);
+            this.lblLiczba.TabIndex = 5;
+            this.lblLiczba.Text = "Liczba kontrol";
+            // 
+            // NumU
+            // 
+            this.NumU.Location = new System.Drawing.Point(172, 179);
+            this.NumU.Name = "NumU";
+            this.NumU.Size = new System.Drawing.Size(120, 26);
+            this.NumU.TabIndex = 6;
             // 
             // Laboratoryjny_Radovskyi61986
             // 
@@ -142,6 +210,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRisownica)).EndInit();
             this.gbWybórKrzywych.ResumeLayout(false);
             this.gbWybórKrzywych.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumU)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +226,11 @@
         private System.Windows.Forms.Label lblY;
         private System.Windows.Forms.RadioButton rdbLiniaProsta;
         private System.Windows.Forms.RadioButton rdbLiniaKreślena;
+        private System.Windows.Forms.RadioButton rdbGwiazdaWieloramienna;
+        private System.Windows.Forms.RadioButton rdbWielokatWypelniony;
+        private System.Windows.Forms.RadioButton rdbWielokatForemny;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.NumericUpDown NumU;
+        private System.Windows.Forms.Label lblLiczba;
     }
 }
