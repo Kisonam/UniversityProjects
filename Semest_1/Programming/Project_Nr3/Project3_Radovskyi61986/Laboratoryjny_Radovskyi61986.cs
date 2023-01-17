@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 // dodanie nowej grafiki 2D
 using System.Drawing.Drawing2D;
-using System.Data.SqlTypes;
 
 namespace Project3_Radovskyi61986
 {
@@ -83,10 +76,12 @@ namespace Project3_Radovskyi61986
                     
                 }
                 if (rdbLiniaProsta.Checked)
+                {
                     Rysownica.DrawLine(Pióro, Punkt.X,
                                         Punkt.Y,
                                         e.Location.X,
                                         e.Location.Y);
+                }
                 if (rdbLiniaKreślena.Checked)
                     Rysownica.DrawLine(Pióro, Punkt.X, Punkt.Y,
                                               e.Location.X, e.Location.Y);
@@ -103,10 +98,10 @@ namespace Project3_Radovskyi61986
                     Point[] WierzchołkiWielokąta = new Point[StopieńWielokąt];
                     for (int i = 0; i < StopieńWielokąt; i++)
                     {
-                        WierzchołkiWielokąta[i].X = LewyGórnyX + (int)(R * Math.Cos(Math.PI * (KątPołożeniaPierwszegoWierzchowka + i * KątMiędzWierzchołkamiWielokta) / 100.0));
-                        WierzchołkiWielokąta[i].Y = LewyGórnyY - (int)(R * Math.Cos(Math.PI * (KątPołożeniaPierwszegoWierzchowka + i * KątMiędzWierzchołkamiWielokta) / 100.0));
+                        WierzchołkiWielokąta[i].X = LewyGórnyX + (int)(R * Math.Cos(Math.PI * (KątPołożeniaPierwszegoWierzchowka + i * KątMiędzWierzchołkamiWielokta) / 180.0));
+                        WierzchołkiWielokąta[i].Y = LewyGórnyY - (int)(R * Math.Sin(Math.PI * (KątPołożeniaPierwszegoWierzchowka + i * KątMiędzWierzchołkamiWielokta) / 180.0));
                     }
-                    Rysownica.FillPolygon(Pędzle,WierzchołkiWielokąta);
+                    Rysownica.DrawPolygon(Pióro,WierzchołkiWielokąta);
                 }
 
             }
