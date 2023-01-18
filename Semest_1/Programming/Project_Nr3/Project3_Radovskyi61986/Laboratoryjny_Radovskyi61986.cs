@@ -102,6 +102,21 @@ namespace Project3_Radovskyi61986
                     Rysownica.DrawPolygon(Pióro,WierzchołkiWielokąta);
                 }
 
+                // 
+                if (rdbTrójkąSierpińskiego.Checked)
+                {
+                    int PoziomRecurencji = (int)NumUD_Rekwencja.Value;
+                    Color KolorWypełnienia = btnColor.BackColor;
+                    //
+                    Point WierzchołekGórny = new Point(LewyGórnyX + Szerokość/2,
+                        LewyGórnyY);
+                    Point WierzchołekLewyDolny = new Point(LewyGórnyX,
+                                                            LewyGórnyY + Wysokość);
+                    Point WierzchołekPrawyDolny = new Point(LewyGórnyX + Szerokość,
+                                                            LewyGórnyY + Wysokość);
+                    WykreślTrójkąSierpińskiego(Rysownica, PoziomRecurencji, KolorWypełnienia, WierzchołekGórny, WierzchołekLewyDolny, WierzchołekPrawyDolny);
+                }
+
             }
             pbRisownica.Refresh();
         }
@@ -178,6 +193,70 @@ namespace Project3_Radovskyi61986
             }
             else
                 e.Cancel = true;
+        }
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog PalataKolorów = new ColorDialog();
+            // zaznacienie biężacego koloru wypełnienia w PolecieKolorów
+            PalataKolorów.Color = btnColor.BackColor;
+            // wizualizacja 
+            if (PalataKolorów.ShowDialog() == DialogResult.OK)
+            {
+                btnColor.BackColor = PalataKolorów.Color;
+            }
+        }
+
+        private void rdbTrójkąSierpińskiego_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbTrójkąSierpińskiego.Checked)
+            {
+                MessageBox.Show("Wykreślenie Trójkąta Sierpińsiego wymaga podania " +
+                    "poziomu  rekurencji  (od 0 2 'górę') oraz wybrania koloru wypełnienia\n" +
+                    "UWAGA: moąna przyląc zaprogramowane ustawienia domyślne",
+                    "Kreślenie Trójkąta Sierpińskiego", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                lblRekwęcja.Visible = true;
+                NumUD_Rekwencja.Visible = true;
+                btnColor.Visible = true;
+
+                NumUD_Rekwencja.Value = 3;
+                btnColor.BackColor = Color.LightGreen;
+                NumUD_Rekwencja.Enabled = true;
+                btnColor.Enabled = true;
+            }
+            else
+            {
+                lblRekwęcja.Visible = false;
+                NumUD_Rekwencja.Visible = false;
+                btnColor.Visible = false;
+            }
+        }
+
+        void WykreślTrójkąSierpińskiego(Graphics Rysownica, int PoziomRekurencji, Color KolorWykresu,  Point WierchoekGurny, Point WierchoekiLewyDolny,Point WierzchoekPrawyDolny)
+        {
+            if (PoziomRekurencji == 0)
+            {
+                Point[] WierzchołkiTrójkata = { WierchoekGurny, WierchoekiLewyDolny, WierzchoekPrawyDolny };
+                using (SolidBrush Pędzel = new SolidBrush(KolorWykresu))
+                {
+                    Rysownica.FillPolygon(Pędzel, WierzchołkiTrójkata);
+                }
+
+            }
+            else
+            {
+                Point PunktyŚrodkowyLewejKrawędzi = new Point((WierchoekGurny.X + WierchoekiLewyDolny.X) / 2,
+                                                              (WierchoekGurny.Y + WierchoekiLewyDolny.Y) / 2);
+                Point PunktyŚrodkowyPrawejKrawędzi = new Point((WierchoekGurny.X + WierzchoekPrawyDolny.X) / 2,
+                                                              (WierchoekGurny.Y + WierzchoekPrawyDolny.Y) / 2);
+                Point PunktyŚrodkowyDolnejKrawędzi = new Point((WierchoekiLewyDolny.X + WierzchoekPrawyDolny.X) / 2,
+                                                              (WierchoekiLewyDolny.Y + WierzchoekPrawyDolny.Y) / 2);
+                //
+                WykreślTrójkąSierpińskiego(Rysownica, PoziomRekurencji - 1, KolorWykresu, WierchoekGurny, PunktyŚrodkowyLewejKrawędzi, PunktyŚrodkowyPrawejKrawędzi);
+                WykreślTrójkąSierpińskiego(Rysownica, PoziomRekurencji - 1, KolorWykresu, WierchoekiLewyDolny, PunktyŚrodkowyLewejKrawędzi, PunktyŚrodkowyDolnejKrawędzi);
+                WykreślTrójkąSierpińskiego(Rysownica, PoziomRekurencji - 1, KolorWykresu, PunktyŚrodkowyDolnejKrawędzi, PunktyŚrodkowyPrawejKrawędzi, WierzchoekPrawyDolny);
+            }
         }
     }
 }

@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.pbRisownica = new System.Windows.Forms.PictureBox();
             this.gbWybórKrzywych = new System.Windows.Forms.GroupBox();
+            this.btnColor = new System.Windows.Forms.Button();
+            this.NumUD_Rekwencja = new System.Windows.Forms.NumericUpDown();
+            this.lblRekwęcja = new System.Windows.Forms.Label();
+            this.rdbTrójkąSierpińskiego = new System.Windows.Forms.RadioButton();
             this.NumU = new System.Windows.Forms.NumericUpDown();
             this.rdbGwiazdaWieloramienna = new System.Windows.Forms.RadioButton();
             this.lblLiczba = new System.Windows.Forms.Label();
@@ -45,6 +49,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbRisownica)).BeginInit();
             this.gbWybórKrzywych.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUD_Rekwencja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumU)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +66,10 @@
             // 
             // gbWybórKrzywych
             // 
+            this.gbWybórKrzywych.Controls.Add(this.btnColor);
+            this.gbWybórKrzywych.Controls.Add(this.NumUD_Rekwencja);
+            this.gbWybórKrzywych.Controls.Add(this.lblRekwęcja);
+            this.gbWybórKrzywych.Controls.Add(this.rdbTrójkąSierpińskiego);
             this.gbWybórKrzywych.Controls.Add(this.NumU);
             this.gbWybórKrzywych.Controls.Add(this.rdbGwiazdaWieloramienna);
             this.gbWybórKrzywych.Controls.Add(this.lblLiczba);
@@ -72,14 +81,56 @@
             this.gbWybórKrzywych.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gbWybórKrzywych.Location = new System.Drawing.Point(1030, 51);
             this.gbWybórKrzywych.Name = "gbWybórKrzywych";
-            this.gbWybórKrzywych.Size = new System.Drawing.Size(286, 560);
+            this.gbWybórKrzywych.Size = new System.Drawing.Size(372, 560);
             this.gbWybórKrzywych.TabIndex = 1;
             this.gbWybórKrzywych.TabStop = false;
             this.gbWybórKrzywych.Text = "Wybierz (zaznacz) krzywą geometryczną";
             // 
+            // btnColor
+            // 
+            this.btnColor.Location = new System.Drawing.Point(236, 276);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(75, 23);
+            this.btnColor.TabIndex = 10;
+            this.btnColor.Text = "Kolor";
+            this.btnColor.UseVisualStyleBackColor = true;
+            this.btnColor.Visible = false;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // NumUD_Rekwencja
+            // 
+            this.NumUD_Rekwencja.Location = new System.Drawing.Point(223, 244);
+            this.NumUD_Rekwencja.Name = "NumUD_Rekwencja";
+            this.NumUD_Rekwencja.Size = new System.Drawing.Size(120, 26);
+            this.NumUD_Rekwencja.TabIndex = 9;
+            this.NumUD_Rekwencja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NumUD_Rekwencja.Visible = false;
+            // 
+            // lblRekwęcja
+            // 
+            this.lblRekwęcja.AutoSize = true;
+            this.lblRekwęcja.Location = new System.Drawing.Point(251, 222);
+            this.lblRekwęcja.Name = "lblRekwęcja";
+            this.lblRekwęcja.Size = new System.Drawing.Size(71, 19);
+            this.lblRekwęcja.TabIndex = 8;
+            this.lblRekwęcja.Text = "Rekwęcja";
+            this.lblRekwęcja.Visible = false;
+            // 
+            // rdbTrójkąSierpińskiego
+            // 
+            this.rdbTrójkąSierpińskiego.AutoSize = true;
+            this.rdbTrójkąSierpińskiego.Location = new System.Drawing.Point(7, 234);
+            this.rdbTrójkąSierpińskiego.Name = "rdbTrójkąSierpińskiego";
+            this.rdbTrójkąSierpińskiego.Size = new System.Drawing.Size(112, 23);
+            this.rdbTrójkąSierpińskiego.TabIndex = 7;
+            this.rdbTrójkąSierpińskiego.TabStop = true;
+            this.rdbTrójkąSierpińskiego.Text = "radioButton1";
+            this.rdbTrójkąSierpińskiego.UseVisualStyleBackColor = true;
+            this.rdbTrójkąSierpińskiego.CheckedChanged += new System.EventHandler(this.rdbTrójkąSierpińskiego_CheckedChanged);
+            // 
             // NumU
             // 
-            this.NumU.Location = new System.Drawing.Point(172, 179);
+            this.NumU.Location = new System.Drawing.Point(223, 176);
             this.NumU.Name = "NumU";
             this.NumU.Size = new System.Drawing.Size(120, 26);
             this.NumU.TabIndex = 6;
@@ -98,7 +149,7 @@
             // lblLiczba
             // 
             this.lblLiczba.AutoSize = true;
-            this.lblLiczba.Location = new System.Drawing.Point(186, 157);
+            this.lblLiczba.Location = new System.Drawing.Point(232, 154);
             this.lblLiczba.Name = "lblLiczba";
             this.lblLiczba.Size = new System.Drawing.Size(101, 19);
             this.lblLiczba.TabIndex = 5;
@@ -199,7 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1328, 638);
+            this.ClientSize = new System.Drawing.Size(1441, 638);
             this.Controls.Add(this.lblY);
             this.Controls.Add(this.lblX);
             this.Controls.Add(this.label1);
@@ -211,6 +262,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRisownica)).EndInit();
             this.gbWybórKrzywych.ResumeLayout(false);
             this.gbWybórKrzywych.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUD_Rekwencja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumU)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -233,5 +285,9 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.NumericUpDown NumU;
         private System.Windows.Forms.Label lblLiczba;
+        private System.Windows.Forms.Button btnColor;
+        private System.Windows.Forms.NumericUpDown NumUD_Rekwencja;
+        private System.Windows.Forms.Label lblRekwęcja;
+        private System.Windows.Forms.RadioButton rdbTrójkąSierpińskiego;
     }
 }
