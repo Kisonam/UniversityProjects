@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.pbRisownica = new System.Windows.Forms.PictureBox();
             this.gbWybórKrzywych = new System.Windows.Forms.GroupBox();
+            this.NumU = new System.Windows.Forms.NumericUpDown();
             this.rdbGwiazdaWieloramienna = new System.Windows.Forms.RadioButton();
+            this.lblLiczba = new System.Windows.Forms.Label();
             this.rdbWielokatWypelniony = new System.Windows.Forms.RadioButton();
             this.rdbWielokatForemny = new System.Windows.Forms.RadioButton();
             this.rdbLiniaKreślena = new System.Windows.Forms.RadioButton();
@@ -41,8 +43,6 @@
             this.lblX = new System.Windows.Forms.Label();
             this.lblY = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.lblLiczba = new System.Windows.Forms.Label();
-            this.NumU = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pbRisownica)).BeginInit();
             this.gbWybórKrzywych.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumU)).BeginInit();
@@ -77,6 +77,13 @@
             this.gbWybórKrzywych.TabStop = false;
             this.gbWybórKrzywych.Text = "Wybierz (zaznacz) krzywą geometryczną";
             // 
+            // NumU
+            // 
+            this.NumU.Location = new System.Drawing.Point(172, 179);
+            this.NumU.Name = "NumU";
+            this.NumU.Size = new System.Drawing.Size(120, 26);
+            this.NumU.TabIndex = 6;
+            // 
             // rdbGwiazdaWieloramienna
             // 
             this.rdbGwiazdaWieloramienna.AutoSize = true;
@@ -87,6 +94,15 @@
             this.rdbGwiazdaWieloramienna.TabStop = true;
             this.rdbGwiazdaWieloramienna.Text = "Gwiazda Wieloramienna\r\n";
             this.rdbGwiazdaWieloramienna.UseVisualStyleBackColor = true;
+            // 
+            // lblLiczba
+            // 
+            this.lblLiczba.AutoSize = true;
+            this.lblLiczba.Location = new System.Drawing.Point(186, 157);
+            this.lblLiczba.Name = "lblLiczba";
+            this.lblLiczba.Size = new System.Drawing.Size(101, 19);
+            this.lblLiczba.TabIndex = 5;
+            this.lblLiczba.Text = "Liczba kontrol";
             // 
             // rdbWielokatWypelniony
             // 
@@ -179,22 +195,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // lblLiczba
-            // 
-            this.lblLiczba.AutoSize = true;
-            this.lblLiczba.Location = new System.Drawing.Point(186, 157);
-            this.lblLiczba.Name = "lblLiczba";
-            this.lblLiczba.Size = new System.Drawing.Size(101, 19);
-            this.lblLiczba.TabIndex = 5;
-            this.lblLiczba.Text = "Liczba kontrol";
-            // 
-            // NumU
-            // 
-            this.NumU.Location = new System.Drawing.Point(172, 179);
-            this.NumU.Name = "NumU";
-            this.NumU.Size = new System.Drawing.Size(120, 26);
-            this.NumU.TabIndex = 6;
-            // 
             // Laboratoryjny_Radovskyi61986
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,6 +207,7 @@
             this.Controls.Add(this.pbRisownica);
             this.Name = "Laboratoryjny_Radovskyi61986";
             this.Text = "Laboratoryjny";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Laboratoryjny_Radovskyi61986_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pbRisownica)).EndInit();
             this.gbWybórKrzywych.ResumeLayout(false);
             this.gbWybórKrzywych.PerformLayout();

@@ -44,8 +44,6 @@ namespace Project3_Radovskyi61986
             {// przechowanie wspołorzędnych poleżonia "Myszy" w zmiennej Punkt
                Punkt =  e.Location;
             }
-
-
         }
 
         private void pbRisownica_MouseUp(object sender, MouseEventArgs e)
@@ -148,6 +146,38 @@ namespace Project3_Radovskyi61986
                 lblLiczba.Visible = false;
                 NumU.Visible = false;
             }
+        }
+
+        private void Laboratoryjny_Radovskyi61986_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult OknoMessage = MessageBox.Show("Czy rzechywicie chcesz zakąć ten " +
+              "formularz i powrócić do formularza głuwnego", this.Text,
+              MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3);
+            // rozpoznanie decyzji użytkownika programu
+            if (OknoMessage == DialogResult.Yes)
+            {
+                e.Cancel = false;
+
+                foreach (Form Formularz in Application.OpenForms)
+                {
+                    if (Formularz.Name == "FormularzStartowy")
+                    { // ukrycie bieżącego formularza
+                        this.Hide();
+                        // odsłonięcie znalezionego głównego formularza
+                        Formularz.Show();
+                        // wyjście z metody obsługi zdarzenia FormClosing
+                        return;
+                    }
+
+                }
+                FormularzStartowy FormularzProjectuNr3 = new FormularzStartowy();
+                // ukrycie bieżącego formularza głównego
+                FormularzProjectuNr3.Show();
+                // ukrycie bieżącego formularza
+                this.Hide();
+            }
+            else
+                e.Cancel = true;
         }
     }
 }
