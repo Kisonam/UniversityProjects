@@ -11,6 +11,12 @@ namespace Project3_Radovskyi61986
         const ushort PromieńPunktu = 2;
         // deklaracja zmiennych referencyjnych narzędni grafichnych
         Graphics Rysownica;
+        // deklaracja rysownict tymczasowej na pobierzchbi kontolki PictureBox
+        Graphics RysownicaTymczasowa;
+        // deklaracja Pióra tymczasowego
+        Pen PióroTymczasowe;
+
+
         Pen Pióro;
         SolidBrush Pędzle;
         Point Punkt = Point.Empty;
@@ -18,11 +24,21 @@ namespace Project3_Radovskyi61986
         public Laboratoryjny_Radovskyi61986()
         {
             InitializeComponent();
+
+
+
+
+
             // ....
             // "podpięcie" BitMapy do kontrolki PictureBox
             pbRisownica.Image = new Bitmap(pbRisownica.Width, pbRisownica.Height);
             // utworzenie egzemplarza graficznej na bitmapie
             Rysownica = Graphics.FromImage(pbRisownica.Image);
+            /* utworzenie egzemplarza tymczasowej powierzchni graficznej na 
+             przezroczystej powierzchni kontrolki PictureBox*/
+            RysownicaTymczasowa = pbRisownica.CreateGraphics();
+            // utworzenie egzemplarza Pióra tymczasowego
+            PióroTymczasowe = new Pen(Color.Blue, 1);
             // utworzenie egzemlarza Pióra i jego sformatowania 
             Pióro = new Pen(Color.Red, 1.4f);
             Pióro.DashStyle = DashStyle.Dash;
@@ -116,16 +132,21 @@ namespace Project3_Radovskyi61986
                                                             LewyGórnyY + Wysokość);
                     WykreślTrójkąSierpińskiego(Rysownica, PoziomRecurencji, KolorWypełnienia, WierzchołekGórny, WierzchołekLewyDolny, WierzchołekPrawyDolny);
                 }
-
             }
             pbRisownica.Refresh();
         }
 
         private void pbRisownica_MouseMove(object sender, MouseEventArgs e)
         {
+
             // wizualizacja wpółrzędnych aktualnego położenia myszy
             lblX.Text = e.Location.X.ToString();
             lblY.Text = e.Location.X.ToString();
+            //
+            int LewyGórnyX = (Punkt.X > e.Location.X) ? e.Location.X : Punkt.X;
+            int LewyGórnyY = (Punkt.Y > e.Location.Y) ? e.Location.Y : Punkt.Y;
+            int Szerokość = Math.Abs(Punkt.X - e.Location.X);
+            int Wysokość = Math.Abs(Punkt.Y - e.Location.Y);
             //obsługa zdarzenia MouseDown
             if (e.Button == MouseButtons.Left)
             {// przechowanie wspołorzędnych poleżonia "Myszy" w zmiennej Punkt
@@ -136,6 +157,44 @@ namespace Project3_Radovskyi61986
                                                     e.Location.X, e.Location.Y);
                     // uaktualnie współrzędnych przechowywanych w zmiennej Punkt od ktorego będzie wykreślany następny odcinek prostej
                     Punkt = e.Location;
+                }
+                //czy jest kreślona linia prosta
+                if (rdbLiniaProsta.Checked)
+                {
+                    RysownicaTymczasowa.DrawLine(PióroTymczasowe, Punkt.X, Punkt.Y, e.Location.X, e.Location.Y);
+                }
+                // czy wielokąt foremny 
+                if (rdbWielokatForemny.Checked)
+                {// deklaracje pomocniecze i pobranie danych z formularza
+                    int StopieńWielokąta = (int) NumU.Value;
+                    int PromieńWielokąta = Szerokość;
+                    // wyznaczenie współrzednych wierzchołków wielokąta
+                    Point[] WierchołkiWielokąta = new Point[StopieńWielokąta];
+                    // deklaracja i wyznaczenie kata środkowego wielokąta
+                    double KątAlfa = 360.0 / StopieńWielokąta;
+                    double KątFi;
+                    for (int i = 0; i < StopieńWielokąta; i++)
+                    {
+                        // wyznaczenie kąta położenia i-tego wierzchołka wielokąta
+                        KątFi = Math.PI * (i * KątAlfa) / 180.0;
+                        WierchołkiWielokąta[i].X = (LewyGórnyX + Szerokość / 2) + (int)(PromieńWielokąta * Math.Cos(KątFi));
+                        WierchołkiWielokąta[i].Y = (LewyGórnyY + Wysokość / 2) + (int)(PromieńWielokąta * Math.Sin(KątFi));
+                    }
+                    // wykreślenie wielokąta na powierzcni tymczasowej
+                    RysownicaTymczasowa.DrawPolygon(PióroTymczasowe, WierchołkiWielokąta);
+                }
+                if (rdbTrójkąSierpińskiego.Checked)
+                {
+                    int PoziomRecurencji = (int)NumUD_Rekwencja.Value;
+                    Color KolorWypełnienia = btnColor.BackColor;
+                    //
+                    Point WierzchołekGórny = new Point(LewyGórnyX + Szerokość / 2,
+                        LewyGórnyY);
+                    Point WierzchołekLewyDolny = new Point(LewyGórnyX,
+                                                            LewyGórnyY + Wysokość);
+                    Point WierzchołekPrawyDolny = new Point(LewyGórnyX + Szerokość,
+                                                            LewyGórnyY + Wysokość);
+                    WykreślTrójkąSierpińskiego(RysownicaTymczasowa, PoziomRecurencji, KolorWypełnienia, WierzchołekGórny, WierzchołekLewyDolny, WierzchołekPrawyDolny);
                 }
 
             }
@@ -214,7 +273,7 @@ namespace Project3_Radovskyi61986
                 MessageBox.Show("Wykreślenie Trójkąta Sierpińsiego wymaga podania " +
                     "poziomu  rekurencji  (od 0 2 'górę') oraz wybrania koloru wypełnienia\n" +
                     "UWAGA: moąna przyląc zaprogramowane ustawienia domyślne",
-                    "Kreślenie Trójkąta Sierpińskiego", MessageBoxButtons.OK,
+                    "Kreślenie Trójkąta Sierpińskieg    o", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 lblRekwęcja.Visible = true;
                 NumUD_Rekwencja.Visible = true;
@@ -258,5 +317,6 @@ namespace Project3_Radovskyi61986
                 WykreślTrójkąSierpińskiego(Rysownica, PoziomRekurencji - 1, KolorWykresu, PunktyŚrodkowyDolnejKrawędzi, PunktyŚrodkowyPrawejKrawędzi, WierzchoekPrawyDolny);
             }
         }
+
     }
 }

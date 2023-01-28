@@ -55,6 +55,7 @@
             // 
             // pbRisownica
             // 
+            this.pbRisownica.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pbRisownica.Location = new System.Drawing.Point(12, 51);
             this.pbRisownica.Name = "pbRisownica";
             this.pbRisownica.Size = new System.Drawing.Size(1001, 560);
@@ -121,10 +122,10 @@
             this.rdbTrójkąSierpińskiego.AutoSize = true;
             this.rdbTrójkąSierpińskiego.Location = new System.Drawing.Point(7, 234);
             this.rdbTrójkąSierpińskiego.Name = "rdbTrójkąSierpińskiego";
-            this.rdbTrójkąSierpińskiego.Size = new System.Drawing.Size(112, 23);
+            this.rdbTrójkąSierpińskiego.Size = new System.Drawing.Size(165, 23);
             this.rdbTrójkąSierpińskiego.TabIndex = 7;
             this.rdbTrójkąSierpińskiego.TabStop = true;
-            this.rdbTrójkąSierpińskiego.Text = "radioButton1";
+            this.rdbTrójkąSierpińskiego.Text = "Trójkąt Sierpińskiego";
             this.rdbTrójkąSierpińskiego.UseVisualStyleBackColor = true;
             this.rdbTrójkąSierpińskiego.CheckedChanged += new System.EventHandler(this.rdbTrójkąSierpińskiego_CheckedChanged);
             // 
