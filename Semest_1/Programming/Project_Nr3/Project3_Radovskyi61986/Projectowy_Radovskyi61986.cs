@@ -16,40 +16,42 @@ namespace Project3_Radovskyi61986
     {
         const ushort PromieńPunktu = 2;
         // deklaracja zmiennych referencyjnych narzędni grafichnych
-        Graphics Rysownica;
-        Pen Pióro;
-        SolidBrush Pędzle;
-        Point Punkt = Point.Empty;
+        Graphics ARRysownica;
+        Pen ArPióro;
+        SolidBrush ArPędzle;
+        Point ARPunkt = Point.Empty;
 
         struct OpisKrzywejBeziera
         {
-            public Point PunktP0;
-            public Point PunktP1;
-            public Point PunktP2;
-            public Point PunktP3;
-            public ushort NumerPunktuKontrolnego;
-            public float PromieńPunktuKontrolnego;
+            public Point ARPunktP0;
+            public Point ARPunktP1;
+            public Point ARPunktP2;
+            public Point ARPunktP3;
+            public ushort ARNumerPunktuKontrolnego;
+            public float ARPromieńPunktuKontrolnego;
         }
         // deklaracja zmiennej dla KrzywejBeziera
-        OpisKrzywejBeziera KrzywaBeziera;
+        OpisKrzywejBeziera ARKrzywaBeziera;
         // deklaracja Fontu opisu punktu kontrolnego
-        Font FontOpisuPunktów = new Font("Arial", 10, FontStyle.Italic);
+        Font ARFontOpisuPunktów = new Font("TimesNewRoman", 14, FontStyle.Regular);
 
         public Projectowy_Radovskyi61986()
         {
             InitializeComponent();
             // ....
+            lblX.Text = "0";
+            lblY.Text = "0";
             // "podpięcie" BitMapy do kontrolki PictureBox
             pbRisownica.Image = new Bitmap(pbRisownica.Width, pbRisownica.Height);
             // utworzenie egzemplarza graficznej na bitmapie
-            Rysownica = Graphics.FromImage(pbRisownica.Image);
+            ARRysownica = Graphics.FromImage(pbRisownica.Image);
             // utworzenie egzemlarza Pióra i jego sformatowania 
-            Pióro = new Pen(Color.Red, 1.4f);
-            Pióro.DashStyle = DashStyle.Dash;
-            Pióro.StartCap = LineCap.Round;
-            Pióro.EndCap = LineCap.Round;
+            ArPióro = new Pen(Color.Red, 1.4f);
+            ArPióro.DashStyle = DashStyle.Dash;
+            ArPióro.StartCap = LineCap.Round;
+            ArPióro.EndCap = LineCap.Round;
 
-            Pędzle = new SolidBrush(Color.Blue);
+            ArPędzle = new SolidBrush(Color.Blue);
         }
 
         private void btnLaboratoryjny_Click(object sender, EventArgs e)
@@ -62,10 +64,10 @@ namespace Project3_Radovskyi61986
             lblX.Text = e.Location.X.ToString();
             lblY.Text = e.Location.X.ToString();
 
-            int LewyGórnyX = (Punkt.X > e.Location.X) ? e.Location.X : Punkt.X;
-            int LewyGórnyY = (Punkt.Y > e.Location.Y) ? e.Location.Y : Punkt.Y;
-            int Szerokość = Math.Abs(Punkt.X - e.Location.X);
-            int Wysokość = Math.Abs(Punkt.Y - e.Location.Y);
+            int LewyGórnyX = (ARPunkt.X > e.Location.X) ? e.Location.X : ARPunkt.X;
+            int LewyGórnyY = (ARPunkt.Y > e.Location.Y) ? e.Location.Y : ARPunkt.Y;
+            int Szerokość = Math.Abs(ARPunkt.X - e.Location.X);
+            int Wysokość = Math.Abs(ARPunkt.Y - e.Location.Y);
 
             if (e.Button == MouseButtons.Left)
             {
@@ -75,66 +77,66 @@ namespace Project3_Radovskyi61986
                     {
                         grbFigury_Linie.Enabled = false;
                         //
-                        KrzywaBeziera.NumerPunktuKontrolnego = 0;
-                        KrzywaBeziera.PromieńPunktuKontrolnego = 5;
+                        ARKrzywaBeziera.ARNumerPunktuKontrolnego = 0;
+                        ARKrzywaBeziera.ARPromieńPunktuKontrolnego = 5;
                         //
-                        KrzywaBeziera.PunktP0 = e.Location;
+                        ARKrzywaBeziera.ARPunktP0 = e.Location;
                         // wykreślenie  (wymalowanie) opisu punktu P0
                         using (SolidBrush Pędzel = new SolidBrush(Color.Black))
                         {
                             // wykreślenie punktu P0
-                            Rysownica.FillEllipse(Pędzel,
-                                e.Location.X - KrzywaBeziera.PromieńPunktuKontrolnego,
-                                e.Location.Y - KrzywaBeziera.PromieńPunktuKontrolnego,
-                                2 * KrzywaBeziera.PromieńPunktuKontrolnego,
-                                2 * KrzywaBeziera.PromieńPunktuKontrolnego);
+                            ARRysownica.FillEllipse(Pędzel,
+                                e.Location.X - ARKrzywaBeziera.ARPromieńPunktuKontrolnego,
+                                e.Location.Y - ARKrzywaBeziera.ARPromieńPunktuKontrolnego,
+                                2 * ARKrzywaBeziera.ARPromieńPunktuKontrolnego,
+                                2 * ARKrzywaBeziera.ARPromieńPunktuKontrolnego);
                             //
-                            Rysownica.DrawString("p" + KrzywaBeziera.NumerPunktuKontrolnego.ToString(),
-                                FontOpisuPunktów, Pędzel, e.Location);
+                            ARRysownica.DrawString("p" + ARKrzywaBeziera.ARNumerPunktuKontrolnego.ToString(),
+                                ARFontOpisuPunktów, Pędzel, e.Location);
                         }
                     }
                     else
                     {
-                        KrzywaBeziera.NumerPunktuKontrolnego++;
-                        switch (KrzywaBeziera.NumerPunktuKontrolnego)
+                        ARKrzywaBeziera.ARNumerPunktuKontrolnego++;
+                        switch (ARKrzywaBeziera.ARNumerPunktuKontrolnego)
                         {
-                            case 1: KrzywaBeziera.PunktP1 = e.Location; break;
-                            case 2: KrzywaBeziera.PunktP2 = e.Location; break;
-                            case 3: KrzywaBeziera.PunktP3 = e.Location; break;
+                            case 1: ARKrzywaBeziera.ARPunktP1 = e.Location; break;
+                            case 2: ARKrzywaBeziera.ARPunktP2 = e.Location; break;
+                            case 3: ARKrzywaBeziera.ARPunktP3 = e.Location; break;
                         }
                         //
-                        if (KrzywaBeziera.NumerPunktuKontrolnego < 3)
+                        if (ARKrzywaBeziera.ARNumerPunktuKontrolnego < 3)
                         {
                             using (SolidBrush Pędzel = new SolidBrush(Color.Red))
                             {
-                                Rysownica.FillEllipse(Pędzel,
-                                    e.Location.X - KrzywaBeziera.PromieńPunktuKontrolnego,
-                                    e.Location.Y - KrzywaBeziera.PromieńPunktuKontrolnego,
-                                    2 * KrzywaBeziera.PromieńPunktuKontrolnego,
-                                    2 * KrzywaBeziera.PromieńPunktuKontrolnego);
+                                ARRysownica.FillEllipse(Pędzel,
+                                    e.Location.X - ARKrzywaBeziera.ARPromieńPunktuKontrolnego,
+                                    e.Location.Y - ARKrzywaBeziera.ARPromieńPunktuKontrolnego,
+                                    2 * ARKrzywaBeziera.ARPromieńPunktuKontrolnego,
+                                    2 * ARKrzywaBeziera.ARPromieńPunktuKontrolnego);
 
-                                Rysownica.DrawString("p" + KrzywaBeziera.NumerPunktuKontrolnego.ToString(),
-                                    FontOpisuPunktów, Pędzel, e.Location);
+                                ARRysownica.DrawString("p" + ARKrzywaBeziera.ARNumerPunktuKontrolnego.ToString(),
+                                    ARFontOpisuPunktów, Pędzel, e.Location);
                             }
                         }
                         else
                         {
                             using (SolidBrush Pędzel = new SolidBrush(Color.Black))
                             {
-                                Rysownica.FillEllipse(Pędzel,
-                                    e.Location.X - KrzywaBeziera.PromieńPunktuKontrolnego,
-                                    e.Location.Y - KrzywaBeziera.PromieńPunktuKontrolnego,
-                                    2 * KrzywaBeziera.PromieńPunktuKontrolnego,
-                                    2 * KrzywaBeziera.PromieńPunktuKontrolnego);
+                                ARRysownica.FillEllipse(Pędzel,
+                                    e.Location.X - ARKrzywaBeziera.ARPromieńPunktuKontrolnego,
+                                    e.Location.Y - ARKrzywaBeziera.ARPromieńPunktuKontrolnego,
+                                    2 * ARKrzywaBeziera.ARPromieńPunktuKontrolnego,
+                                    2 * ARKrzywaBeziera.ARPromieńPunktuKontrolnego);
 
-                                Rysownica.DrawString("p" + KrzywaBeziera.NumerPunktuKontrolnego.ToString(),
-                                    FontOpisuPunktów, Pędzel, e.Location);
+                                ARRysownica.DrawString("p" + ARKrzywaBeziera.ARNumerPunktuKontrolnego.ToString(),
+                                    ARFontOpisuPunktów, Pędzel, e.Location);
                             }
                             //
-                            Rysownica.DrawBezier(Pióro, KrzywaBeziera.PunktP0,
-                                                        KrzywaBeziera.PunktP1,
-                                                        KrzywaBeziera.PunktP2,
-                                                        KrzywaBeziera.PunktP3);
+                            ARRysownica.DrawBezier(ArPióro, ARKrzywaBeziera.ARPunktP0,
+                                                        ARKrzywaBeziera.ARPunktP1,
+                                                        ARKrzywaBeziera.ARPunktP2,
+                                                        ARKrzywaBeziera.ARPunktP3);
 
                         }
                         grbFigury_Linie.Enabled = true;
@@ -160,7 +162,7 @@ namespace Project3_Radovskyi61986
             //obsługa zdarzenia MouseDown
             if (e.Button == MouseButtons.Left)
             {// przechowanie wspołorzędnych poleżonia "Myszy" w zmiennej Punkt
-                Punkt = e.Location;
+                ARPunkt = e.Location;
             }
         }
 

@@ -33,30 +33,30 @@
             this.lblX = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grbFigury_Linie = new System.Windows.Forms.GroupBox();
-            this.rdbProstokąt = new System.Windows.Forms.RadioButton();
-            this.rdbKwadrat = new System.Windows.Forms.RadioButton();
-            this.rdbElipsa = new System.Windows.Forms.RadioButton();
-            this.rdbOkrag = new System.Windows.Forms.RadioButton();
-            this.rdbKrzywaBeziera = new System.Windows.Forms.RadioButton();
-            this.rdbSklejanaKrzywaBeziera = new System.Windows.Forms.RadioButton();
-            this.rdbKrzywaKardynalna = new System.Windows.Forms.RadioButton();
             this.rdbZamkniętaKrzywaKardynalna = new System.Windows.Forms.RadioButton();
+            this.rdbKrzywaKardynalna = new System.Windows.Forms.RadioButton();
+            this.rdbSklejanaKrzywaBeziera = new System.Windows.Forms.RadioButton();
+            this.rdbKrzywaBeziera = new System.Windows.Forms.RadioButton();
+            this.rdbOkrag = new System.Windows.Forms.RadioButton();
+            this.rdbElipsa = new System.Windows.Forms.RadioButton();
+            this.rdbKwadrat = new System.Windows.Forms.RadioButton();
+            this.rdbProstokąt = new System.Windows.Forms.RadioButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.koloryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.atrybutyLiniiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.atrybutyKreślonejCzcionkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zapiszaBitMapęWPlikuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odczytajBitMapęZPlikuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitZFormularzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restartProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.koloryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kolorLiniiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kolorTłaRysownicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kolorWypełnieniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atrybutyLiniiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grubośćLiniiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stylLiniiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grotyRozpoczęciaLiniiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grotyZakończeniaLiniiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atrybutyKreślonejCzcionkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.krójCzcionkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rozmiarCzcionkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kolorCzcionkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +67,7 @@
             // 
             // pbRisownica
             // 
+            this.pbRisownica.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pbRisownica.Location = new System.Drawing.Point(12, 99);
             this.pbRisownica.Name = "pbRisownica";
             this.pbRisownica.Size = new System.Drawing.Size(1041, 560);
@@ -77,7 +78,7 @@
             // 
             this.lblY.AutoSize = true;
             this.lblY.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblY.Location = new System.Drawing.Point(367, 63);
+            this.lblY.Location = new System.Drawing.Point(367, 44);
             this.lblY.Name = "lblY";
             this.lblY.Size = new System.Drawing.Size(23, 21);
             this.lblY.TabIndex = 7;
@@ -87,7 +88,7 @@
             // 
             this.lblX.AutoSize = true;
             this.lblX.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblX.Location = new System.Drawing.Point(315, 63);
+            this.lblX.Location = new System.Drawing.Point(315, 44);
             this.lblX.Name = "lblX";
             this.lblX.Size = new System.Drawing.Size(23, 21);
             this.lblX.TabIndex = 6;
@@ -97,7 +98,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 63);
+            this.label1.Location = new System.Drawing.Point(12, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(249, 21);
             this.label1.TabIndex = 5;
@@ -120,49 +121,38 @@
             this.grbFigury_Linie.TabStop = false;
             this.grbFigury_Linie.Text = "Wybierz (zaznacz) figurę lub linię geometryczną";
             // 
-            // rdbProstokąt
+            // rdbZamkniętaKrzywaKardynalna
             // 
-            this.rdbProstokąt.AutoSize = true;
-            this.rdbProstokąt.Location = new System.Drawing.Point(6, 31);
-            this.rdbProstokąt.Name = "rdbProstokąt";
-            this.rdbProstokąt.Size = new System.Drawing.Size(128, 17);
-            this.rdbProstokąt.TabIndex = 0;
-            this.rdbProstokąt.TabStop = true;
-            this.rdbProstokąt.Text = "Prostokąt (Rectangle)";
-            this.rdbProstokąt.UseVisualStyleBackColor = true;
+            this.rdbZamkniętaKrzywaKardynalna.AutoSize = true;
+            this.rdbZamkniętaKrzywaKardynalna.Location = new System.Drawing.Point(6, 192);
+            this.rdbZamkniętaKrzywaKardynalna.Name = "rdbZamkniętaKrzywaKardynalna";
+            this.rdbZamkniętaKrzywaKardynalna.Size = new System.Drawing.Size(260, 17);
+            this.rdbZamkniętaKrzywaKardynalna.TabIndex = 7;
+            this.rdbZamkniętaKrzywaKardynalna.TabStop = true;
+            this.rdbZamkniętaKrzywaKardynalna.Text = "Zamknięta krzywa kardynalna (DrawClosedCurve)";
+            this.rdbZamkniętaKrzywaKardynalna.UseVisualStyleBackColor = true;
             // 
-            // rdbKwadrat
+            // rdbKrzywaKardynalna
             // 
-            this.rdbKwadrat.AutoSize = true;
-            this.rdbKwadrat.Location = new System.Drawing.Point(6, 54);
-            this.rdbKwadrat.Name = "rdbKwadrat";
-            this.rdbKwadrat.Size = new System.Drawing.Size(64, 17);
-            this.rdbKwadrat.TabIndex = 1;
-            this.rdbKwadrat.TabStop = true;
-            this.rdbKwadrat.Text = "Kwadrat";
-            this.rdbKwadrat.UseVisualStyleBackColor = true;
+            this.rdbKrzywaKardynalna.AutoSize = true;
+            this.rdbKrzywaKardynalna.Location = new System.Drawing.Point(6, 169);
+            this.rdbKrzywaKardynalna.Name = "rdbKrzywaKardynalna";
+            this.rdbKrzywaKardynalna.Size = new System.Drawing.Size(176, 17);
+            this.rdbKrzywaKardynalna.TabIndex = 6;
+            this.rdbKrzywaKardynalna.TabStop = true;
+            this.rdbKrzywaKardynalna.Text = "Krzywa kardynalna (DrawCurve)";
+            this.rdbKrzywaKardynalna.UseVisualStyleBackColor = true;
             // 
-            // rdbElipsa
+            // rdbSklejanaKrzywaBeziera
             // 
-            this.rdbElipsa.AutoSize = true;
-            this.rdbElipsa.Location = new System.Drawing.Point(6, 77);
-            this.rdbElipsa.Name = "rdbElipsa";
-            this.rdbElipsa.Size = new System.Drawing.Size(90, 17);
-            this.rdbElipsa.TabIndex = 2;
-            this.rdbElipsa.TabStop = true;
-            this.rdbElipsa.Text = "Elipsa (Elipse)";
-            this.rdbElipsa.UseVisualStyleBackColor = true;
-            // 
-            // rdbOkrag
-            // 
-            this.rdbOkrag.AutoSize = true;
-            this.rdbOkrag.Location = new System.Drawing.Point(6, 100);
-            this.rdbOkrag.Name = "rdbOkrag";
-            this.rdbOkrag.Size = new System.Drawing.Size(54, 17);
-            this.rdbOkrag.TabIndex = 3;
-            this.rdbOkrag.TabStop = true;
-            this.rdbOkrag.Text = "Okrag";
-            this.rdbOkrag.UseVisualStyleBackColor = true;
+            this.rdbSklejanaKrzywaBeziera.AutoSize = true;
+            this.rdbSklejanaKrzywaBeziera.Location = new System.Drawing.Point(6, 146);
+            this.rdbSklejanaKrzywaBeziera.Name = "rdbSklejanaKrzywaBeziera";
+            this.rdbSklejanaKrzywaBeziera.Size = new System.Drawing.Size(143, 17);
+            this.rdbSklejanaKrzywaBeziera.TabIndex = 5;
+            this.rdbSklejanaKrzywaBeziera.TabStop = true;
+            this.rdbSklejanaKrzywaBeziera.Text = "Sklejana krzywa Beziera ";
+            this.rdbSklejanaKrzywaBeziera.UseVisualStyleBackColor = true;
             // 
             // rdbKrzywaBeziera
             // 
@@ -176,38 +166,49 @@
             this.rdbKrzywaBeziera.UseVisualStyleBackColor = true;
             this.rdbKrzywaBeziera.CheckedChanged += new System.EventHandler(this.rdbKrzywaBeziera_CheckedChanged);
             // 
-            // rdbSklejanaKrzywaBeziera
+            // rdbOkrag
             // 
-            this.rdbSklejanaKrzywaBeziera.AutoSize = true;
-            this.rdbSklejanaKrzywaBeziera.Location = new System.Drawing.Point(6, 146);
-            this.rdbSklejanaKrzywaBeziera.Name = "rdbSklejanaKrzywaBeziera";
-            this.rdbSklejanaKrzywaBeziera.Size = new System.Drawing.Size(143, 17);
-            this.rdbSklejanaKrzywaBeziera.TabIndex = 5;
-            this.rdbSklejanaKrzywaBeziera.TabStop = true;
-            this.rdbSklejanaKrzywaBeziera.Text = "Sklejana krzywa Beziera ";
-            this.rdbSklejanaKrzywaBeziera.UseVisualStyleBackColor = true;
+            this.rdbOkrag.AutoSize = true;
+            this.rdbOkrag.Location = new System.Drawing.Point(6, 100);
+            this.rdbOkrag.Name = "rdbOkrag";
+            this.rdbOkrag.Size = new System.Drawing.Size(54, 17);
+            this.rdbOkrag.TabIndex = 3;
+            this.rdbOkrag.TabStop = true;
+            this.rdbOkrag.Text = "Okrag";
+            this.rdbOkrag.UseVisualStyleBackColor = true;
             // 
-            // rdbKrzywaKardynalna
+            // rdbElipsa
             // 
-            this.rdbKrzywaKardynalna.AutoSize = true;
-            this.rdbKrzywaKardynalna.Location = new System.Drawing.Point(6, 169);
-            this.rdbKrzywaKardynalna.Name = "rdbKrzywaKardynalna";
-            this.rdbKrzywaKardynalna.Size = new System.Drawing.Size(176, 17);
-            this.rdbKrzywaKardynalna.TabIndex = 6;
-            this.rdbKrzywaKardynalna.TabStop = true;
-            this.rdbKrzywaKardynalna.Text = "Krzywa kardynalna (DrawCurve)";
-            this.rdbKrzywaKardynalna.UseVisualStyleBackColor = true;
+            this.rdbElipsa.AutoSize = true;
+            this.rdbElipsa.Location = new System.Drawing.Point(6, 77);
+            this.rdbElipsa.Name = "rdbElipsa";
+            this.rdbElipsa.Size = new System.Drawing.Size(90, 17);
+            this.rdbElipsa.TabIndex = 2;
+            this.rdbElipsa.TabStop = true;
+            this.rdbElipsa.Text = "Elipsa (Elipse)";
+            this.rdbElipsa.UseVisualStyleBackColor = true;
             // 
-            // rdbZamkniętaKrzywaKardynalna
+            // rdbKwadrat
             // 
-            this.rdbZamkniętaKrzywaKardynalna.AutoSize = true;
-            this.rdbZamkniętaKrzywaKardynalna.Location = new System.Drawing.Point(6, 192);
-            this.rdbZamkniętaKrzywaKardynalna.Name = "rdbZamkniętaKrzywaKardynalna";
-            this.rdbZamkniętaKrzywaKardynalna.Size = new System.Drawing.Size(260, 17);
-            this.rdbZamkniętaKrzywaKardynalna.TabIndex = 7;
-            this.rdbZamkniętaKrzywaKardynalna.TabStop = true;
-            this.rdbZamkniętaKrzywaKardynalna.Text = "Zamknięta krzywa kardynalna (DrawClosedCurve)";
-            this.rdbZamkniętaKrzywaKardynalna.UseVisualStyleBackColor = true;
+            this.rdbKwadrat.AutoSize = true;
+            this.rdbKwadrat.Location = new System.Drawing.Point(6, 54);
+            this.rdbKwadrat.Name = "rdbKwadrat";
+            this.rdbKwadrat.Size = new System.Drawing.Size(64, 17);
+            this.rdbKwadrat.TabIndex = 1;
+            this.rdbKwadrat.TabStop = true;
+            this.rdbKwadrat.Text = "Kwadrat";
+            this.rdbKwadrat.UseVisualStyleBackColor = true;
+            // 
+            // rdbProstokąt
+            // 
+            this.rdbProstokąt.AutoSize = true;
+            this.rdbProstokąt.Location = new System.Drawing.Point(6, 31);
+            this.rdbProstokąt.Name = "rdbProstokąt";
+            this.rdbProstokąt.Size = new System.Drawing.Size(128, 17);
+            this.rdbProstokąt.TabIndex = 0;
+            this.rdbProstokąt.TabStop = true;
+            this.rdbProstokąt.Text = "Prostokąt (Rectangle)";
+            this.rdbProstokąt.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -233,37 +234,6 @@
             this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.plikToolStripMenuItem.Text = "Plik";
             // 
-            // koloryToolStripMenuItem
-            // 
-            this.koloryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kolorLiniiToolStripMenuItem,
-            this.kolorTłaRysownicyToolStripMenuItem,
-            this.kolorWypełnieniaToolStripMenuItem});
-            this.koloryToolStripMenuItem.Name = "koloryToolStripMenuItem";
-            this.koloryToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.koloryToolStripMenuItem.Text = "Kolory";
-            // 
-            // atrybutyLiniiToolStripMenuItem
-            // 
-            this.atrybutyLiniiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.grubośćLiniiToolStripMenuItem,
-            this.stylLiniiToolStripMenuItem,
-            this.grotyRozpoczęciaLiniiToolStripMenuItem,
-            this.grotyZakończeniaLiniiToolStripMenuItem});
-            this.atrybutyLiniiToolStripMenuItem.Name = "atrybutyLiniiToolStripMenuItem";
-            this.atrybutyLiniiToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.atrybutyLiniiToolStripMenuItem.Text = "Styl linii";
-            // 
-            // atrybutyKreślonejCzcionkiToolStripMenuItem
-            // 
-            this.atrybutyKreślonejCzcionkiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.krójCzcionkiToolStripMenuItem,
-            this.rozmiarCzcionkiToolStripMenuItem,
-            this.kolorCzcionkiToolStripMenuItem});
-            this.atrybutyKreślonejCzcionkiToolStripMenuItem.Name = "atrybutyKreślonejCzcionkiToolStripMenuItem";
-            this.atrybutyKreślonejCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(161, 20);
-            this.atrybutyKreślonejCzcionkiToolStripMenuItem.Text = "Atrybuty kreślonej czcionki";
-            // 
             // zapiszaBitMapęWPlikuToolStripMenuItem
             // 
             this.zapiszaBitMapęWPlikuToolStripMenuItem.Name = "zapiszaBitMapęWPlikuToolStripMenuItem";
@@ -288,23 +258,44 @@
             this.restartProgramuToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.restartProgramuToolStripMenuItem.Text = "Restart programu";
             // 
+            // koloryToolStripMenuItem
+            // 
+            this.koloryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kolorLiniiToolStripMenuItem,
+            this.kolorTłaRysownicyToolStripMenuItem,
+            this.kolorWypełnieniaToolStripMenuItem});
+            this.koloryToolStripMenuItem.Name = "koloryToolStripMenuItem";
+            this.koloryToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.koloryToolStripMenuItem.Text = "Kolory";
+            // 
             // kolorLiniiToolStripMenuItem
             // 
             this.kolorLiniiToolStripMenuItem.Name = "kolorLiniiToolStripMenuItem";
-            this.kolorLiniiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kolorLiniiToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.kolorLiniiToolStripMenuItem.Text = "Kolor linii";
             // 
             // kolorTłaRysownicyToolStripMenuItem
             // 
             this.kolorTłaRysownicyToolStripMenuItem.Name = "kolorTłaRysownicyToolStripMenuItem";
-            this.kolorTłaRysownicyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kolorTłaRysownicyToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.kolorTłaRysownicyToolStripMenuItem.Text = "Kolor tła rysownicy";
             // 
             // kolorWypełnieniaToolStripMenuItem
             // 
             this.kolorWypełnieniaToolStripMenuItem.Name = "kolorWypełnieniaToolStripMenuItem";
-            this.kolorWypełnieniaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kolorWypełnieniaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.kolorWypełnieniaToolStripMenuItem.Text = "Kolor wypełnienia";
+            // 
+            // atrybutyLiniiToolStripMenuItem
+            // 
+            this.atrybutyLiniiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.grubośćLiniiToolStripMenuItem,
+            this.stylLiniiToolStripMenuItem,
+            this.grotyRozpoczęciaLiniiToolStripMenuItem,
+            this.grotyZakończeniaLiniiToolStripMenuItem});
+            this.atrybutyLiniiToolStripMenuItem.Name = "atrybutyLiniiToolStripMenuItem";
+            this.atrybutyLiniiToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.atrybutyLiniiToolStripMenuItem.Text = "Styl linii";
             // 
             // grubośćLiniiToolStripMenuItem
             // 
@@ -330,22 +321,32 @@
             this.grotyZakończeniaLiniiToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.grotyZakończeniaLiniiToolStripMenuItem.Text = "Groty zakończenia linii";
             // 
+            // atrybutyKreślonejCzcionkiToolStripMenuItem
+            // 
+            this.atrybutyKreślonejCzcionkiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.krójCzcionkiToolStripMenuItem,
+            this.rozmiarCzcionkiToolStripMenuItem,
+            this.kolorCzcionkiToolStripMenuItem});
+            this.atrybutyKreślonejCzcionkiToolStripMenuItem.Name = "atrybutyKreślonejCzcionkiToolStripMenuItem";
+            this.atrybutyKreślonejCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(161, 20);
+            this.atrybutyKreślonejCzcionkiToolStripMenuItem.Text = "Atrybuty kreślonej czcionki";
+            // 
             // krójCzcionkiToolStripMenuItem
             // 
             this.krójCzcionkiToolStripMenuItem.Name = "krójCzcionkiToolStripMenuItem";
-            this.krójCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.krójCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.krójCzcionkiToolStripMenuItem.Text = "Krój czcionki";
             // 
             // rozmiarCzcionkiToolStripMenuItem
             // 
             this.rozmiarCzcionkiToolStripMenuItem.Name = "rozmiarCzcionkiToolStripMenuItem";
-            this.rozmiarCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rozmiarCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.rozmiarCzcionkiToolStripMenuItem.Text = "Rozmiar czcionki";
             // 
             // kolorCzcionkiToolStripMenuItem
             // 
             this.kolorCzcionkiToolStripMenuItem.Name = "kolorCzcionkiToolStripMenuItem";
-            this.kolorCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kolorCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.kolorCzcionkiToolStripMenuItem.Text = "Kolor czcionki";
             // 
             // Projectowy_Radovskyi61986

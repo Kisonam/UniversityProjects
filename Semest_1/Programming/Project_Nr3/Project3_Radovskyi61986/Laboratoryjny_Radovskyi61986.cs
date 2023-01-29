@@ -20,12 +20,28 @@ namespace Project3_Radovskyi61986
         Pen Pióro;
         SolidBrush Pędzle;
         Point Punkt = Point.Empty;
+        const int MarginesFormularza = 10;
 
         public Laboratoryjny_Radovskyi61986()
         {
             InitializeComponent();
-
-
+            // lokalizacja i zwymiarowanie formularza 
+            // wyznaczęnie płożenia na ekranie lewego górnego narożnika formularza
+            this.Location = new Point(Screen.PrimaryScreen.Bounds.X + MarginesFormularza, Screen.PrimaryScreen.Bounds.Y + MarginesFormularza);
+            this.Width = (int)(Screen.PrimaryScreen.Bounds.Width * 0.9f);
+            this.Height = (int)(Screen.PrimaryScreen.Bounds.Height * 0.8f);
+            // "wumuszenie" uwzględnienia naszych ustawień przy tworzeniu egzemplarza formularza 
+            this.StartPosition = FormStartPosition.Manual;
+            // ustawienie innych atrybutów formularza
+            this.AutoScroll = true;
+            // lokalizacja i zwymiarowanie kontrolki PictureBox
+            pbRisownica.Location = new Point(this.Left + 2 * MarginesFormularza,
+                this.Top + 2 * MarginesFormularza);
+            pbRisownica.Width = (int)(this.Width * 0.7);
+            pbRisownica.Height = (int)(this.Height * 0.8);
+            // loalizacja kontenera GroupBox: gbWybórKrzywych
+            gbWybórKrzywych.Location = new Point(pbRisownica.Location.X + pbRisownica.Width + MarginesFormularza,
+                pbRisownica.Location.Y);
 
 
 
@@ -107,8 +123,6 @@ namespace Project3_Radovskyi61986
                     double KątMiędzWierzchołkamiWielokta = 360.0 / StopieńWielokąt;
                     double KątPołożeniaPierwszegoWierzchowka = 0.0;
                     //
-                    NumU.Enabled = false;
-                    //
                     Point[] WierzchołkiWielokąta = new Point[StopieńWielokąt];
                     for (int i = 0; i < StopieńWielokąt; i++)
                     {
@@ -116,6 +130,39 @@ namespace Project3_Radovskyi61986
                         WierzchołkiWielokąta[i].Y = LewyGórnyY - (int)(R * Math.Sin(Math.PI * (KątPołożeniaPierwszegoWierzchowka + i * KątMiędzWierzchołkamiWielokta) / 180.0));
                     }
                     Rysownica.DrawPolygon(Pióro,WierzchołkiWielokąta);
+                }
+                if (rdbWielokatWypelniony.Checked)
+                {
+                    ushort StopieńWielokąt = (ushort)NUD_WielokątWypelniony.Value;
+                    int R = Szerokość;
+                    double KątMiędzWierzchołkamiWielokta = 360.0 / StopieńWielokąt;
+                    double KątPołożeniaPierwszegoWierzchowka = 0.0;
+                    //
+                    Point[] WierzchołkiWielokąta = new Point[StopieńWielokąt];
+                    for (int i = 0; i < StopieńWielokąt; i++)
+                    {
+                        WierzchołkiWielokąta[i].X = LewyGórnyX + (int)(R * Math.Cos(Math.PI * (KątPołożeniaPierwszegoWierzchowka + i * KątMiędzWierzchołkamiWielokta) / 180.0));
+                        WierzchołkiWielokąta[i].Y = LewyGórnyY - (int)(R * Math.Sin(Math.PI * (KątPołożeniaPierwszegoWierzchowka + i * KątMiędzWierzchołkamiWielokta) / 180.0));
+                    }
+                    Rysownica.DrawPolygon(Pióro, WierzchołkiWielokąta);
+                    Rysownica.FillPolygon(Pędzle, WierzchołkiWielokąta);
+                }
+                //
+                if (rdbGwiazdaWieloramienna.Checked)
+                {
+                    Point[] p = new Point[8];
+                    p[0] = new Point(0, 50);
+                    p[1] = new Point(40, 40);
+                    p[2] = new Point(50, 0);
+                    p[3] = new Point(60, 40);
+                    p[4] = new Point(100, 50);
+                    p[5] = new Point(60, 60);
+                    p[6] = new Point(50, 100);
+                    p[7] = new Point(40, 60);
+                    GraphicsPath gp = new GraphicsPath();
+                    gp.AddPolygon(p);
+                    Region r = new Region(gp);
+                    Rysownica.FillRegion(Brushes.BlueViolet, r);
                 }
 
                 // 
@@ -131,6 +178,39 @@ namespace Project3_Radovskyi61986
                     Point WierzchołekPrawyDolny = new Point(LewyGórnyX + Szerokość,
                                                             LewyGórnyY + Wysokość);
                     WykreślTrójkąSierpińskiego(Rysownica, PoziomRecurencji, KolorWypełnienia, WierzchołekGórny, WierzchołekLewyDolny, WierzchołekPrawyDolny);
+                }
+                if (rdbFraktal.Checked)
+                {
+                    for (int x = 0; x < 400; x++)
+                    {
+                        for (int y = 0; y < 400; y++)
+                        {
+                            double zx, zy, cX, cY, x1, y1;
+                            zx = zy = 0;
+                            cX = (x - 200) / 200.0;
+                            cY = (y - 200) / 200.0;
+                            int iteration = 0;
+                            int max_iteration = 100;
+
+                            while (zx * zx + zy * zy < 4 && iteration < max_iteration)
+                            {
+                                x1 = zx * zx - zy * zy + cX;
+                                y1 = 2 * zx * zy + cY;
+                                zx = x1;
+                                zy = y1;
+                                iteration = iteration + 1;
+                            }
+
+                            if (iteration == max_iteration)
+                            {
+                                Rysownica.DrawRectangle(Pens.Black, x, y, 1, 1);
+                            }
+                            else
+                            {
+                                Rysownica.DrawRectangle(Pens.Gray, x, y, 1, 1);
+                            }
+                        }
+                    }
                 }
             }
             pbRisownica.Refresh();
@@ -183,9 +263,24 @@ namespace Project3_Radovskyi61986
                     // wykreślenie wielokąta na powierzcni tymczasowej
                     RysownicaTymczasowa.DrawPolygon(PióroTymczasowe, WierchołkiWielokąta);
                 }
+                if (rdbWielokatWypelniony.Checked)
+                {
+                    ushort StopieńWielokąt = (ushort)NUD_WielokątWypelniony.Value;
+                    int R = Szerokość;
+                    double KątMiędzWierzchołkamiWielokta = 360.0 / StopieńWielokąt;
+                    double KątPołożeniaPierwszegoWierzchowka = 0.0;
+                    //
+                    Point[] WierzchołkiWielokąta = new Point[StopieńWielokąt];
+                    for (int i = 0; i < StopieńWielokąt; i++)
+                    {
+                        WierzchołkiWielokąta[i].X = LewyGórnyX + (int)(R * Math.Cos(Math.PI * (KątPołożeniaPierwszegoWierzchowka + i * KątMiędzWierzchołkamiWielokta) / 180.0));
+                        WierzchołkiWielokąta[i].Y = LewyGórnyY - (int)(R * Math.Sin(Math.PI * (KątPołożeniaPierwszegoWierzchowka + i * KątMiędzWierzchołkamiWielokta) / 180.0));
+                    }
+                    RysownicaTymczasowa.DrawPolygon(PióroTymczasowe, WierzchołkiWielokąta);
+                }
                 if (rdbTrójkąSierpińskiego.Checked)
                 {
-                    int PoziomRecurencji = (int)NumUD_Rekwencja.Value;
+                    int PoziomRecurencji = (int)NumUD_Rekwencja.Value;  
                     Color KolorWypełnienia = btnColor.BackColor;
                     //
                     Point WierzchołekGórny = new Point(LewyGórnyX + Szerokość / 2,
@@ -318,5 +413,33 @@ namespace Project3_Radovskyi61986
             }
         }
 
+        private void rdbWielokatWypelniony_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbWielokatWypelniony.Checked)
+            {
+                MessageBox.Show("Wykreślenie wielokąta wypełnionego foremnego wymaga podania stopnia wielokąta, czyli liczby katów wielokata (minimalny stopień wielokąta jest równy 3)", "Wykreślanie wielokąta foremnego", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lblLiczbaWyp.Visible = true;
+                NUD_WielokątWypelniony.Visible = true;
+                NUD_WielokątWypelniony.Enabled = true;
+                NUD_WielokątWypelniony.Minimum = 3;
+            }
+
+            else
+            {
+                lblLiczbaWyp.Visible = false;
+                NUD_WielokątWypelniony.Visible = false;
+            }
+
+        }
+
+        private void rdbGwiazdaWieloramienna_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void rdbFraktal_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

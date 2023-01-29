@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.pbRisownica = new System.Windows.Forms.PictureBox();
             this.gbWybórKrzywych = new System.Windows.Forms.GroupBox();
+            this.NUD_WielokątWypelniony = new System.Windows.Forms.NumericUpDown();
+            this.lblLiczbaWyp = new System.Windows.Forms.Label();
             this.btnColor = new System.Windows.Forms.Button();
             this.NumUD_Rekwencja = new System.Windows.Forms.NumericUpDown();
             this.lblRekwęcja = new System.Windows.Forms.Label();
@@ -47,8 +49,11 @@
             this.lblX = new System.Windows.Forms.Label();
             this.lblY = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.rdDywanSierpińskiego = new System.Windows.Forms.RadioButton();
+            this.rdbFraktal = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbRisownica)).BeginInit();
             this.gbWybórKrzywych.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_WielokątWypelniony)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumUD_Rekwencja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumU)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +72,10 @@
             // 
             // gbWybórKrzywych
             // 
+            this.gbWybórKrzywych.Controls.Add(this.rdbFraktal);
+            this.gbWybórKrzywych.Controls.Add(this.rdDywanSierpińskiego);
+            this.gbWybórKrzywych.Controls.Add(this.NUD_WielokątWypelniony);
+            this.gbWybórKrzywych.Controls.Add(this.lblLiczbaWyp);
             this.gbWybórKrzywych.Controls.Add(this.btnColor);
             this.gbWybórKrzywych.Controls.Add(this.NumUD_Rekwencja);
             this.gbWybórKrzywych.Controls.Add(this.lblRekwęcja);
@@ -87,9 +96,27 @@
             this.gbWybórKrzywych.TabStop = false;
             this.gbWybórKrzywych.Text = "Wybierz (zaznacz) krzywą geometryczną";
             // 
+            // NUD_WielokątWypelniony
+            // 
+            this.NUD_WielokątWypelniony.Location = new System.Drawing.Point(223, 181);
+            this.NUD_WielokątWypelniony.Name = "NUD_WielokątWypelniony";
+            this.NUD_WielokątWypelniony.Size = new System.Drawing.Size(120, 26);
+            this.NUD_WielokątWypelniony.TabIndex = 12;
+            this.NUD_WielokątWypelniony.Visible = false;
+            // 
+            // lblLiczbaWyp
+            // 
+            this.lblLiczbaWyp.AutoSize = true;
+            this.lblLiczbaWyp.Location = new System.Drawing.Point(232, 159);
+            this.lblLiczbaWyp.Name = "lblLiczbaWyp";
+            this.lblLiczbaWyp.Size = new System.Drawing.Size(101, 19);
+            this.lblLiczbaWyp.TabIndex = 11;
+            this.lblLiczbaWyp.Text = "Liczba kontrol";
+            this.lblLiczbaWyp.Visible = false;
+            // 
             // btnColor
             // 
-            this.btnColor.Location = new System.Drawing.Point(236, 276);
+            this.btnColor.Location = new System.Drawing.Point(240, 264);
             this.btnColor.Name = "btnColor";
             this.btnColor.Size = new System.Drawing.Size(75, 23);
             this.btnColor.TabIndex = 10;
@@ -100,7 +127,7 @@
             // 
             // NumUD_Rekwencja
             // 
-            this.NumUD_Rekwencja.Location = new System.Drawing.Point(223, 244);
+            this.NumUD_Rekwencja.Location = new System.Drawing.Point(227, 232);
             this.NumUD_Rekwencja.Name = "NumUD_Rekwencja";
             this.NumUD_Rekwencja.Size = new System.Drawing.Size(120, 26);
             this.NumUD_Rekwencja.TabIndex = 9;
@@ -110,7 +137,7 @@
             // lblRekwęcja
             // 
             this.lblRekwęcja.AutoSize = true;
-            this.lblRekwęcja.Location = new System.Drawing.Point(251, 222);
+            this.lblRekwęcja.Location = new System.Drawing.Point(244, 210);
             this.lblRekwęcja.Name = "lblRekwęcja";
             this.lblRekwęcja.Size = new System.Drawing.Size(71, 19);
             this.lblRekwęcja.TabIndex = 8;
@@ -131,10 +158,11 @@
             // 
             // NumU
             // 
-            this.NumU.Location = new System.Drawing.Point(223, 176);
+            this.NumU.Location = new System.Drawing.Point(223, 130);
             this.NumU.Name = "NumU";
             this.NumU.Size = new System.Drawing.Size(120, 26);
             this.NumU.TabIndex = 6;
+            this.NumU.Visible = false;
             // 
             // rdbGwiazdaWieloramienna
             // 
@@ -146,15 +174,17 @@
             this.rdbGwiazdaWieloramienna.TabStop = true;
             this.rdbGwiazdaWieloramienna.Text = "Gwiazda Wieloramienna\r\n";
             this.rdbGwiazdaWieloramienna.UseVisualStyleBackColor = true;
+            this.rdbGwiazdaWieloramienna.CheckedChanged += new System.EventHandler(this.rdbGwiazdaWieloramienna_CheckedChanged);
             // 
             // lblLiczba
             // 
             this.lblLiczba.AutoSize = true;
-            this.lblLiczba.Location = new System.Drawing.Point(232, 154);
+            this.lblLiczba.Location = new System.Drawing.Point(232, 108);
             this.lblLiczba.Name = "lblLiczba";
             this.lblLiczba.Size = new System.Drawing.Size(101, 19);
             this.lblLiczba.TabIndex = 5;
             this.lblLiczba.Text = "Liczba kontrol";
+            this.lblLiczba.Visible = false;
             // 
             // rdbWielokatWypelniony
             // 
@@ -166,6 +196,7 @@
             this.rdbWielokatWypelniony.TabStop = true;
             this.rdbWielokatWypelniony.Text = "Wielokąt wypelniony";
             this.rdbWielokatWypelniony.UseVisualStyleBackColor = true;
+            this.rdbWielokatWypelniony.CheckedChanged += new System.EventHandler(this.rdbWielokatWypelniony_CheckedChanged);
             // 
             // rdbWielokatForemny
             // 
@@ -247,6 +278,29 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // rdDywanSierpińskiego
+            // 
+            this.rdDywanSierpińskiego.AutoSize = true;
+            this.rdDywanSierpińskiego.Location = new System.Drawing.Point(7, 263);
+            this.rdDywanSierpińskiego.Name = "rdDywanSierpińskiego";
+            this.rdDywanSierpińskiego.Size = new System.Drawing.Size(162, 23);
+            this.rdDywanSierpińskiego.TabIndex = 13;
+            this.rdDywanSierpińskiego.TabStop = true;
+            this.rdDywanSierpińskiego.Text = "Dywan Sierpińskiego";
+            this.rdDywanSierpińskiego.UseVisualStyleBackColor = true;
+            // 
+            // rdbFraktal
+            // 
+            this.rdbFraktal.AutoSize = true;
+            this.rdbFraktal.Location = new System.Drawing.Point(7, 292);
+            this.rdbFraktal.Name = "rdbFraktal";
+            this.rdbFraktal.Size = new System.Drawing.Size(76, 23);
+            this.rdbFraktal.TabIndex = 14;
+            this.rdbFraktal.TabStop = true;
+            this.rdbFraktal.Text = "Fraktal";
+            this.rdbFraktal.UseVisualStyleBackColor = true;
+            this.rdbFraktal.CheckedChanged += new System.EventHandler(this.rdbFraktal_CheckedChanged);
+            // 
             // Laboratoryjny_Radovskyi61986
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,6 +317,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRisownica)).EndInit();
             this.gbWybórKrzywych.ResumeLayout(false);
             this.gbWybórKrzywych.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_WielokątWypelniony)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumUD_Rekwencja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumU)).EndInit();
             this.ResumeLayout(false);
@@ -290,5 +345,9 @@
         private System.Windows.Forms.NumericUpDown NumUD_Rekwencja;
         private System.Windows.Forms.Label lblRekwęcja;
         private System.Windows.Forms.RadioButton rdbTrójkąSierpińskiego;
+        private System.Windows.Forms.NumericUpDown NUD_WielokątWypelniony;
+        private System.Windows.Forms.Label lblLiczbaWyp;
+        private System.Windows.Forms.RadioButton rdbFraktal;
+        private System.Windows.Forms.RadioButton rdDywanSierpińskiego;
     }
 }
