@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.pbRisownica = new System.Windows.Forms.PictureBox();
             this.gbWybórKrzywych = new System.Windows.Forms.GroupBox();
+            this.rdbFraktal = new System.Windows.Forms.RadioButton();
+            this.rdDywanSierpińskiego = new System.Windows.Forms.RadioButton();
             this.NUD_WielokątWypelniony = new System.Windows.Forms.NumericUpDown();
             this.lblLiczbaWyp = new System.Windows.Forms.Label();
             this.btnColor = new System.Windows.Forms.Button();
@@ -49,8 +51,6 @@
             this.lblX = new System.Windows.Forms.Label();
             this.lblY = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.rdDywanSierpińskiego = new System.Windows.Forms.RadioButton();
-            this.rdbFraktal = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbRisownica)).BeginInit();
             this.gbWybórKrzywych.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_WielokątWypelniony)).BeginInit();
@@ -95,6 +95,29 @@
             this.gbWybórKrzywych.TabIndex = 1;
             this.gbWybórKrzywych.TabStop = false;
             this.gbWybórKrzywych.Text = "Wybierz (zaznacz) krzywą geometryczną";
+            // 
+            // rdbFraktal
+            // 
+            this.rdbFraktal.AutoSize = true;
+            this.rdbFraktal.Location = new System.Drawing.Point(7, 292);
+            this.rdbFraktal.Name = "rdbFraktal";
+            this.rdbFraktal.Size = new System.Drawing.Size(76, 23);
+            this.rdbFraktal.TabIndex = 14;
+            this.rdbFraktal.TabStop = true;
+            this.rdbFraktal.Text = "Fraktal";
+            this.rdbFraktal.UseVisualStyleBackColor = true;
+            this.rdbFraktal.CheckedChanged += new System.EventHandler(this.rdbFraktal_CheckedChanged);
+            // 
+            // rdDywanSierpińskiego
+            // 
+            this.rdDywanSierpińskiego.AutoSize = true;
+            this.rdDywanSierpińskiego.Location = new System.Drawing.Point(7, 263);
+            this.rdDywanSierpińskiego.Name = "rdDywanSierpińskiego";
+            this.rdDywanSierpińskiego.Size = new System.Drawing.Size(162, 23);
+            this.rdDywanSierpińskiego.TabIndex = 13;
+            this.rdDywanSierpińskiego.TabStop = true;
+            this.rdDywanSierpińskiego.Text = "Dywan Sierpińskiego";
+            this.rdDywanSierpińskiego.UseVisualStyleBackColor = true;
             // 
             // NUD_WielokątWypelniony
             // 
@@ -278,29 +301,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // rdDywanSierpińskiego
-            // 
-            this.rdDywanSierpińskiego.AutoSize = true;
-            this.rdDywanSierpińskiego.Location = new System.Drawing.Point(7, 263);
-            this.rdDywanSierpińskiego.Name = "rdDywanSierpińskiego";
-            this.rdDywanSierpińskiego.Size = new System.Drawing.Size(162, 23);
-            this.rdDywanSierpińskiego.TabIndex = 13;
-            this.rdDywanSierpińskiego.TabStop = true;
-            this.rdDywanSierpińskiego.Text = "Dywan Sierpińskiego";
-            this.rdDywanSierpińskiego.UseVisualStyleBackColor = true;
-            // 
-            // rdbFraktal
-            // 
-            this.rdbFraktal.AutoSize = true;
-            this.rdbFraktal.Location = new System.Drawing.Point(7, 292);
-            this.rdbFraktal.Name = "rdbFraktal";
-            this.rdbFraktal.Size = new System.Drawing.Size(76, 23);
-            this.rdbFraktal.TabIndex = 14;
-            this.rdbFraktal.TabStop = true;
-            this.rdbFraktal.Text = "Fraktal";
-            this.rdbFraktal.UseVisualStyleBackColor = true;
-            this.rdbFraktal.CheckedChanged += new System.EventHandler(this.rdbFraktal_CheckedChanged);
-            // 
             // Laboratoryjny_Radovskyi61986
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,7 +312,7 @@
             this.Controls.Add(this.gbWybórKrzywych);
             this.Controls.Add(this.pbRisownica);
             this.Name = "Laboratoryjny_Radovskyi61986";
-            this.Text = "Laboratoryjny";
+            this.Text = "Laboratoryjny_Radovskyi61986";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Laboratoryjny_Radovskyi61986_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pbRisownica)).EndInit();
             this.gbWybórKrzywych.ResumeLayout(false);
