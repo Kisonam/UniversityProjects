@@ -75,6 +75,7 @@
             this.Name = "Kokpit_Radovskyi61986";
             this.Text = "Kokpit_Radovskyi61986";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Kokpit_Radovskyi61986_FormClosing);
+            this.Load += new System.EventHandler(this.Kokpit_Radovskyi61986_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

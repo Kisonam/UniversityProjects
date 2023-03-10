@@ -39,6 +39,11 @@ namespace ProjectNr1_Radovskyi61986
         private void Kokpit_Radovskyi61986_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.ExitThread();
+        }   
+
+        private void Kokpit_Radovskyi61986_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
