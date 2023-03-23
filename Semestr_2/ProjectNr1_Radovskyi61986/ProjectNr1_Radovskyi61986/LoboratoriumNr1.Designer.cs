@@ -38,9 +38,9 @@
             this.lblH = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtXd = new System.Windows.Forms.TextBox();
+            this.txtXg = new System.Windows.Forms.TextBox();
+            this.txtH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -49,10 +49,11 @@
             this.atrybutyLiniiTonuIObiektuAnimowanegoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kształtObiektuAnimowanegoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnWizualizacjaTabeleryczna
@@ -84,6 +85,7 @@
             this.btnAnimacja.TabIndex = 2;
             this.btnAnimacja.Text = "Animacja po linii toru\r\n(wyznaczonej przez \r\nszereg potęgowy)";
             this.btnAnimacja.UseVisualStyleBackColor = true;
+            this.btnAnimacja.Click += new System.EventHandler(this.btnAnimacja_Click);
             // 
             // btnResetuj
             // 
@@ -142,26 +144,26 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Zmiana prękości animacji";
             // 
-            // textBox1
+            // txtXd
             // 
-            this.textBox1.Location = new System.Drawing.Point(327, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(71, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtXd.Location = new System.Drawing.Point(327, 47);
+            this.txtXd.Name = "txtXd";
+            this.txtXd.Size = new System.Drawing.Size(71, 20);
+            this.txtXd.TabIndex = 9;
             // 
-            // textBox2
+            // txtXg
             // 
-            this.textBox2.Location = new System.Drawing.Point(440, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(71, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtXg.Location = new System.Drawing.Point(440, 47);
+            this.txtXg.Name = "txtXg";
+            this.txtXg.Size = new System.Drawing.Size(71, 20);
+            this.txtXg.TabIndex = 10;
             // 
-            // textBox3
+            // txtH
             // 
-            this.textBox3.Location = new System.Drawing.Point(632, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(79, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtH.Location = new System.Drawing.Point(632, 47);
+            this.txtH.Name = "txtH";
+            this.txtH.Size = new System.Drawing.Size(79, 20);
+            this.txtH.TabIndex = 11;
             // 
             // label1
             // 
@@ -223,24 +225,20 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // dateTimePicker1
+            // errorProvider1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(603, 310);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(8, 20);
-            this.dateTimePicker1.TabIndex = 15;
+            this.errorProvider1.ContainerControl = this;
             // 
             // LoboratoriumNr1_Raovskyi61986
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1244, 629);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtH);
+            this.Controls.Add(this.txtXg);
+            this.Controls.Add(this.txtXd);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.lblH);
@@ -260,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,9 +275,9 @@
         private System.Windows.Forms.Label lblH;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtXd;
+        private System.Windows.Forms.TextBox txtXg;
+        private System.Windows.Forms.TextBox txtH;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -287,6 +286,6 @@
         private System.Windows.Forms.ToolStripMenuItem atrybutyLiniiTonuIObiektuAnimowanegoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kształtObiektuAnimowanegoToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

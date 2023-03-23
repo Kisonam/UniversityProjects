@@ -14,9 +14,12 @@ namespace ProjectNr1_Radovskyi61986
     {
         const int Margines = 10;
         const int PromienObiekty = 5;
+        const float DGprzedziałuX = float.MaxValue;
+        const float GGprzedziałuX = float.MinValue;
+
         // deklaracje pomocnicza
         static LoboratoriumNr1_Raovskyi61986 UchwytFormularza;
-        float Xd, Xg;
+        float Xd, Xg, h;
         //
         float[,] TWS = null;
         int IndexPOA;
@@ -85,9 +88,71 @@ namespace ProjectNr1_Radovskyi61986
                    PrzeliczanieWsprznych.WspX(TWS[j + 1, 0]),
                    PrzeliczanieWsprznych.WspX(TWS[j + 1, 1]));
             }
-            Rysownica.FillEllipse(Brushes.Yellow, PrzeliczanieWsprznych.WspX(TWS[IndexPOA, 0]) - PromienObiekty, PrzeliczanieWsprznych.WspX(TWS[IndexPOA, 1]) - PromienObiekty, 2 * PromienObiekty, PromienObiekty);
+            Rysownica.FillEllipse(Brushes.Yellow, PrzeliczanieWsprznych.WspX(TWS[IndexPOA, 0]) - PromienObiekty, PrzeliczanieWsprznych.WspX(TWS[IndexPOA, 1]) - PromienObiekty, 2 * PromienObiekty, 2 * PromienObiekty);
         }
 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        bool PobirzDaneWejściowe(out float Xd, out float Xg, out float h)
+        {
+            Xd = Xg = h = 0;
+            if (!float.TryParse(txtXd.Text, out Xd))
+            {
+                errorProvider1.SetError(txtXd, "Error: wystąpił znak");
+                return false;
+            }
+
+            if ((Xd < DGprzedziałuX) || (Xd > GGprzedziałuX))
+            {
+                return false;
+            }
+            if (!float.TryParse(txtXg.Text, out Xg))
+            {
+                errorProvider1.SetError(txtXd, "Error: wystąpił znak");
+                return false;
+            }
+            if (Xd > Xg)
+            {
+                errorProvider1.SetError(txtXg, "ERROR");
+                return false;
+            }
+            if (!float.TryParse(txtH.Text,out h))
+            {
+                errorProvider1.SetError(txtH, "");
+                return false;
+            }
+            if ((h <= 0.0f) || (h > 1.0f))
+            {
+                errorProvider1.SetError(txtH, "");
+                return false;
+            }
+
+
+            return true;
+        }
+        private void btnAnimacja_Click(object sender, EventArgs e)
+        {
+            ushort LiczbaPrzedziałówH;
+            errorProvider1.Dispose();
+            if (!PobirzDaneWejściowe(out Xd, out Xg, out h))
+            {
+                return;
+            }
+            LiczbaPrzedziałówH = (ushort)((Xg - Xd) / h + 1);
+
+            TWS = new float[LiczbaPrzedziałówH, 2];
+            TablicowanieSzeregu(TWS,Xd,Xg,h);
+            IndexPOA = 0;
+            MaxIndexPOA= TWS.GetLength(0);
+            timer1.Enabled = true;
+        }
+
+        void TablicowanieSzeregu(float[,] TWS, float Xd, float Xg, float h)
+        {
+
+        }
         public static class PrzeliczanieWsprznych 
         {
             static float Sx, Sy;
