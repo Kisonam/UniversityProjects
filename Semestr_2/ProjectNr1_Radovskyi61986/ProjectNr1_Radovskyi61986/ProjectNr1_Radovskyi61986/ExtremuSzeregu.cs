@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjectNr1_Radovskyi61986
+﻿namespace ProjectNr1_Radovskyi61986
 {
-    internal static class ExtremuSzeregu
+    public static class ExtremuSzeregu
     {
         public static float MinSx(float[ , ] TWS)
         { // deklaracje pomocnicza

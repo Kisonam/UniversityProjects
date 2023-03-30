@@ -73,5 +73,26 @@ namespace ProjectNr1_Radovskyi61986
         {
 
         }
+
+        private void ProjectowyNr1_Click(object sender, EventArgs e)
+        {
+            /* sprawdzanie, czy był już utworzony egzemolarza formularza
+             LaboratoriumNr1*/
+            foreach (Form Formularz in Application.OpenForms)
+            {
+                // sprwdzenie,czy to jest formularz LaboratoriumNr1
+                if (Formularz.Name == "ProjectowyNr1_Radovskiy61986")
+                { // ukrycie bieżącego (to będzie główny) formularza
+                    this.Hide();
+                    // odsłonięcie formularza znalezionego
+                    Formularz.Show();
+                    // bezwarunkowe zakończenie obsługi zdarzenia Click
+                    return;
+                }
+            }
+            ProjectowyNr1_Radovskiy61986 Project = new ProjectowyNr1_Radovskiy61986();
+            Project.Show();
+            this.Hide();
+        }
     }
 }

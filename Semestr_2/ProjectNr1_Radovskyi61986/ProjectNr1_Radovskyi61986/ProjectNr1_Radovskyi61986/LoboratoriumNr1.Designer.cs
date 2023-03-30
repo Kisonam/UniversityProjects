@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnWizualizacjaTabeleryczna = new System.Windows.Forms.Button();
-            this.btnWizualizacjaGraficzna = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnAnimacja = new System.Windows.Forms.Button();
             this.btnResetuj = new System.Windows.Forms.Button();
             this.lblXd = new System.Windows.Forms.Label();
@@ -37,60 +39,63 @@
             this.lblH = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtXd = new System.Windows.Forms.TextBox();
+            this.txtXg = new System.Windows.Forms.TextBox();
+            this.txtH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnWizualizacjaGraficzna = new System.Windows.Forms.Button();
+            this.btnWizualizacjaTabeleryczna = new System.Windows.Forms.Button();
+            this.chtWykresSzeregu = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.dgvTWS = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.koloryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.atrybutyLiniiTonuIObiektuAnimowanegoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kształtObiektuAnimowanegoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.liniaToruToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grubośćLiniiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stylLiniiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kolorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.liniaKreskowaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.liniaKreskowaKrapkowaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.liniaKreskowaKrapkowaKrapkowaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.liniaKrapkowaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agłasolidToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtWykresSzeregu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTWS)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnWizualizacjaTabeleryczna
-            // 
-            this.btnWizualizacjaTabeleryczna.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnWizualizacjaTabeleryczna.Location = new System.Drawing.Point(979, 206);
-            this.btnWizualizacjaTabeleryczna.Name = "btnWizualizacjaTabeleryczna";
-            this.btnWizualizacjaTabeleryczna.Size = new System.Drawing.Size(263, 88);
-            this.btnWizualizacjaTabeleryczna.TabIndex = 0;
-            this.btnWizualizacjaTabeleryczna.Text = "Wizualizacja tabeleryczna\r\nzmian wartości szeregu potęgowego";
-            this.btnWizualizacjaTabeleryczna.UseVisualStyleBackColor = true;
-            // 
-            // btnWizualizacjaGraficzna
-            // 
-            this.btnWizualizacjaGraficzna.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnWizualizacjaGraficzna.Location = new System.Drawing.Point(979, 300);
-            this.btnWizualizacjaGraficzna.Name = "btnWizualizacjaGraficzna";
-            this.btnWizualizacjaGraficzna.Size = new System.Drawing.Size(263, 88);
-            this.btnWizualizacjaGraficzna.TabIndex = 1;
-            this.btnWizualizacjaGraficzna.Text = "Wizualizacja graficzna\r\nzmian wartości szeregu potęgowego";
-            this.btnWizualizacjaGraficzna.UseVisualStyleBackColor = true;
             // 
             // btnAnimacja
             // 
             this.btnAnimacja.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAnimacja.Location = new System.Drawing.Point(979, 394);
+            this.btnAnimacja.Location = new System.Drawing.Point(1132, 331);
             this.btnAnimacja.Name = "btnAnimacja";
             this.btnAnimacja.Size = new System.Drawing.Size(263, 88);
             this.btnAnimacja.TabIndex = 2;
             this.btnAnimacja.Text = "Animacja po linii toru\r\n(wyznaczonej przez \r\nszereg potęgowy)";
             this.btnAnimacja.UseVisualStyleBackColor = true;
+            this.btnAnimacja.Click += new System.EventHandler(this.btnAnimacja_Click);
             // 
             // btnResetuj
             // 
             this.btnResetuj.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnResetuj.Location = new System.Drawing.Point(979, 488);
+            this.btnResetuj.Location = new System.Drawing.Point(1132, 425);
             this.btnResetuj.Name = "btnResetuj";
             this.btnResetuj.Size = new System.Drawing.Size(263, 88);
             this.btnResetuj.TabIndex = 3;
             this.btnResetuj.Text = "Resetuj";
             this.btnResetuj.UseVisualStyleBackColor = true;
+            this.btnResetuj.Click += new System.EventHandler(this.btnResetuj_Click);
             // 
             // lblXd
             // 
@@ -124,41 +129,46 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(969, 102);
+            this.trackBar1.Location = new System.Drawing.Point(1132, 89);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Minimum = 10;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(263, 45);
             this.trackBar1.TabIndex = 7;
+            this.trackBar1.TickFrequency = 30;
+            this.trackBar1.Value = 10;
+            this.trackBar1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBar1_MouseUp);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(975, 67);
+            this.label4.Location = new System.Drawing.Point(1138, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(178, 19);
             this.label4.TabIndex = 8;
             this.label4.Text = "Zmiana prękości animacji";
             // 
-            // textBox1
+            // txtXd
             // 
-            this.textBox1.Location = new System.Drawing.Point(327, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(71, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtXd.Location = new System.Drawing.Point(327, 47);
+            this.txtXd.Name = "txtXd";
+            this.txtXd.Size = new System.Drawing.Size(71, 20);
+            this.txtXd.TabIndex = 9;
             // 
-            // textBox2
+            // txtXg
             // 
-            this.textBox2.Location = new System.Drawing.Point(440, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(71, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtXg.Location = new System.Drawing.Point(440, 47);
+            this.txtXg.Name = "txtXg";
+            this.txtXg.Size = new System.Drawing.Size(71, 20);
+            this.txtXg.TabIndex = 10;
             // 
-            // textBox3
+            // txtH
             // 
-            this.textBox3.Location = new System.Drawing.Point(632, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(79, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtH.Location = new System.Drawing.Point(632, 47);
+            this.txtH.Name = "txtH";
+            this.txtH.Size = new System.Drawing.Size(79, 20);
+            this.txtH.TabIndex = 11;
             // 
             // label1
             // 
@@ -174,57 +184,217 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(39, 117);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(924, 459);
+            this.pictureBox1.Size = new System.Drawing.Size(1076, 736);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // btnWizualizacjaGraficzna
+            // 
+            this.btnWizualizacjaGraficzna.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnWizualizacjaGraficzna.Location = new System.Drawing.Point(1132, 234);
+            this.btnWizualizacjaGraficzna.Name = "btnWizualizacjaGraficzna";
+            this.btnWizualizacjaGraficzna.Size = new System.Drawing.Size(263, 88);
+            this.btnWizualizacjaGraficzna.TabIndex = 18;
+            this.btnWizualizacjaGraficzna.Text = "Wizualizacja graficzna\r\nzmian wartości szeregu potęgowego";
+            this.btnWizualizacjaGraficzna.UseVisualStyleBackColor = true;
+            this.btnWizualizacjaGraficzna.Click += new System.EventHandler(this.btnWizualizacjaGraficzna_Click);
+            // 
+            // btnWizualizacjaTabeleryczna
+            // 
+            this.btnWizualizacjaTabeleryczna.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnWizualizacjaTabeleryczna.Location = new System.Drawing.Point(1132, 140);
+            this.btnWizualizacjaTabeleryczna.Name = "btnWizualizacjaTabeleryczna";
+            this.btnWizualizacjaTabeleryczna.Size = new System.Drawing.Size(263, 88);
+            this.btnWizualizacjaTabeleryczna.TabIndex = 17;
+            this.btnWizualizacjaTabeleryczna.Text = "Wizualizacja tabeleryczna\r\nzmian wartości szeregu potęgowego";
+            this.btnWizualizacjaTabeleryczna.UseVisualStyleBackColor = true;
+            this.btnWizualizacjaTabeleryczna.Click += new System.EventHandler(this.btnWizualizacjaTabeleryczna_Click);
+            // 
+            // chtWykresSzeregu
+            // 
+            chartArea17.Name = "ChartArea1";
+            this.chtWykresSzeregu.ChartAreas.Add(chartArea17);
+            legend17.Name = "Legend1";
+            this.chtWykresSzeregu.Legends.Add(legend17);
+            this.chtWykresSzeregu.Location = new System.Drawing.Point(39, 117);
+            this.chtWykresSzeregu.Name = "chtWykresSzeregu";
+            series17.ChartArea = "ChartArea1";
+            series17.Legend = "Legend1";
+            series17.Name = "Series1";
+            this.chtWykresSzeregu.Series.Add(series17);
+            this.chtWykresSzeregu.Size = new System.Drawing.Size(1076, 736);
+            this.chtWykresSzeregu.TabIndex = 19;
+            this.chtWykresSzeregu.Text = "chart1";
+            this.chtWykresSzeregu.Visible = false;
+            // 
+            // dgvTWS
+            // 
+            this.dgvTWS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTWS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.dgvTWS.Location = new System.Drawing.Point(39, 117);
+            this.dgvTWS.Name = "dgvTWS";
+            this.dgvTWS.Size = new System.Drawing.Size(1076, 753);
+            this.dgvTWS.TabIndex = 20;
+            this.dgvTWS.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Xg";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 300;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Xd";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 300;
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.plikToolStripMenuItem,
-            this.koloryToolStripMenuItem,
-            this.atrybutyLiniiTonuIObiektuAnimowanegoToolStripMenuItem,
-            this.kształtObiektuAnimowanegoToolStripMenuItem});
+            this.liniaToruToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1244, 24);
-            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Size = new System.Drawing.Size(1417, 24);
+            this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // plikToolStripMenuItem
+            // liniaToruToolStripMenuItem
             // 
-            this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
-            this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.plikToolStripMenuItem.Text = "Plik";
+            this.liniaToruToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.grubośćLiniiToolStripMenuItem,
+            this.stylLiniiToolStripMenuItem,
+            this.kolorToolStripMenuItem});
+            this.liniaToruToolStripMenuItem.Name = "liniaToruToolStripMenuItem";
+            this.liniaToruToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.liniaToruToolStripMenuItem.Text = "Linia toru";
             // 
-            // koloryToolStripMenuItem
+            // grubośćLiniiToolStripMenuItem
             // 
-            this.koloryToolStripMenuItem.Name = "koloryToolStripMenuItem";
-            this.koloryToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.koloryToolStripMenuItem.Text = "Kolory";
+            this.grubośćLiniiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5,
+            this.toolStripMenuItem6});
+            this.grubośćLiniiToolStripMenuItem.Name = "grubośćLiniiToolStripMenuItem";
+            this.grubośćLiniiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.grubośćLiniiToolStripMenuItem.Text = "Grubość linii";
             // 
-            // atrybutyLiniiTonuIObiektuAnimowanegoToolStripMenuItem
+            // stylLiniiToolStripMenuItem
             // 
-            this.atrybutyLiniiTonuIObiektuAnimowanegoToolStripMenuItem.Name = "atrybutyLiniiTonuIObiektuAnimowanegoToolStripMenuItem";
-            this.atrybutyLiniiTonuIObiektuAnimowanegoToolStripMenuItem.Size = new System.Drawing.Size(243, 20);
-            this.atrybutyLiniiTonuIObiektuAnimowanegoToolStripMenuItem.Text = "Atrybuty linii tonu i obiektu animowanego";
+            this.stylLiniiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.liniaKreskowaToolStripMenuItem,
+            this.liniaKreskowaKrapkowaToolStripMenuItem,
+            this.liniaKreskowaKrapkowaKrapkowaToolStripMenuItem,
+            this.liniaKrapkowaToolStripMenuItem,
+            this.agłasolidToolStripMenuItem});
+            this.stylLiniiToolStripMenuItem.Name = "stylLiniiToolStripMenuItem";
+            this.stylLiniiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stylLiniiToolStripMenuItem.Text = "Styl linii";
             // 
-            // kształtObiektuAnimowanegoToolStripMenuItem
+            // kolorToolStripMenuItem
             // 
-            this.kształtObiektuAnimowanegoToolStripMenuItem.Name = "kształtObiektuAnimowanegoToolStripMenuItem";
-            this.kształtObiektuAnimowanegoToolStripMenuItem.Size = new System.Drawing.Size(175, 20);
-            this.kształtObiektuAnimowanegoToolStripMenuItem.Text = "Kształt obiektu animowanego";
+            this.kolorToolStripMenuItem.Name = "kolorToolStripMenuItem";
+            this.kolorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kolorToolStripMenuItem.Text = "Kolor";
+            this.kolorToolStripMenuItem.Click += new System.EventHandler(this.kolorToolStripMenuItem_Click);
+            // 
+            // liniaKreskowaToolStripMenuItem
+            // 
+            this.liniaKreskowaToolStripMenuItem.Name = "liniaKreskowaToolStripMenuItem";
+            this.liniaKreskowaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.liniaKreskowaToolStripMenuItem.Text = "Linia kreskowa";
+            this.liniaKreskowaToolStripMenuItem.Click += new System.EventHandler(this.liniaKreskowaToolStripMenuItem_Click);
+            // 
+            // liniaKreskowaKrapkowaToolStripMenuItem
+            // 
+            this.liniaKreskowaKrapkowaToolStripMenuItem.Name = "liniaKreskowaKrapkowaToolStripMenuItem";
+            this.liniaKreskowaKrapkowaToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.liniaKreskowaKrapkowaToolStripMenuItem.Text = "Linia kreskowaKrapkowa";
+            this.liniaKreskowaKrapkowaToolStripMenuItem.Click += new System.EventHandler(this.liniaKreskowaKrapkowaToolStripMenuItem_Click);
+            // 
+            // liniaKreskowaKrapkowaKrapkowaToolStripMenuItem
+            // 
+            this.liniaKreskowaKrapkowaKrapkowaToolStripMenuItem.Name = "liniaKreskowaKrapkowaKrapkowaToolStripMenuItem";
+            this.liniaKreskowaKrapkowaKrapkowaToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
+            this.liniaKreskowaKrapkowaKrapkowaToolStripMenuItem.Text = "Linia kreskowaKrapkowaKrapkowa";
+            this.liniaKreskowaKrapkowaKrapkowaToolStripMenuItem.Click += new System.EventHandler(this.liniaKreskowaKrapkowaKrapkowaToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "1";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Text = "2";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Text = "3";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Text = "4";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem6.Text = "5";
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
+            // 
+            // liniaKrapkowaToolStripMenuItem
+            // 
+            this.liniaKrapkowaToolStripMenuItem.Name = "liniaKrapkowaToolStripMenuItem";
+            this.liniaKrapkowaToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
+            this.liniaKrapkowaToolStripMenuItem.Text = "Linia Krapkowa";
+            this.liniaKrapkowaToolStripMenuItem.Click += new System.EventHandler(this.liniaKrapkowaToolStripMenuItem_Click);
+            // 
+            // agłasolidToolStripMenuItem
+            // 
+            this.agłasolidToolStripMenuItem.Name = "agłasolidToolStripMenuItem";
+            this.agłasolidToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
+            this.agłasolidToolStripMenuItem.Text = "agła (solid)";
+            this.agłasolidToolStripMenuItem.Click += new System.EventHandler(this.agłasolidToolStripMenuItem_Click);
             // 
             // LoboratoriumNr1_Raovskyi61986
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1244, 629);
+            this.ClientSize = new System.Drawing.Size(1417, 882);
+            this.Controls.Add(this.dgvTWS);
+            this.Controls.Add(this.chtWykresSzeregu);
+            this.Controls.Add(this.btnWizualizacjaGraficzna);
+            this.Controls.Add(this.btnWizualizacjaTabeleryczna);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtH);
+            this.Controls.Add(this.txtXg);
+            this.Controls.Add(this.txtXd);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.lblH);
@@ -232,16 +402,15 @@
             this.Controls.Add(this.lblXd);
             this.Controls.Add(this.btnResetuj);
             this.Controls.Add(this.btnAnimacja);
-            this.Controls.Add(this.btnWizualizacjaGraficzna);
-            this.Controls.Add(this.btnWizualizacjaTabeleryczna);
             this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "LoboratoriumNr1_Raovskyi61986";
             this.Text = "LoboratoriumNr1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoboratoriumNr1_Raovskyi61986_FormClosing);
-            this.Load += new System.EventHandler(this.LoboratoriumNr1_Raovskyi61986_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtWykresSzeregu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTWS)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -250,9 +419,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnWizualizacjaTabeleryczna;
-        private System.Windows.Forms.Button btnWizualizacjaGraficzna;
         private System.Windows.Forms.Button btnAnimacja;
         private System.Windows.Forms.Button btnResetuj;
         private System.Windows.Forms.Label lblXd;
@@ -260,15 +426,33 @@
         private System.Windows.Forms.Label lblH;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtXd;
+        private System.Windows.Forms.TextBox txtXg;
+        private System.Windows.Forms.TextBox txtH;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnWizualizacjaGraficzna;
+        private System.Windows.Forms.Button btnWizualizacjaTabeleryczna;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtWykresSzeregu;
+        private System.Windows.Forms.DataGridView dgvTWS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem koloryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem atrybutyLiniiTonuIObiektuAnimowanegoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kształtObiektuAnimowanegoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem liniaToruToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem grubośćLiniiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stylLiniiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem liniaKreskowaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kolorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem liniaKreskowaKrapkowaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem liniaKreskowaKrapkowaKrapkowaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem liniaKrapkowaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agłasolidToolStripMenuItem;
     }
 }
