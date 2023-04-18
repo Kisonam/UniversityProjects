@@ -103,6 +103,33 @@ namespace ProjectNr2_Radovskyi61986
         private void txtH_TextChanged(object sender, EventArgs e)
         {
             ushort N;
+            errorProvider1.Dispose();
+            if (!ushort.TryParse(txtH.Text, out N))
+            { 
+                errorProvider1.SetError(txtH,"ERROR");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            int Xmax, Ymax, Xp, Yp;
+            Rysownica.Clear(pictureBox1.BackColor);
+
+            Xmax = pictureBox1.Width; Ymax = pictureBox1.Height;
+
+            for (int i = 0; i < TFG.Length; i++)
+            {
+                Xp = rnd.Next(Margines, Xmax - Margines);
+                Yp = rnd.Next(Margines, Ymax - Margines);
+
+                if (TFG[i] is null) 
+                {
+                    MessageBox.Show("ERROR"); 
+                }
+                TFG[i].PrzesuńDoNowegoXY(Rysownica, Xp, Yp);
+            }
+            pictureBox1.Refresh();
         }
     }
 }
