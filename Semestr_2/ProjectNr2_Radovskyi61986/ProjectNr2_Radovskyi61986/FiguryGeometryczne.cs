@@ -114,6 +114,11 @@ namespace ProjectNr2_Radovskyi61986
                     Widoczny = false;
                 }
             }
+            public virtual void PrzesuńDoNowegoXY(Control Kontrolka ,Graphics Rysownica,int Xp,int Yp)
+            {
+                X = Xp; Y = Yp;
+                Wykreśl(Rysownica);
+            }
         }
         public class Linia : Punkt
         {
@@ -148,6 +153,28 @@ namespace ProjectNr2_Radovskyi61986
                 }
                 
             }
+            public override void PrzesuńDoNowegoXY(Control Kontrolka,Graphics Rysownica, int Xp, int Yp)
+            {
+                int dx, dy;
+
+                if (Xp > X)
+                    dx = Xp - X;
+                else
+                    dx = X - Xp;
+
+                if (Yp> Y) dy = Yp - Y;
+                else dy= Y - Yp;
+
+                X = Xp; Y = Yp;
+                Xk = (Xk + dx) % Kontrolka.Width;
+                Yk = (Yk + dy) % Kontrolka.Height;
+
+                Wykreśl(Rysownica);  
+            }
+        }
+        public class Elipsa : Punkt
+        {
+
         }
     }
 }
