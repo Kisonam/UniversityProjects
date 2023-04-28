@@ -10,3 +10,17 @@ D:\Vistula\Project1_Radovskyi61986\ProjectNr1_Radovskyi61986\ProjectNr1_Radovsky
 D:\Vistula\Project1_Radovskyi61986\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.csproj.CoreCompileInputs.cache
 D:\Vistula\Project1_Radovskyi61986\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.exe
 D:\Vistula\Project1_Radovskyi61986\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.pdb
+D:\Vistula\Project1_Radovskyi61986\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.ProjectowyNr1_Radovskiy61986.resources
+C:\Users\kison\OneDrive\Рабочий стол\ProjectNr1_Radovskyi61986 (1)\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\bin\Debug\ProjectNr1_Radovskyi61986.exe.config
+C:\Users\kison\OneDrive\Рабочий стол\ProjectNr1_Radovskyi61986 (1)\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\bin\Debug\ProjectNr1_Radovskyi61986.exe
+C:\Users\kison\OneDrive\Рабочий стол\ProjectNr1_Radovskyi61986 (1)\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\bin\Debug\ProjectNr1_Radovskyi61986.pdb
+C:\Users\kison\OneDrive\Рабочий стол\ProjectNr1_Radovskyi61986 (1)\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.csproj.AssemblyReference.cache
+C:\Users\kison\OneDrive\Рабочий стол\ProjectNr1_Radovskyi61986 (1)\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.csproj.SuggestedBindingRedirects.cache
+C:\Users\kison\OneDrive\Рабочий стол\ProjectNr1_Radovskyi61986 (1)\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.Kokpit_Radovskyi61986.resources
+C:\Users\kison\OneDrive\Рабочий стол\ProjectNr1_Radovskyi61986 (1)\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.LoboratoriumNr1_Raovskyi61986.resources
+C:\Users\kison\OneDrive\Рабочий стол\ProjectNr1_Radovskyi61986 (1)\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.ProjectowyNr1_Radovskiy61986.resources
+C:\Users\kison\OneDrive\Рабочий стол\ProjectNr1_Radovskyi61986 (1)\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.Properties.Resources.resources
+C:\Users\kison\OneDrive\Рабочий стол\ProjectNr1_Radovskyi61986 (1)\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.csproj.GenerateResource.cache
+C:\Users\kison\OneDrive\Рабочий стол\ProjectNr1_Radovskyi61986 (1)\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.csproj.CoreCompileInputs.cache
+C:\Users\kison\OneDrive\Рабочий стол\ProjectNr1_Radovskyi61986 (1)\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.exe
+C:\Users\kison\OneDrive\Рабочий стол\ProjectNr1_Radovskyi61986 (1)\ProjectNr1_Radovskyi61986\ProjectNr1_Radovskyi61986\obj\Debug\ProjectNr1_Radovskyi61986.pdb

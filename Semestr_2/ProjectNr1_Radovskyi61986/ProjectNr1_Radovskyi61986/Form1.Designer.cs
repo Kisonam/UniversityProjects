@@ -63,6 +63,7 @@
             this.ProjectowyNr1.TabIndex = 2;
             this.ProjectowyNr1.Text = "Projectowy  Nr1\r\n(Szereg indywidualny)";
             this.ProjectowyNr1.UseVisualStyleBackColor = true;
+            this.ProjectowyNr1.Click += new System.EventHandler(this.ProjectowyNr1_Click);
             // 
             // Kokpit_Radovskyi61986
             // 

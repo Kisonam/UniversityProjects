@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjectNr1_Radovskyi61986
+﻿namespace ProjectNr1_Radovskyi61986
 {
     public static class ExtremuSzeregu
     {
