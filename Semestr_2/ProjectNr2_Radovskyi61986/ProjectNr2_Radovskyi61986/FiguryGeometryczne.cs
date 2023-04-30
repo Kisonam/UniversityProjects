@@ -27,7 +27,8 @@ namespace ProjectNr2_Radovskyi61986
                 Prostakąt,
                 Okrag,
                 Kwadrat,
-                Wielokąt
+                Wielokąt,
+                KwadratWypełniony
             }
 
             public FiguraGeometryczna Figura 
@@ -172,9 +173,236 @@ namespace ProjectNr2_Radovskyi61986
                 Wykreśl(Rysownica);  
             }
         }
+        public class Prostokąt : Punkt
+        {
+            public int Szerokość { get; protected set; }
+            public int Wysokość { get; protected set; }
+
+            public Prostokąt(int x, int y, int szerokość, int wysokość) : base(x, y)
+            {
+                Figura = FiguraGeometryczna.Prostakąt;
+                Szerokość = szerokość;
+                Wysokość = wysokość;
+            }
+
+            public Prostokąt(int x, int y, int szerokość, int wysokość, Color kolor) : this(x, y, szerokość, wysokość)
+            {
+                Kolor = kolor;
+            }
+
+            public Prostokąt(int x, int y, int szerokość, int wysokość, Color kolor, int średnicaPunktu) : this(x, y, szerokość, wysokość, kolor)
+            {
+                ŚrednicaPunktu = średnicaPunktu;
+            }
+
+            public override void Wykreśl(Graphics rysownica)
+            {
+                using (SolidBrush pędzel = new SolidBrush(Kolor))
+                {
+                    rysownica.FillRectangle(pędzel, X - Szerokość / 2, Y - Wysokość / 2, Szerokość, Wysokość);
+                    Widoczny = true;
+                }
+            }
+
+            public override void Wymaż(Control kontrolka, Graphics rysownica)
+            {
+                using (SolidBrush pędzel = new SolidBrush(kontrolka.BackColor))
+                {
+                    rysownica.FillRectangle(pędzel, X - Szerokość / 2, Y - Wysokość / 2, Szerokość, Wysokość);
+                    Widoczny = false;
+                }
+            }
+
+            public override void PrzesuńDoNowegoXY(Control kontrolka, Graphics rysownica, int xp, int yp)
+            {
+                X = xp;
+                Y = yp;
+                Wykreśl(rysownica);
+            }
+        }
         public class Elipsa : Punkt
         {
+            public int OśDuża { get; protected set; }
+            public int OśMała { get; protected set; }
 
+            public Elipsa(int x, int y, int ośDuża, int ośMała) : base(x, y)
+            {
+                Figura = FiguraGeometryczna.Elipsa;
+                OśDuża = ośDuża;
+                OśMała = ośMała;
+            }
+
+            public Elipsa(int x, int y, int ośDuża, int ośMała, Color kolor) : base(x, y, kolor)
+            {
+                Figura = FiguraGeometryczna.Elipsa;
+                OśDuża = ośDuża;
+                OśMała = ośMała;
+            }
+
+            public Elipsa(int x, int y, int ośDuża, int ośMała, Color kolor, int średnicaPunktu) : base(x, y, kolor, średnicaPunktu)
+            {
+                Figura = FiguraGeometryczna.Elipsa;
+                OśDuża = ośDuża;
+                OśMała = ośMała;
+            }
+            public Elipsa(int x, int y, int ośDuża, int ośMała, Color kolorLinii, DashStyle stylLinii, float grubośćLinii) : base(x, y)
+            {
+                Figura = FiguraGeometryczna.Elipsa;
+                OśDuża = ośDuża;
+                OśMała = ośMała;
+                Kolor = kolorLinii;
+                StylLinii = stylLinii;
+                GrubośćLinii = grubośćLinii;
+            }
+
+            public override void Wykreśl(Graphics rysownica)
+            {
+                SolidBrush pędzel = new SolidBrush(Kolor);
+                rysownica.FillEllipse(pędzel, X - OśDuża / 2, Y - OśMała / 2, OśDuża, OśMała);
+                Widoczny = true;
+                pędzel.Dispose();
+
+                using (SolidBrush pędzel2 = new SolidBrush(Kolor))
+                {
+                    rysownica.FillEllipse(pędzel2, X - OśDuża / 2, Y - OśMała / 2, OśDuża, OśMała);
+                    Widoczny = true;
+                }
+            }
+
+            public override void Wymaż(Control kontrolka, Graphics rysownica)
+            {
+                using (SolidBrush pędzel = new SolidBrush(kontrolka.BackColor))
+                {
+                    rysownica.FillEllipse(pędzel, X - OśDuża / 2, Y - OśMała / 2, OśDuża, OśMała);
+                    Widoczny = false;
+                }
+            }
+
+            public override void PrzesuńDoNowegoXY(Control kontrolka, Graphics rysownica, int xp, int yp)
+            {
+                X = xp;
+                Y = yp;
+                Wykreśl(rysownica);
+            }
+        }
+        public class Okrąg : Elipsa
+        {
+            protected int Promień
+            {
+                get { return OśDuża; }
+                set { OśDuża= value;
+                    OśMała = value;
+                }
+            }
+
+            public Okrąg(int x, int y, int Promień, Color KolorLinii,
+                DashStyle StylLinii, float GrubośćLinii): base(x,y, 2 * Promień, 2 * Promień, KolorLinii, StylLinii, GrubośćLinii)
+            {
+                Figura = FiguraGeometryczna.Okrag;
+                Widoczny = false;
+            }
+            public override void Wykreśl(Graphics rysownica)
+            {
+                Pen pisak = new Pen(Kolor, GrubośćLinii);
+                pisak.DashStyle = StylLinii;
+
+                rysownica.DrawEllipse(pisak, X - Promień, Y - Promień, Promień * 2, Promień * 2);
+                Widoczny = true;
+
+                pisak.Dispose();
+            }
+
+            public override void Wymaż(Control kontrolka, Graphics rysownica)
+            {
+                SolidBrush pędzel = new SolidBrush(kontrolka.BackColor);
+                rysownica.FillEllipse(pędzel, X - Promień, Y - Promień, Promień * 2, Promień * 2);
+                Widoczny = false;
+
+                pędzel.Dispose();
+            }
+
+            public override void PrzesuńDoNowegoXY(Control kontrolka, Graphics rysownica, int xp, int yp)
+            {
+                X = xp;
+                Y = yp;
+                Wykreśl(rysownica);
+            }
+        }
+        public class Kwadrat : Prostokąt
+        {
+            public int bok { get; protected set; }
+
+            public Kwadrat(int x, int y, int bok) : base(x, y, bok, bok)
+            {
+                this.bok = bok;
+                Figura = FiguraGeometryczna.Kwadrat;
+            }
+
+            public Kwadrat(int x, int y, int bok, Color kolor) : base(x, y, bok, bok, kolor)
+            {
+                this.bok = bok;
+                Figura = FiguraGeometryczna.Kwadrat;
+            }
+
+            public Kwadrat(int x, int y, int bok, Color kolor, int średnicaPunktu) : base(x, y, bok, bok, kolor, średnicaPunktu)
+            {
+                this.bok = bok;
+                Figura = FiguraGeometryczna.Kwadrat;
+            }
+
+            public override void Wykreśl(Graphics rysownica)
+            {
+                using (SolidBrush pędzel = new SolidBrush(Kolor))
+                {
+                    rysownica.FillRectangle(pędzel, X - bok / 2, Y - bok / 2, bok, bok);
+                    Widoczny = true;
+                }
+            }
+
+            public override void Wymaż(Control kontrolka, Graphics rysownica)
+            {
+                using (SolidBrush pędzel = new SolidBrush(kontrolka.BackColor))
+                {
+                    rysownica.FillRectangle(pędzel, X - bok / 2, Y - bok / 2, bok, bok);
+                    Widoczny = false;
+                }
+            }
+
+            public override void PrzesuńDoNowegoXY(Control kontrolka, Graphics rysownica, int xp, int yp)
+            {
+                X = xp;
+                Y = yp;
+                Wykreśl(rysownica);
+            }
+        }
+        public class KwadratWypełniony : Kwadrat
+        {
+            private Color kolor;
+
+            public KwadratWypełniony(int x, int y, int bok, Color kolor) : base(x, y, bok)
+            {
+                this.kolor = kolor;
+            }
+
+            public override void Wykreśl(Graphics rysownica)
+            {
+                SolidBrush pędzel = new SolidBrush(kolor);
+                rysownica.FillRectangle(pędzel, X - bok / 2, Y - bok / 2, bok, bok);
+            }
+
+            public override void Wymaż(Control kontrolka, Graphics rysownica)
+            {
+                SolidBrush pędzel = new SolidBrush(kontrolka.BackColor);
+                rysownica.FillRectangle(pędzel, X - bok / 2, Y - bok / 2, bok, bok);
+            }
+
+            public override void PrzesuńDoNowegoXY(Control kontrolka, Graphics rysownica, int xp, int yp)
+            {
+                Wymaż(kontrolka, rysownica);
+                X = xp;
+                Y = yp;
+                Wykreśl(rysownica);
+            }
         }
     }
 }

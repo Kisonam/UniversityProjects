@@ -26,5 +26,45 @@ namespace ProjectNr2_Radovskyi61986
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (Form Formularz in Application.OpenForms)
+            {
+                // sprwdzenie,czy to jest formularz LaboratoriumNr1
+                if (Formularz.Name == "Laboratorny_Radovskyi61986")
+                { // ukrycie bieżącego (to będzie główny) formularza
+                    this.Hide();
+                    // odsłonięcie formularza znalezionego
+                    Formularz.Show();
+                    // bezwarunkowe zakończenie obsługi zdarzenia Click
+                    return;
+                }
+            }
+            Laboratorny_Radovskyi61986 Laboratorium = new Laboratorny_Radovskyi61986();
+            Laboratorium.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            /* sprawdzanie, czy był już utworzony egzemolarza formularza
+             LaboratoriumNr1*/
+            foreach (Form Formularz in Application.OpenForms)
+            {
+                // sprwdzenie,czy to jest formularz LaboratoriumNr1
+                if (Formularz.Name == "Projectowy_Radovskyi61986")
+                { // ukrycie bieżącego (to będzie główny) formularza
+                    this.Hide();
+                    // odsłonięcie formularza znalezionego
+                    Formularz.Show();
+                    // bezwarunkowe zakończenie obsługi zdarzenia Click
+                    return;
+                }
+            }
+            Projectowy_Radovskyi61986 Project = new Projectowy_Radovskyi61986();
+            Project.Show();
+            this.Hide();
+        }
     }
 }
