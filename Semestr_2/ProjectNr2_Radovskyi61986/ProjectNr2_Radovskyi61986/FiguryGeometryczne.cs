@@ -106,7 +106,7 @@ namespace ProjectNr2_Radovskyi61986
                     Rysownica.FillEllipse(Pędzel, X - ŚrednicaPunktu / 2, Y - ŚrednicaPunktu / 2, ŚrednicaPunktu, ŚrednicaPunktu);
                     Widoczny = true;
                 }
-            }
+            } 
             public virtual void Wymaż(Control Kontrolka, Graphics Rysownica)
             {
                 using (SolidBrush Pędzel = new SolidBrush(Kontrolka.BackColor))
@@ -132,6 +132,14 @@ namespace ProjectNr2_Radovskyi61986
             {
                 Figura = FiguraGeometryczna.Linia;
                 this.Xk = Xk; this.Yk = Yk;
+            }
+            public Linia(int Xp, int Yp, int Xk, int Yk, Color KolorLonii, DashStyle StylLinii, float GrubośćLinii) : base(Xp, Yp, KolorLonii)
+            {
+                Figura = FiguraGeometryczna.Linia;
+                this.Xk = Xk;
+                this.Yk = Yk;
+                this.StylLinii = StylLinii;
+                this.GrubośćLinii = GrubośćLinii;
             }
             public override void Wykreśl(Graphics Rysownica)
             {
