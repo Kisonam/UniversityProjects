@@ -97,7 +97,6 @@ namespace ProjectNr2_Radovskyi61986
                         IndexTFG++;
                         break;
                     case "Okrag":
-                        {
                             int Promień = rnd.Next(Margines, Xmax / 4);
 
                             TFG[IndexTFG] = new Okrąg(Xp, Yp, Promień, Kolor, StylLinii, GrubośćLinii);
@@ -105,34 +104,32 @@ namespace ProjectNr2_Radovskyi61986
 
                             IndexTFG++;
                             break;
-                        }
                     case "Prostokąt":
                         int Szerokość = rnd.Next(10, Margines);
                         int Wysokość = rnd.Next(10, Margines);
-                        TFG[IndexTFG] = new Prostokąt(Xp, Yp, Szerokość, Wysokość, Kolor, (int)GrubośćLinii);
+                        TFG[IndexTFG] = new Prostokąt(Xp, Yp, Szerokość, Wysokość, Kolor, (int)GrubośćLinii , (int)GrubośćLinii);
                         TFG[IndexTFG].Wykreśl(Rysownica);
                         IndexTFG++;
                         break;
-                    //case "Kwadrat":
-                    //    OśDuża = rnd.Next(Margines, Math.Min(Xmax - Margines, Ymax - Margines));
-                    //    TFG[IndexTFG] = new Kwadrat(Xp, Yp, OśDuża, Kolor, KolorWypełnienia, GrubośćLinii, StylLinii);
-                    //    TFG[IndexTFG].Wykreśl(Rysownica);
-                    //    IndexTFG++;
-                    //    break;
-                    //case "Wielokąt":
-                    //    OśDuża = rnd.Next(Margines, Xmax - Margines);
-                    //    int LiczbaWierzchołków = rnd.Next(3, 7); // Wielokąt od trójkąta do sześciokąta
-                    //    Punkt[] Wierzchołki = new Punkt[LiczbaWierzchołków];
-                    //    for (int i = 0; i < LiczbaWierzchołków; i++)
-                    //    {
-                    //        Xp = rnd.Next(Margines, Xmax - Margines);
-                    //        Yp = rnd.Next(Margines, Ymax - Margines);
-                    //        Wierzchołki[i] = new Punkt(Xp, Yp, Kolor);
-                    //    }
-                    //    TFG[IndexTFG] = new Wielokąt(Wierzchołki, Kolor, KolorWypełnienia, GrubośćLinii, StylLinii);
-                    //    TFG[IndexTFG].Wykreśl(Rysownica);
-                    //    IndexTFG++;
-                    //    break;
+                    case "Kwadrat":
+                        OśDuża = rnd.Next(Margines, Math.Min(Xmax - Margines, Ymax - Margines));
+                        TFG[IndexTFG] = new Kwadrat(Xp, Yp, OśDuża, Kolor, OśDuża,(int)GrubośćLinii);
+                        TFG[IndexTFG].Wykreśl(Rysownica);
+                        IndexTFG++;
+                        break;
+                    case "Wielokąt":
+                        int liczbaWierzchołków = rnd.Next(3, 7);
+                        List<Punkt> wierzchołki = new List<Punkt>();
+                        for (int o = 0; o < liczbaWierzchołków; o++)
+                        {
+                            int x = rnd.Next(Margines, (Xmax - Margines) / 2);
+                            int y = rnd.Next(Margines, (Ymax - Margines) / 2);
+                            wierzchołki.Add(new Punkt(x, y));
+                        }
+                        TFG[IndexTFG] = new Wielokąt(wierzchołki, Kolor, GrubośćLinii, StylLinii);
+                        TFG[IndexTFG].Wykreśl(Rysownica);
+                        IndexTFG++;
+                        break;
                     default:
                         MessageBox.Show("UWAGA: tej figury jeszcze nie wykreślam"); break;
                 }
@@ -351,7 +348,26 @@ namespace ProjectNr2_Radovskyi61986
 
         private void Laboratorny_Radovskyi61986_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            foreach (Form Formularz in Application.OpenForms)
+            {
+                // sprwdzenie,czy to jest formularz LaboratoriumNr1
+                if (Formularz.Name == "Kokpit_Radovskyi61986")
+                { // ukrycie bieżącego (to będzie główny) formularza
+                    this.Hide();
+                    // odsłonięcie formularza znalezionego
+                    Formularz.Show();
+                    // bezwarunkowe zakończenie obsługi zdarzenia Click
+                    return;
+                }
+            }
+            Kokpit_Radovskyi61986 Kokpit = new Kokpit_Radovskyi61986();
+            Kokpit.Show();
+            this.Hide();
+        }
+
+        private void rdbAuto_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -102,7 +102,10 @@
             "Linia",
             "Elipsa",
             "Prostokąt",
-            "Okrag"});
+            "Okrag",
+            "Kwadrat",
+            "Ośmiokąt",
+            "Wielokąt"});
             this.chblFiguryGeometryczne.Location = new System.Drawing.Point(918, 45);
             this.chblFiguryGeometryczne.Name = "chblFiguryGeometryczne";
             this.chblFiguryGeometryczne.Size = new System.Drawing.Size(162, 139);
@@ -209,6 +212,7 @@
             this.rdbAuto.TabStop = true;
             this.rdbAuto.Text = "Automatyczny (zegarowy)";
             this.rdbAuto.UseVisualStyleBackColor = true;
+            this.rdbAuto.CheckedChanged += new System.EventHandler(this.rdbAuto_CheckedChanged);
             // 
             // timer1
             // 
@@ -290,7 +294,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 588);
+            this.ClientSize = new System.Drawing.Size(1118, 538);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 
 namespace ProjectNr2_Radovskyi61986
 {
@@ -28,7 +29,10 @@ namespace ProjectNr2_Radovskyi61986
                 Okrag,
                 Kwadrat,
                 Wielokąt,
-                KwadratWypełniony
+                KwadratWypełniony,
+                Koło,
+                Dłuto,
+                Pie
             }
 
             public FiguraGeometryczna Figura 
@@ -198,25 +202,26 @@ namespace ProjectNr2_Radovskyi61986
                 Kolor = kolor;
             }
 
-            public Prostokąt(int x, int y, int szerokość, int wysokość, Color kolor, int średnicaPunktu) : this(x, y, szerokość, wysokość, kolor)
+            public Prostokąt(int x, int y, int szerokość, int wysokość, Color kolor, int średnicaPunktu , int grubość) : this(x, y, szerokość, wysokość, kolor)
             {
+                this.GrubośćLinii = grubość;
                 ŚrednicaPunktu = średnicaPunktu;
             }
 
             public override void Wykreśl(Graphics rysownica)
             {
-                using (SolidBrush pędzel = new SolidBrush(Kolor))
+                using (Pen pędzel = new Pen(Kolor, GrubośćLinii))
                 {
-                    rysownica.FillRectangle(pędzel, X - Szerokość / 2, Y - Wysokość / 2, Szerokość, Wysokość);
+                    rysownica.DrawRectangle(pędzel, X - Szerokość / 2, Y - Wysokość / 2, Szerokość, Wysokość);
                     Widoczny = true;
                 }
             }
 
             public override void Wymaż(Control kontrolka, Graphics rysownica)
             {
-                using (SolidBrush pędzel = new SolidBrush(kontrolka.BackColor))
+                using (Pen pędzel = new Pen(kontrolka.BackColor))
                 {
-                    rysownica.FillRectangle(pędzel, X - Szerokość / 2, Y - Wysokość / 2, Szerokość, Wysokość);
+                    rysownica.DrawRectangle(pędzel, X - Szerokość / 2, Y - Wysokość / 2, Szerokość, Wysokość);
                     Widoczny = false;
                 }
             }
@@ -265,16 +270,16 @@ namespace ProjectNr2_Radovskyi61986
 
             public override void Wykreśl(Graphics rysownica)
             {
-                SolidBrush pędzel = new SolidBrush(Kolor);
-                rysownica.FillEllipse(pędzel, X - OśDuża / 2, Y - OśMała / 2, OśDuża, OśMała);
+                Pen pędzel = new Pen(Kolor, GrubośćLinii);
+                rysownica.DrawEllipse(pędzel, X - OśDuża / 2, Y - OśMała / 2, OśDuża, OśMała);
                 Widoczny = true;
                 pędzel.Dispose();
 
-                using (SolidBrush pędzel2 = new SolidBrush(Kolor))
-                {
-                    rysownica.FillEllipse(pędzel2, X - OśDuża / 2, Y - OśMała / 2, OśDuża, OśMała);
-                    Widoczny = true;
-                }
+                //using (SolidBrush pędzel2 = new SolidBrush(Kolor))
+                //{
+                //    rysownica.FillEllipse(pędzel2, X - OśDuża / 2, Y - OśMała / 2, OśDuża, OśMała);
+                //    Widoczny = true;
+                //}
             }
 
             public override void Wymaż(Control kontrolka, Graphics rysownica)
@@ -352,17 +357,18 @@ namespace ProjectNr2_Radovskyi61986
                 Figura = FiguraGeometryczna.Kwadrat;
             }
 
-            public Kwadrat(int x, int y, int bok, Color kolor, int średnicaPunktu) : base(x, y, bok, bok, kolor, średnicaPunktu)
+            public Kwadrat(int x, int y, int bok, Color kolor, int średnicaPunktu, int grubośćLinii) : base(x, y, bok, bok, kolor, średnicaPunktu ,grubośćLinii)
             {
+                this.GrubośćLinii = grubośćLinii;
                 this.bok = bok;
                 Figura = FiguraGeometryczna.Kwadrat;
             }
 
             public override void Wykreśl(Graphics rysownica)
             {
-                using (SolidBrush pędzel = new SolidBrush(Kolor))
+                using (Pen pędzel = new Pen(Kolor,GrubośćLinii))
                 {
-                    rysownica.FillRectangle(pędzel, X - bok / 2, Y - bok / 2, bok, bok);
+                    rysownica.DrawRectangle(pędzel, X - bok / 2, Y - bok / 2, bok, bok);
                     Widoczny = true;
                 }
             }
@@ -407,6 +413,338 @@ namespace ProjectNr2_Radovskyi61986
             public override void PrzesuńDoNowegoXY(Control kontrolka, Graphics rysownica, int xp, int yp)
             {
                 Wymaż(kontrolka, rysownica);
+                X = xp;
+                Y = yp;
+                Wykreśl(rysownica);
+            }
+        }
+        public class Wielokąt : Punkt
+        {
+            private List<Point> punkty = new List<Point>();
+
+            public Wielokąt(List<Punkt> wierzchołki) : base(wierzchołki[0].X, wierzchołki[0].Y)
+            {
+                Figura = FiguraGeometryczna.Wielokąt;
+                foreach (Punkt p in wierzchołki)
+                {
+                    if (p.X < X) X = p.X;
+                    if (p.Y < Y) Y = p.Y;
+                }
+                ŚrednicaPunktu = 2 * PromieńPunktu;
+            }
+
+            public Wielokąt(List<Punkt> wierzchołki, Color kolor) : this(wierzchołki)
+            {
+                Kolor = kolor;
+            }
+
+            public Wielokąt(List<Punkt> wierzchołki, Color kolor, float grubośćLinii, DashStyle stylLinii) : this(wierzchołki, kolor)
+            {
+                GrubośćLinii = grubośćLinii;
+                StylLinii = stylLinii;
+            }
+
+            public Wielokąt(List<Punkt> wierzchołki, Color kolorWypełnienia, Color kolorLinii, float grubośćLinii, DashStyle stylLinii) : this(wierzchołki, kolorLinii, grubośćLinii, stylLinii)
+            {
+                KolorWypełniea = kolorWypełnienia;
+            }
+            public override void Wykreśl(Graphics Rysownica)
+            {
+                if (punkty.Count > 1)
+                {
+                    using (SolidBrush Pióro = new SolidBrush(Kolor))
+                    {
+                        Point[] punktyArray = punkty.ToArray();
+                        Rysownica.FillPolygon(Pióro, punktyArray);
+                        Widoczny = true;
+                    }
+                }
+            }
+
+            public override void Wymaż(Control Kontrolka, Graphics Rysownica)
+            {
+                if (punkty.Count > 1)
+                {
+                    using (SolidBrush Pędzel = new SolidBrush(Kontrolka.BackColor))
+                    {
+                        Point[] punktyArray = punkty.ToArray();
+                        Rysownica.FillPolygon(Pędzel, punktyArray);
+                        Widoczny = false;
+                    }
+                }
+            }
+
+            public override void PrzesuńDoNowegoXY(Control Kontrolka, Graphics Rysownica, int Xp, int Yp)
+            {
+                int dx = Xp - X;
+                int dy = Yp - Y;
+                for (int i = 0; i < punkty.Count; i++)
+                {
+                    punkty[i] = new Point(punkty[i].X + dx, punkty[i].Y + dy);
+                }
+                base.PrzesuńDoNowegoXY(Kontrolka, Rysownica, Xp, Yp);
+            }
+
+        }
+        public class FillProstokąt : Punkt
+        {
+            public int Szerokość { get; protected set; }
+            public int Wysokość { get; protected set; }
+
+            public FillProstokąt(int x, int y, int szerokość, int wysokość) : base(x, y)
+            {
+                Figura = FiguraGeometryczna.Prostakąt;
+                Szerokość = szerokość;
+                Wysokość = wysokość;
+            }
+
+            public FillProstokąt(int x, int y, int szerokość, int wysokość, Color kolor , Color kolorWypełnienia) : this(x, y, szerokość, wysokość)
+            {
+                KolorWypełniea = kolorWypełnienia;
+                Kolor = kolor;
+            }
+
+            public FillProstokąt(int x, int y, int szerokość, int wysokość, Color kolor, Color kolorWypełnienia, int średnicaPunktu, int grubość) : this(x, y, szerokość, wysokość, kolor, kolorWypełnienia)
+            {
+                ŚrednicaPunktu = średnicaPunktu;
+                this.GrubośćLinii = grubość;
+            }
+
+            public override void Wykreśl(Graphics rysownica)
+            {
+                Pen pen = new Pen(Kolor, GrubośćLinii);
+                rysownica.DrawRectangle(pen, X - Szerokość / 2, Y - Wysokość / 2, Szerokość, Wysokość);
+                Widoczny = true;
+                pen.Dispose();
+
+                using (SolidBrush pędzel = new SolidBrush(KolorWypełniea))
+                {
+                    rysownica.FillRectangle(pędzel, X - Szerokość / 2, Y - Wysokość / 2, Szerokość, Wysokość);
+                    Widoczny = true;
+                }
+            }
+
+            public override void Wymaż(Control kontrolka, Graphics rysownica)
+            {
+                using (SolidBrush pędzel = new SolidBrush(kontrolka.BackColor))
+                {
+                    rysownica.FillRectangle(pędzel, X - Szerokość / 2, Y - Wysokość / 2, Szerokość, Wysokość);
+                    Widoczny = false;
+                }
+            }
+
+            public override void PrzesuńDoNowegoXY(Control kontrolka, Graphics rysownica, int xp, int yp)
+            {
+                X = xp;
+                Y = yp;
+                Wykreśl(rysownica);
+            }
+        }
+        public class Koło : Okrąg
+        {
+
+            public Koło(int x, int y, int Promień, Color KolorLinii, DashStyle StylLinii, float GrubośćLinii)
+                : base(x, y, Promień, KolorLinii, StylLinii, GrubośćLinii)
+            {
+                Figura = FiguraGeometryczna.Okrag;
+                this.StylLinii = StylLinii;
+                this.GrubośćLinii = GrubośćLinii;
+                this.Kolor = KolorLinii;
+            }
+
+            public override void Wykreśl(Graphics rysownica)
+            {
+                Pen pen = new Pen(Kolor, GrubośćLinii);
+                pen.DashStyle = StylLinii;
+
+                rysownica.DrawEllipse(pen, X - Promień, Y - Promień, Promień * 2, Promień * 2);
+                Widoczny = true;
+
+                pen.Dispose();
+            }
+        }
+        public class FillElipsa : Punkt
+        {
+            public int OśDuża { get; protected set; }
+            public int OśMała { get; protected set; }
+
+            public FillElipsa(int x, int y, int ośDuża, int ośMała) : base(x, y)
+            {
+                Figura = FiguraGeometryczna.Elipsa;
+                OśDuża = ośDuża;
+                OśMała = ośMała;
+            }
+
+            public FillElipsa(int x, int y, int ośDuża, int ośMała, Color kolor) : base(x, y, kolor)
+            {
+                Figura = FiguraGeometryczna.Elipsa;
+                OśDuża = ośDuża;
+                OśMała = ośMała;
+            }
+
+            public FillElipsa(int x, int y, int ośDuża, int ośMała, Color kolor, int średnicaPunktu) : base(x, y, kolor, średnicaPunktu)
+            {
+                Figura = FiguraGeometryczna.Elipsa;
+                OśDuża = ośDuża;
+                OśMała = ośMała;
+            }
+            public FillElipsa(int x, int y, int ośDuża, int ośMała, Color kolorLinii, Color kolorWyp, DashStyle stylLinii, float grubośćLinii) : base(x, y)
+            {
+                Figura = FiguraGeometryczna.Elipsa;
+                OśDuża = ośDuża;
+                OśMała = ośMała;
+                Kolor = kolorLinii;
+                StylLinii = stylLinii;
+                GrubośćLinii = grubośćLinii;
+                KolorWypełniea = kolorWyp;
+            }
+
+            public override void Wykreśl(Graphics rysownica)
+            {
+                Pen pędzel = new Pen(Kolor, GrubośćLinii);
+                rysownica.DrawEllipse(pędzel, X - OśDuża / 2, Y - OśMała / 2, OśDuża, OśMała);
+                Widoczny = true;
+                pędzel.Dispose();
+
+                using (SolidBrush pędzel2 = new SolidBrush(KolorWypełniea))
+                {
+                    rysownica.FillEllipse(pędzel2, X - OśDuża / 2, Y - OśMała / 2, OśDuża, OśMała);
+                    Widoczny = true;
+                }
+            }
+
+            public override void Wymaż(Control kontrolka, Graphics rysownica)
+            {
+                using (SolidBrush pędzel = new SolidBrush(kontrolka.BackColor))
+                {
+                    rysownica.FillEllipse(pędzel, X - OśDuża / 2, Y - OśMała / 2, OśDuża, OśMała);
+                    Widoczny = false;
+                }
+            }
+
+            public override void PrzesuńDoNowegoXY(Control kontrolka, Graphics rysownica, int xp, int yp)
+            {
+                X = xp;
+                Y = yp;
+                Wykreśl(rysownica);
+            }
+        }
+        public class Arc : Okrąg
+        {
+            private float początkowyKąt, końcowyKąt;
+
+            public Arc(int x, int y, int promień, float początkowyKąt, float końcowyKąt, Color kolorLinii, DashStyle stylLinii, float grubośćLinii)
+                : base(x, y, promień, kolorLinii, stylLinii, grubośćLinii)
+            {
+                this.początkowyKąt = początkowyKąt;
+                this.końcowyKąt = końcowyKąt;
+                Figura = FiguraGeometryczna.Dłuto;
+            }
+
+            public override void Wykreśl(Graphics rysownica)
+            {
+                Pen pisak = new Pen(Kolor, GrubośćLinii);
+                pisak.DashStyle = StylLinii;
+
+                rysownica.DrawArc(pisak, X - Promień, Y - Promień, Promień * 2, Promień * 2, początkowyKąt, końcowyKąt - początkowyKąt);
+                Widoczny = true;
+
+                pisak.Dispose();
+            }
+
+            public override void Wymaż(Control kontrolka, Graphics rysownica)
+            {
+                SolidBrush pędzel = new SolidBrush(kontrolka.BackColor);
+                rysownica.FillEllipse(pędzel, X - Promień, Y - Promień, Promień * 2, Promień * 2);
+                Widoczny = false;
+
+                pędzel.Dispose();
+            }
+
+            public override void PrzesuńDoNowegoXY(Control kontrolka, Graphics rysownica, int xp, int yp)
+            {
+                X = xp;
+                Y = yp;
+                Wykreśl(rysownica);
+            }
+        }
+        public class Pie : Arc
+        {
+            protected int kątPoczątkowy;
+            protected int kątKońcowy;
+
+            public Pie(int x, int y, int promień, int kątPoczątkowy, int kątKońcowy, Color kolorLinii,
+                    DashStyle stylLinii, float grubośćLinii) : base(x, y, promień, kątPoczątkowy, kątKońcowy, kolorLinii, stylLinii, grubośćLinii)
+            {
+                this.kątPoczątkowy = kątPoczątkowy;
+                this.kątKońcowy = kątKońcowy;
+                Figura = FiguraGeometryczna.Pie;
+                Widoczny = false;
+            }
+
+            public override void Wykreśl(Graphics rysownica)
+            {
+                Pen pisak = new Pen(Kolor, GrubośćLinii);
+                pisak.DashStyle = StylLinii;
+
+                rysownica.DrawPie(pisak, X - Promień, Y - Promień, Promień * 2, Promień * 2, kątPoczątkowy, kątKońcowy - kątPoczątkowy);
+                Widoczny = true;
+
+                pisak.Dispose();
+            }
+
+            public override void Wymaż(Control kontrolka, Graphics rysownica)
+            {
+                SolidBrush pędzel = new SolidBrush(kontrolka.BackColor);
+                rysownica.FillPie(pędzel, X - Promień, Y - Promień, Promień * 2, Promień * 2, kątPoczątkowy, kątKońcowy - kątPoczątkowy);
+                Widoczny = false;
+
+                pędzel.Dispose();
+            }
+
+            public override void PrzesuńDoNowegoXY(Control kontrolka, Graphics rysownica, int xp, int yp)
+            {
+                X = xp;
+                Y = yp;
+                Wykreśl(rysownica);
+            }
+        }
+        public class FillPie : Arc
+        {
+            protected int kątPoczątkowy;
+            protected int kątKońcowy;
+
+            public FillPie(int x, int y, int promień, int kątPoczątkowy, int kątKońcowy, Color kolorLinii, Color kolorWyp,
+                    DashStyle stylLinii, float grubośćLinii) : base(x, y, promień, kątPoczątkowy, kątKońcowy, kolorLinii, stylLinii, grubośćLinii)
+            {
+                KolorWypełniea = kolorWyp;
+                this.kątPoczątkowy = kątPoczątkowy;
+                this.kątKońcowy = kątKońcowy;
+                Figura = FiguraGeometryczna.Pie;
+                Widoczny = false;
+            }
+
+            public override void Wykreśl(Graphics rysownica)
+            {
+                SolidBrush pisak = new SolidBrush(KolorWypełniea);
+
+                rysownica.FillPie(pisak, X - Promień, Y - Promień, Promień * 2, Promień * 2, kątPoczątkowy, kątKońcowy - kątPoczątkowy);
+                Widoczny = true;
+
+                pisak.Dispose();
+            }
+
+            public override void Wymaż(Control kontrolka, Graphics rysownica)
+            {
+                SolidBrush pędzel = new SolidBrush(kontrolka.BackColor);
+                rysownica.FillPie(pędzel, X - Promień, Y - Promień, Promień * 2, Promień * 2, kątPoczątkowy, kątKońcowy - kątPoczątkowy);
+                Widoczny = false;
+
+                pędzel.Dispose();
+            }
+
+            public override void PrzesuńDoNowegoXY(Control kontrolka, Graphics rysownica, int xp, int yp)
+            {
                 X = xp;
                 Y = yp;
                 Wykreśl(rysownica);

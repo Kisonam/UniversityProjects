@@ -73,6 +73,9 @@
     <EmbeddedResource Include="Laboratorny_Radovskyi61986.resx">
       <DependentUpon>Laboratorny_Radovskyi61986.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Projectowy_Radovskyi61986.resx">
+      <DependentUpon>Projectowy_Radovskyi61986.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

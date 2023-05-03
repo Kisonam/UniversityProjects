@@ -10,3 +10,4 @@ D:\Vistula\ProjectNr2_Radovskyi61986\ProjectNr2_Radovskyi61986\bin\Debug\Project
 D:\Vistula\ProjectNr2_Radovskyi61986\ProjectNr2_Radovskyi61986\bin\Debug\ProjectNr2_Radovskyi61986.pdb
 D:\Vistula\ProjectNr2_Radovskyi61986\ProjectNr2_Radovskyi61986\obj\Debug\ProjectNr2_Radovskyi61986.exe
 D:\Vistula\ProjectNr2_Radovskyi61986\ProjectNr2_Radovskyi61986\obj\Debug\ProjectNr2_Radovskyi61986.pdb
+D:\Vistula\ProjectNr2_Radovskyi61986\ProjectNr2_Radovskyi61986\obj\Debug\ProjectNr2_Radovskyi61986.Projectowy_Radovskyi61986.resources
