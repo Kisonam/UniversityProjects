@@ -219,7 +219,7 @@ namespace ProjektNr3_Radovskyi61986
         }
         public class Stożek : BryłyObrotowe
         {
-            protected int XsS, YsS;
+            protected int XsS, YsS; 
             protected int StopieńWielokątaPodstawy;
             protected float OśDuża, OśMała;
             protected int WysokośćStożka;
@@ -338,10 +338,28 @@ namespace ProjektNr3_Radovskyi61986
         }
         public class Kula : BryłyObrotowe
         {
+            protected int StopieńWielokąta;
+            float OśDuza, OśMała;
+            float KątPołożeniaPirwszegoWierzchołka, KątŚrodkowyWielokąta;
+            Point[] WilokątPrzekrojuKuli;
             public Kula(int R, int WysokośćStoąka, int StopieńWielokąta, int XsP, int YsP, Color KolorLinii, DashStyle StylLinii, float GrubośćLinii) : 
                 base(R, KolorLinii, StylLinii, GrubośćLinii)
             {
-                
+                this.StopieńWielokąta = StopieńWielokąta;
+                this.XsP = XsP;
+                this.YsP = YsP;
+
+                KątŚrodkowyWielokąta = 360F/ StopieńWielokąta;
+                KątPołożeniaPirwszegoWierzchołka = 0.0f;
+
+                WilokątPrzekrojuKuli = new Point[StopieńWielokąta];
+
+                for (int i = 0; i < WilokątPrzekrojuKuli.Length - 1; i++)
+                {
+                    WilokątPrzekrojuKuli[i] = new Point();
+                    WilokątPrzekrojuKuli[i].X = (int)(XsP + OśDuza/2.0f * Math.Cos(Math.PI * (KątPołożeniaPirwszegoWierzchołka + i * KątŚrodkowyWielokąta) / 180f));
+                    //WilokątPrzekrojuKuli[i].Y = (int)(YsP + OśMała/2f * Math.Sin(Math.PI * ()))
+                }
             }
         }
     }

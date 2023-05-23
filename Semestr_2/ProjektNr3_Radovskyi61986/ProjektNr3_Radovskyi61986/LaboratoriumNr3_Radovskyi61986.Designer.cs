@@ -184,6 +184,7 @@
             this.btnDodajNowąBrułę.TabIndex = 10;
             this.btnDodajNowąBrułę.Text = "Dodaj nową brylę";
             this.btnDodajNowąBrułę.UseVisualStyleBackColor = true;
+            this.btnDodajNowąBrułę.Click += new System.EventHandler(this.btnDodajNowąBrułę_Click);
             // 
             // btnKierunekPrawo
             // 
@@ -440,6 +441,7 @@
             // 
             // ZegarObrotu
             // 
+            this.ZegarObrotu.Interval = 1000;
             this.ZegarObrotu.Tick += new System.EventHandler(this.ZegarObrotu_Tick);
             // 
             // LaboratoriumNr3_Radovskyi61986
