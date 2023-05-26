@@ -22,8 +22,9 @@ namespace ProjektNr3_Radovskyi61986
             protected Color KolorLinii;
             protected DashStyle StylLinii;
             protected float GrubośćLinii;
+            protected float Wysokość;
 
-            protected TypBryłyGeometrycznej TRodzajBryły;
+            protected TypBryłyGeometrycznej RodzajBryły;
 
             protected bool KierunekObrotu;
 
@@ -230,7 +231,7 @@ namespace ProjektNr3_Radovskyi61986
             public Stożek(int R, int WysokośćStoąka, int StopieńWielokąta, int XsP, int YsP, Color KolorLinii, DashStyle StylLinii, float GrubośćLinii) :
                 base(R, KolorLinii, StylLinii, GrubośćLinii)
             {
-                TRodzajBryły = TypBryłyGeometrycznej.BG_Stożek;
+                RodzajBryły = TypBryłyGeometrycznej.BG_Stożek;
                 this.WysokośćStożka = WysokośćStoąka;
                 this.StopieńWielokątaPodstawy = StopieńWielokąta;
                 OśDuża = 2 * PromińBryłu; // lub 2 * R
@@ -291,8 +292,6 @@ namespace ProjektNr3_Radovskyi61986
             }
             public override void Obróć_i_Wykreś(Control Kontrolka, Graphics Rysownica, float KątObrotu)
             {
-                float KątPołożenia;
-
                 Wymaż(Rysownica, Kontrolka);
 
                 if (KierunekObrotu)
@@ -360,6 +359,78 @@ namespace ProjektNr3_Radovskyi61986
                     WilokątPrzekrojuKuli[i].X = (int)(XsP + OśDuza/2.0f * Math.Cos(Math.PI * (KątPołożeniaPirwszegoWierzchołka + i * KątŚrodkowyWielokąta) / 180f));
                     //WilokątPrzekrojuKuli[i].Y = (int)(YsP + OśMała/2f * Math.Sin(Math.PI * ()))
                 }
+            }
+        }
+        public class Wielościany : BryłaAbstrakcyjna
+        {
+            protected int Promień;
+            protected int StopieńWielokątaPodstawy;
+
+
+            public Wielościany(int R, int StopieńWielokątaPodstawy ,Color KolorLinii, DashStyle StylLinii, float GrubośćLinii) 
+                : base(KolorLinii, StylLinii, GrubośćLinii)
+            {
+                this.Promień = R;
+                this.StopieńWielokątaPodstawy = StopieńWielokątaPodstawy;
+            }
+
+            public override void Obróć_i_Wykreś(Control Kontrolka, Graphics Rysownica, float KątObrotu)
+            {
+            }
+
+            public override void PrzesuńDoNowegoXY(Control Kontrolka, Graphics Rysownica, int X, int Y)
+            {
+            }
+
+            public override void Wykreśl(Graphics Rysownica)
+            {
+            }
+
+            public override void Wymaż(Graphics Rysownica, Control Kontrolka)
+            {
+            }
+        }
+        public class Graniastosłup : Wielościany
+        {
+            float Oś_duża, Oś_mała;
+            float KątPołożeniaPierwszegoWierzchołka;
+            Point[] WielokątPodłogi;
+            Point[] WielokątSufitu;
+            public Graniastosłup(int R,int Wysokość , int StopieńWielokątaPodstawy,int XsS, int YsS, int XsP, int YsP ,
+                Color KolorLinii, DashStyle StylLinii, float GrubośćLinii) 
+                : base(R, StopieńWielokątaPodstawy, KolorLinii, StylLinii, GrubośćLinii)
+            {
+                this.RodzajBryły = TypBryłyGeometrycznej.BG_Graniastosłup;
+                this.Wysokość = Wysokość;
+                this.StopieńWielokątaPodstawy = StopieńWielokątaPodstawy;
+                this.Oś_duża = this.Promień * 2.0f;
+                this.Oś_mała = this.Promień / 2.0f;
+                this.XsS
+            }
+
+            public override void Obróć_i_Wykreś(Control Kontrolka, Graphics Rysownica, float KątObrotu)
+            {
+                base.Obróć_i_Wykreś(Kontrolka, Rysownica, KątObrotu);
+            }
+
+            public override void PrzesuńDoNowegoXY(Control Kontrolka, Graphics Rysownica, int X, int Y)
+            {
+                base.PrzesuńDoNowegoXY(Kontrolka, Rysownica, X, Y);
+            }
+
+            public override string ToString()
+            {
+                return base.ToString();
+            }
+
+            public override void Wykreśl(Graphics Rysownica)
+            {
+                base.Wykreśl(Rysownica);
+            }
+
+            public override void Wymaż(Graphics Rysownica, Control Kontrolka)
+            {
+                base.Wymaż(Rysownica, Kontrolka);
             }
         }
     }

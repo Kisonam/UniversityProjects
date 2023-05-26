@@ -55,10 +55,10 @@ namespace ProjektNr3_Radovskyi61986
         private void ZegarObrotu_Tick(object sender, EventArgs e)
         {
             KątObrotu = 5f;
-            //for (int i = 0; i < LBG.Count; i++)
-            //{
-                
-            //}
+            for (int i = 0; i < LBG.Count; i++)
+            {
+
+            }
 
             Refresh();
         }
