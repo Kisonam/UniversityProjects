@@ -321,6 +321,7 @@
             this.rdbPrzyciskowy.TabStop = true;
             this.rdbPrzyciskowy.Text = "Przyciskowy";
             this.rdbPrzyciskowy.UseVisualStyleBackColor = true;
+            this.rdbPrzyciskowy.CheckedChanged += new System.EventHandler(this.rdbPrzyciskowy_CheckedChanged);
             // 
             // rdbZegarowy
             // 
@@ -369,6 +370,7 @@
             this.btnNastępny.TabIndex = 25;
             this.btnNastępny.Text = "Następny";
             this.btnNastępny.UseVisualStyleBackColor = true;
+            this.btnNastępny.Click += new System.EventHandler(this.btnNastępny_Click);
             // 
             // btnPoprzedni
             // 
@@ -378,6 +380,7 @@
             this.btnPoprzedni.TabIndex = 26;
             this.btnPoprzedni.Text = "Poprzedni";
             this.btnPoprzedni.UseVisualStyleBackColor = true;
+            this.btnPoprzedni.Click += new System.EventHandler(this.btnPoprzedni_Click);
             // 
             // btnWyłączSlajderPokazu
             // 
@@ -387,6 +390,7 @@
             this.btnWyłączSlajderPokazu.TabIndex = 27;
             this.btnWyłączSlajderPokazu.Text = "Wyłącz slajder pokazu";
             this.btnWyłączSlajderPokazu.UseVisualStyleBackColor = true;
+            this.btnWyłączSlajderPokazu.Click += new System.EventHandler(this.btnWyłączSlajderPokazu_Click);
             // 
             // pictureBox2
             // 

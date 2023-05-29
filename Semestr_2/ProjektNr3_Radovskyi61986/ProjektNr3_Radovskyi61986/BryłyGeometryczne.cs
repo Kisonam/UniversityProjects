@@ -11,6 +11,36 @@ namespace ProjektNr3_Radovskyi61986
 {
     internal class BryłyGeometryczne
     {
+        public class BryłyObrotowe : BryłaAbstrakcyjna
+        {
+            public int PromińBryłu
+            {
+                get;
+                protected set;
+            }
+
+            public BryłyObrotowe(int R, Color KolorLinii, DashStyle StylLinii, float GrubośćLinii) : base(KolorLinii, StylLinii, GrubośćLinii)
+            {
+                PromińBryłu = R;
+            }
+
+            public override void Wykreśl(Graphics Rysownica)
+            {
+
+            }
+            public override void Wymaż(Graphics Rysownica, Control Kontrolka)
+            {
+
+            }
+            public override void Obróć_i_Wykreś(Control Kontrolka, Graphics Rysownica, float KątObrotu)
+            {
+
+            }
+            public override void PrzesuńDoNowegoXY(Control Kontrolka, Graphics Rysownica, int X, int Y)
+            {
+
+            }
+        }
         public abstract class BryłaAbstrakcyjna
         {
             public enum TypBryłyGeometrycznej
@@ -40,36 +70,6 @@ namespace ProjektNr3_Radovskyi61986
             public abstract void Obróć_i_Wykreś(Control Kontrolka, Graphics Rysownica, float KątObrotu);
             public abstract void PrzesuńDoNowegoXY(Control Kontrolka, Graphics Rysownica, int X, int Y);
 
-        }
-        public class BryłyObrotowe : BryłaAbstrakcyjna
-        {
-            public int PromińBryłu
-            {
-                get;
-                protected set;
-            }
-
-            public BryłyObrotowe(int R,Color KolorLinii, DashStyle StylLinii, float GrubośćLinii) : base(KolorLinii, StylLinii, GrubośćLinii)
-            {
-                PromińBryłu = R;
-            }
-
-            public override void Wykreśl(Graphics Rysownica)
-            {
-
-            }
-            public override void Wymaż(Graphics Rysownica, Control Kontrolka)
-            {
-
-            }
-            public override void Obróć_i_Wykreś(Control Kontrolka, Graphics Rysownica, float KątObrotu) 
-            {
-
-            }
-            public override void PrzesuńDoNowegoXY(Control Kontrolka, Graphics Rysownica, int X, int Y)
-            {
-
-            }
         }
         public class Wielościany : BryłaAbstrakcyjna
         {
@@ -454,30 +454,23 @@ namespace ProjektNr3_Radovskyi61986
             {
                 using (Pen Pióro = new Pen(KolorLinii, GrubośćLinii))
                 {
-                    // Малюємо другу кулю горизонтально
                     Rysownica.DrawEllipse(Pióro, XsP - OśDuza / 2.0f, YsP - OśMała / 2.0f, OśDuza, OśMała);
 
-                    // Перераховуємо координати вершин відповідно до горизонтальної кулі
                     for (int i = 0; i < WilokątPrzekrojuKuli.Length - 1; i++)
                     {
                         WilokątPrzekrojuKuli[i].X = (int)(XsP + OśDuza / 2.0f * Math.Cos(Math.PI * (KątPołożeniaPirwszegoWierzchołka + i * KątŚrodkowyWielokąta) / 180f));
                         WilokątPrzekrojuKuli[i].Y = (int)(YsP + OśMała / 2f * Math.Sin(Math.PI * (KątPołożeniaPirwszegoWierzchołka + i * KątŚrodkowyWielokąta) / 180f));
                     }
 
-                    // Малюємо першу кулю вертикально
                     Rysownica.DrawEllipse(Pióro, XsP - OśDuza / 2, YsP - OśDuza / 2.0f, OśDuza, OśDuza);
 
                    
 
-                    // Перераховуємо координати вершин відповідно до вертикальної кулі
                     for (int i = 0; i < WilokątPrzekrojuKuli.Length - 1; i++)
                     {
                         WilokątPrzekrojuKuli[i].X = (int)(XsP + OśMała / 2.0f * Math.Cos(Math.PI * (KątPołożeniaPirwszegoWierzchołka + i * KątŚrodkowyWielokąta) / 180f));
                         WilokątPrzekrojuKuli[i].Y = (int)(YsP + OśDuza / 2f * Math.Sin(Math.PI * (KątPołożeniaPirwszegoWierzchołka + i * KątŚrodkowyWielokąta) / 180f));
                     }
-
-                    for (int i = 0; i < WilokątPrzekrojuKuli.Length - 1; i++)
-                        Rysownica.DrawLine(Pióro, WilokątPrzekrojuKuli[i],new Point(XsP, YsP));
                 }
             }
 
@@ -504,12 +497,9 @@ namespace ProjektNr3_Radovskyi61986
                         WilokątPrzekrojuKuli[i].X = (int)(XsP + OśMała / 2.0f * Math.Cos(Math.PI * (KątPołożeniaPirwszegoWierzchołka + i * KątŚrodkowyWielokąta) / 180f));
                         WilokątPrzekrojuKuli[i].Y = (int)(YsP + OśDuza / 2f * Math.Sin(Math.PI * (KątPołożeniaPirwszegoWierzchołka + i * KątŚrodkowyWielokąta) / 180f));
                     }
-
-                    for (int i = 0; i < WilokątPrzekrojuKuli.Length - 1; i++)
-                        Rysownica.DrawLine(Pióro, WilokątPrzekrojuKuli[i].Y, WilokątPrzekrojuKuli[i].X, XsP, YsP);
                 }
             }
-        } // +
+        } // +-
         public class Graniastosłup : Wielościany
         {
             float Oś_duża, Oś_mała;
@@ -786,6 +776,36 @@ namespace ProjektNr3_Radovskyi61986
                         Rysownica.DrawLine(Pióro, WielokątPodłogi[i], WielokątSufitu[i]);
                 }
             }
-        } //+
+        } //+-
+        public class OstrosłupProsty
+        {
+            private float długośćBokuPodstawy;
+            private float wysokość;
+
+            public OstrosłupProsty(float długośćBokuPodstawy, float wysokość)
+            {
+                this.długośćBokuPodstawy = długośćBokuPodstawy;
+                this.wysokość = wysokość;
+            }
+
+            public void Narysuj(Graphics rysownica, PictureBox pictureBox , float X, float Y)
+            {
+                PointF[] wierzchołkiPodstawy = new PointF[4];
+                wierzchołkiPodstawy[0] = new PointF(X - długośćBokuPodstawy / 2.0f, Y + długośćBokuPodstawy / 2.0f);
+                wierzchołkiPodstawy[1] = new PointF(X + długośćBokuPodstawy / 2.0f, Y + długośćBokuPodstawy / 2.0f);
+                wierzchołkiPodstawy[2] = new PointF(X + długośćBokuPodstawy / 2.0f, Y - długośćBokuPodstawy / 2.0f);
+                wierzchołkiPodstawy[3] = new PointF(X - długośćBokuPodstawy / 2.0f, Y - długośćBokuPodstawy / 2.0f);
+
+                rysownica.FillPolygon(Brushes.Gray, wierzchołkiPodstawy);
+                rysownica.DrawPolygon(Pens.Black, wierzchołkiPodstawy);
+
+                PointF wierzchołekWysokości = new PointF(X, Y - wysokość);
+
+                for (int i = 0; i < 4; i++)
+                {
+                    rysownica.DrawLine(Pens.Black, wierzchołkiPodstawy[i], wierzchołekWysokości);
+                }
+            }
+        } // +-
     }
 }

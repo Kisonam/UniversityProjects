@@ -16,12 +16,20 @@ namespace ProjektNr3_Radovskyi61986
         {
             InitializeComponent();
         }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
-        }
+            DialogResult arOknoMessage = MessageBox.Show("Samoocena: 4 - za część laboratoryjną. 3 - dla indywidualnych. " +
+                 "W laboratorium wykonałem większość pracy, wszystkie kształty są narysowane, wszystko działa oprócz kuli. " +
+                 "Indywidualnie rysuję wszystkie figury, tylko jedna działa. Drugi działa, ale pojawia się za deską kreślarską. " +
+                 "Myślę, że ta praca zasługuje na co najmniej 3", Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3);
 
+            if (arOknoMessage == DialogResult.Yes)
+            {
+                e.Cancel = false;
+            }
+            else
+                e.Cancel = true;
+        }
         private void btnLaboratorium_Click(object sender, EventArgs e)
         {
             foreach (Form formularz in Application.OpenForms)
@@ -32,15 +40,12 @@ namespace ProjektNr3_Radovskyi61986
                     formularz.Show();
                     return;
                 }
-
-                
             }
             this.Hide();
 
             LaboratoriumNr3_Radovskyi61986 laboratoriumNr3 = new LaboratoriumNr3_Radovskyi61986();
             laboratoriumNr3.Show();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             foreach (Form formularz in Application.OpenForms)

@@ -92,6 +92,7 @@
             this.btnWyłączSlajderPokazu.TabIndex = 56;
             this.btnWyłączSlajderPokazu.Text = "Wyłącz slajder pokazu";
             this.btnWyłączSlajderPokazu.UseVisualStyleBackColor = true;
+            this.btnWyłączSlajderPokazu.Click += new System.EventHandler(this.btnWyłączSlajderPokazu_Click);
             // 
             // btnPoprzedni
             // 
@@ -102,6 +103,7 @@
             this.btnPoprzedni.TabIndex = 55;
             this.btnPoprzedni.Text = "Poprzedni";
             this.btnPoprzedni.UseVisualStyleBackColor = true;
+            this.btnPoprzedni.Click += new System.EventHandler(this.btnPoprzedni_Click);
             // 
             // btnNastępny
             // 
@@ -112,6 +114,7 @@
             this.btnNastępny.TabIndex = 54;
             this.btnNastępny.Text = "Następny";
             this.btnNastępny.UseVisualStyleBackColor = true;
+            this.btnNastępny.Click += new System.EventHandler(this.btnNastępny_Click);
             // 
             // txtNumerBryły
             // 
@@ -139,6 +142,7 @@
             this.btnWłączSlajderPokazu.TabIndex = 50;
             this.btnWłączSlajderPokazu.Text = "Włącz slajder pokazu";
             this.btnWłączSlajderPokazu.UseVisualStyleBackColor = true;
+            this.btnWłączSlajderPokazu.Click += new System.EventHandler(this.btnWłączSlajderPokazu_Click);
             // 
             // groupBox1
             // 
@@ -161,6 +165,7 @@
             this.rdbPrzyciskowy.TabStop = true;
             this.rdbPrzyciskowy.Text = "Przyciskowy";
             this.rdbPrzyciskowy.UseVisualStyleBackColor = true;
+            this.rdbPrzyciskowy.CheckedChanged += new System.EventHandler(this.rdbPrzyciskowy_CheckedChanged);
             // 
             // rdbZegarowy
             // 
@@ -322,7 +327,8 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Graniastosłup",
-            "GraniastosłupPochyły"});
+            "GraniastosłupPochyły",
+            "Ostrosłup"});
             this.comboBox1.Location = new System.Drawing.Point(12, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(191, 21);

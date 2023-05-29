@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using static ProjektNr3_Radovskyi61986.BryłyGeometryczne;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProjektNr3_Radovskyi61986
 {
@@ -12,6 +13,7 @@ namespace ProjektNr3_Radovskyi61986
         const int PromieńPunktuLok = 2;
         float KątProsty = 90.0f;
         Graphics Rysownica;
+        Graphics MałąRysownica;
         float KątObrotu = 5;
 
         DashStyle StylLinii = DashStyle.Solid;
@@ -26,25 +28,42 @@ namespace ProjektNr3_Radovskyi61986
 
             pbRysownica.Image = new Bitmap(pbRysownica.Width, pbRysownica.Height);
             Rysownica = Graphics.FromImage(pbRysownica.Image);
+
+            pictureBox2.Image = new Bitmap(pictureBox2.Width, pictureBox2.Height);
+            MałąRysownica = Graphics.FromImage(pictureBox2.Image);
         }
 
         private void LaboratoriumNr3_FormClosing(object sender, FormClosingEventArgs e)
         {
-            foreach (Form formularz in Application.OpenForms)
+            DialogResult arOknoMessage = MessageBox.Show("Samoocena: 4 - za część laboratoryjną. 3 - dla indywidualnych. " +
+                "W laboratorium wykonałem większość pracy, wszystkie kształty są narysowane, wszystko działa oprócz kuli. " +
+                "Indywidualnie rysuję wszystkie figury, tylko jedna działa. Drugi działa, ale pojawia się za deską kreślarską. " +
+                "Myślę, że ta praca zasługuje na co najmniej 3", Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3);
+
+            if (arOknoMessage == DialogResult.Yes)
             {
-                if (formularz.Name == "Kokpit")
+                e.Cancel = false;
+
+                foreach (Form formularz in Application.OpenForms)
                 {
-                    this.Hide();
-                    formularz.Show();
-                    return;
+                    if (formularz.Name == "Kokpit")
+                    {
+                        this.Hide();
+                        formularz.Show();
+                        return;
+                    }
+
+
                 }
+                this.Hide();
 
-                
+                Kokpit kokpit = new Kokpit();
+                kokpit.Show();
+
             }
-            this.Hide();
+            else
+                e.Cancel = true;
 
-            Kokpit kokpit = new Kokpit();
-            kokpit.Show();
         }
 
         private void ZegarObrotu_Tick(object sender, EventArgs e)
@@ -220,7 +239,78 @@ namespace ProjektNr3_Radovskyi61986
 
         private void btnWłączSlajderPokazu_Click(object sender, EventArgs e)
         {
+            MałąRysownica.Clear(pictureBox2.BackColor);
+            pictureBox2.Refresh();
+            txtNumerBryły.Text = 0.ToString();
 
+                int N = int.Parse(txtNumerBryły.Text);
+                int Xmax = pictureBox2.Width;
+                int Ymax = pictureBox2.Height;
+                LBG[N].PrzesuńDoNowegoXY(pictureBox2, MałąRysownica, Xmax / 2, Ymax / 2);
+                pictureBox2.Refresh();
+        }
+
+        private void rdbPrzyciskowy_CheckedChanged(object sender, EventArgs e)
+        {
+            txtNumerBryły.Enabled = false;
+            txtNumerBryły.Text = 0.ToString();
+        }
+
+        private void btnNastępny_Click(object sender, EventArgs e)
+        {
+            int N = int.Parse(txtNumerBryły.Text);
+            LBG[N].Wymaż( MałąRysownica, pictureBox2);
+            pictureBox2.Refresh();
+            if (N == LBG.Count- 1)
+            {
+                N = 0;
+            }
+            else
+            {
+                N++;
+
+                int Xmax = pictureBox2.Width;
+                int Ymax = pictureBox2.Height;
+
+                LBG[N].PrzesuńDoNowegoXY(pictureBox2, MałąRysownica, Xmax / 2, Ymax / 2);
+                pictureBox2.Refresh();
+
+                txtNumerBryły.Text = N.ToString();
+            }
+        }
+
+        private void btnPoprzedni_Click(object sender, EventArgs e)
+        {
+            int N = int.Parse(txtNumerBryły.Text);
+            LBG[N].Wymaż(MałąRysownica, pictureBox2);
+            pictureBox2.Refresh();
+            if (N == 0)
+            {
+                N = LBG.Count - 1;
+            }
+            else
+            {
+                N--;
+
+                int Xmax = pictureBox2.Width;
+                int Ymax = pictureBox2.Height;
+
+                LBG[N].PrzesuńDoNowegoXY(pictureBox2, MałąRysownica, Xmax / 2, Ymax / 2);
+                pictureBox2.Refresh();
+
+                txtNumerBryły.Text = N.ToString();
+            }
+        }
+
+        private void btnWyłączSlajderPokazu_Click(object sender, EventArgs e)
+        {
+            MałąRysownica.Clear(pictureBox2.BackColor);
+            pictureBox2.Refresh();
+
+            txtNumerBryły.Text = "";
+            txtNumerBryły.Enabled = true;
+
+            rdbPrzyciskowy.Checked = false;
         }
     }
 }
