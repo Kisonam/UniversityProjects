@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.rdbObiętość = new System.Windows.Forms.RadioButton();
-            this.rdbWysokość = new System.Windows.Forms.RadioButton();
             this.btnWyłączSlajderPokazu = new System.Windows.Forms.Button();
             this.btnPoprzedni = new System.Windows.Forms.Button();
             this.btnNastępny = new System.Windows.Forms.Button();
@@ -62,8 +59,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbWartośćPromieniu = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
+            this.ZegarObrotu = new System.Windows.Forms.Timer(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbStylLinii = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumerUsuwanejBryły)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRysownica)).BeginInit();
@@ -71,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbWysokośćFiguryGeometrycznej)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbWartośćPromieniu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -82,51 +82,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(214, 239);
             this.pictureBox2.TabIndex = 57;
             this.pictureBox2.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.rdbObiętość);
-            this.groupBox2.Controls.Add(this.rdbWysokość);
-            this.groupBox2.Location = new System.Drawing.Point(209, 548);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(280, 49);
-            this.groupBox2.TabIndex = 51;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Krzyteria pokazu brył geometrycznych";
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(161, 20);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(105, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Pole powierzchni";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // rdbObiętość
-            // 
-            this.rdbObiętość.AutoSize = true;
-            this.rdbObiętość.Location = new System.Drawing.Point(88, 20);
-            this.rdbObiętość.Name = "rdbObiętość";
-            this.rdbObiętość.Size = new System.Drawing.Size(67, 17);
-            this.rdbObiętość.TabIndex = 1;
-            this.rdbObiętość.TabStop = true;
-            this.rdbObiętość.Text = "Obiętość";
-            this.rdbObiętość.UseVisualStyleBackColor = true;
-            // 
-            // rdbWysokość
-            // 
-            this.rdbWysokość.AutoSize = true;
-            this.rdbWysokość.Location = new System.Drawing.Point(7, 19);
-            this.rdbWysokość.Name = "rdbWysokość";
-            this.rdbWysokość.Size = new System.Drawing.Size(75, 17);
-            this.rdbWysokość.TabIndex = 0;
-            this.rdbWysokość.TabStop = true;
-            this.rdbWysokość.Text = "Wysokość";
-            this.rdbWysokość.UseVisualStyleBackColor = true;
             // 
             // btnWyłączSlajderPokazu
             // 
@@ -254,6 +209,7 @@
             this.btnUsuńWybranąBryłę.TabIndex = 46;
             this.btnUsuńWybranąBryłę.Text = "Usuń wybraną brylę";
             this.btnUsuńWybranąBryłę.UseVisualStyleBackColor = true;
+            this.btnUsuńWybranąBryłę.Click += new System.EventHandler(this.btnUsuńWybranąBryłę_Click);
             // 
             // btnUsuńOstatniąDodanąBryłę
             // 
@@ -264,6 +220,7 @@
             this.btnUsuńOstatniąDodanąBryłę.TabIndex = 45;
             this.btnUsuńOstatniąDodanąBryłę.Text = "Usuń ostatnią dodaną brylę";
             this.btnUsuńOstatniąDodanąBryłę.UseVisualStyleBackColor = true;
+            this.btnUsuńOstatniąDodanąBryłę.Click += new System.EventHandler(this.btnUsuńOstatniąDodanąBryłę_Click);
             // 
             // btnUsuńPierwsząDodanąBryłę
             // 
@@ -274,6 +231,7 @@
             this.btnUsuńPierwsząDodanąBryłę.TabIndex = 44;
             this.btnUsuńPierwsząDodanąBryłę.Text = "Usuń pierwszą dodaną brylę";
             this.btnUsuńPierwsząDodanąBryłę.UseVisualStyleBackColor = true;
+            this.btnUsuńPierwsząDodanąBryłę.Click += new System.EventHandler(this.btnUsuńPierwsząDodanąBryłę_Click);
             // 
             // pbRysownica
             // 
@@ -284,6 +242,7 @@
             this.pbRysownica.Size = new System.Drawing.Size(853, 472);
             this.pbRysownica.TabIndex = 43;
             this.pbRysownica.TabStop = false;
+            this.pbRysownica.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbRysownica_MouseClick);
             // 
             // btnWylosujNowePołożenie
             // 
@@ -294,6 +253,7 @@
             this.btnWylosujNowePołożenie.TabIndex = 42;
             this.btnWylosujNowePołożenie.Text = "Wylosuj nowe położenie";
             this.btnWylosujNowePołożenie.UseVisualStyleBackColor = true;
+            this.btnWylosujNowePołożenie.Click += new System.EventHandler(this.btnWylosujNowePołożenie_Click);
             // 
             // btnUstawNoweAtrybuty
             // 
@@ -304,6 +264,7 @@
             this.btnUstawNoweAtrybuty.TabIndex = 41;
             this.btnUstawNoweAtrybuty.Text = "Ustaw nowe atrybuty graficzne";
             this.btnUstawNoweAtrybuty.UseVisualStyleBackColor = true;
+            this.btnUstawNoweAtrybuty.Click += new System.EventHandler(this.btnUstawNoweAtrybuty_Click);
             // 
             // btnKierunekLewo
             // 
@@ -314,6 +275,7 @@
             this.btnKierunekLewo.TabIndex = 40;
             this.btnKierunekLewo.Text = "Kierunek obwodu w lewo";
             this.btnKierunekLewo.UseVisualStyleBackColor = true;
+            this.btnKierunekLewo.Click += new System.EventHandler(this.btnKierunekLewo_Click);
             // 
             // btnKierunekPrawo
             // 
@@ -324,20 +286,22 @@
             this.btnKierunekPrawo.TabIndex = 39;
             this.btnKierunekPrawo.Text = "Kierunek obwodu w prawo";
             this.btnKierunekPrawo.UseVisualStyleBackColor = true;
+            this.btnKierunekPrawo.Click += new System.EventHandler(this.btnKierunekPrawo_Click);
             // 
             // btnDodajNowąBrułę
             // 
             this.btnDodajNowąBrułę.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDodajNowąBrułę.Location = new System.Drawing.Point(12, 324);
+            this.btnDodajNowąBrułę.Location = new System.Drawing.Point(11, 324);
             this.btnDodajNowąBrułę.Name = "btnDodajNowąBrułę";
             this.btnDodajNowąBrułę.Size = new System.Drawing.Size(173, 50);
             this.btnDodajNowąBrułę.TabIndex = 38;
             this.btnDodajNowąBrułę.Text = "Dodaj nową brylę";
             this.btnDodajNowąBrułę.UseVisualStyleBackColor = true;
+            this.btnDodajNowąBrułę.Click += new System.EventHandler(this.btnDodajNowąBrułę_Click);
             // 
             // tbKątNachyleniaBryłyGeometrycznej
             // 
-            this.tbKątNachyleniaBryłyGeometrycznej.Location = new System.Drawing.Point(16, 273);
+            this.tbKątNachyleniaBryłyGeometrycznej.Location = new System.Drawing.Point(13, 236);
             this.tbKątNachyleniaBryłyGeometrycznej.Minimum = 1;
             this.tbKątNachyleniaBryłyGeometrycznej.Name = "tbKątNachyleniaBryłyGeometrycznej";
             this.tbKątNachyleniaBryłyGeometrycznej.Size = new System.Drawing.Size(176, 45);
@@ -347,7 +311,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 247);
+            this.label6.Location = new System.Drawing.Point(12, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(174, 13);
             this.label6.TabIndex = 36;
@@ -357,8 +321,8 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Stożek",
-            "Koło"});
+            "Graniastosłup",
+            "GraniastosłupPochyły"});
             this.comboBox1.Location = new System.Drawing.Point(12, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(191, 21);
@@ -367,7 +331,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(18, 215);
+            this.numericUpDown1.Location = new System.Drawing.Point(16, 187);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             20,
             0,
@@ -389,7 +353,7 @@
             // 
             // tbWysokośćFiguryGeometrycznej
             // 
-            this.tbWysokośćFiguryGeometrycznej.Location = new System.Drawing.Point(14, 76);
+            this.tbWysokośćFiguryGeometrycznej.Location = new System.Drawing.Point(14, 52);
             this.tbWysokośćFiguryGeometrycznej.Maximum = 200;
             this.tbWysokośćFiguryGeometrycznej.Minimum = 20;
             this.tbWysokośćFiguryGeometrycznej.Name = "tbWysokośćFiguryGeometrycznej";
@@ -400,7 +364,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 199);
+            this.label5.Location = new System.Drawing.Point(13, 171);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(166, 13);
             this.label5.TabIndex = 34;
@@ -409,7 +373,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 60);
+            this.label1.Location = new System.Drawing.Point(13, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 13);
             this.label1.TabIndex = 31;
@@ -417,7 +381,8 @@
             // 
             // tbWartośćPromieniu
             // 
-            this.tbWartośćPromieniu.Location = new System.Drawing.Point(16, 151);
+            this.tbWartośćPromieniu.Location = new System.Drawing.Point(14, 123);
+            this.tbWartośćPromieniu.Maximum = 200;
             this.tbWartośćPromieniu.Minimum = 1;
             this.tbWartośćPromieniu.Name = "tbWartośćPromieniu";
             this.tbWartośćPromieniu.Size = new System.Drawing.Size(176, 45);
@@ -427,19 +392,42 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 125);
+            this.label3.Location = new System.Drawing.Point(13, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 13);
             this.label3.TabIndex = 32;
             this.label3.Text = "Ustaw promień  bryły";
+            // 
+            // ZegarObrotu
+            // 
+            this.ZegarObrotu.Tick += new System.EventHandler(this.ZegarObrotu_Tick);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // cmbStylLinii
+            // 
+            this.cmbStylLinii.FormattingEnabled = true;
+            this.cmbStylLinii.Items.AddRange(new object[] {
+            "Solid",
+            "Dash",
+            "Dot",
+            "DashDot",
+            "DashDotDot"});
+            this.cmbStylLinii.Location = new System.Drawing.Point(12, 287);
+            this.cmbStylLinii.Name = "cmbStylLinii";
+            this.cmbStylLinii.Size = new System.Drawing.Size(167, 21);
+            this.cmbStylLinii.TabIndex = 58;
+            this.cmbStylLinii.Text = "Ustaw Styl Linii";
             // 
             // ProjektowyNr3_Radovskyi61986
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1299, 614);
+            this.Controls.Add(this.cmbStylLinii);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnWyłączSlajderPokazu);
             this.Controls.Add(this.btnPoprzedni);
             this.Controls.Add(this.btnNastępny);
@@ -471,8 +459,6 @@
             this.Text = "ProjektowyNr3_Radovskyi61986";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProjektowyNr3_Radovskyi61986_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumerUsuwanejBryły)).EndInit();
@@ -481,6 +467,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbWysokośćFiguryGeometrycznej)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbWartośćPromieniu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,10 +476,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton rdbObiętość;
-        private System.Windows.Forms.RadioButton rdbWysokość;
         private System.Windows.Forms.Button btnWyłączSlajderPokazu;
         private System.Windows.Forms.Button btnPoprzedni;
         private System.Windows.Forms.Button btnNastępny;
@@ -522,5 +505,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TrackBar tbWartośćPromieniu;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer ZegarObrotu;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox cmbStylLinii;
     }
 }

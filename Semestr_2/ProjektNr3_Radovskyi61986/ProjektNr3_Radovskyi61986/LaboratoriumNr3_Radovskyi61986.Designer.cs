@@ -58,13 +58,10 @@
             this.btnNastępny = new System.Windows.Forms.Button();
             this.btnPoprzedni = new System.Windows.Forms.Button();
             this.btnWyłączSlajderPokazu = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.rdbObiętość = new System.Windows.Forms.RadioButton();
-            this.rdbWysokość = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.ZegarObrotu = new System.Windows.Forms.Timer(this.components);
+            this.cmbStylLinii = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tbKątNachyleniaBryłyGeometrycznej)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbWartośćPromieniu)).BeginInit();
@@ -72,7 +69,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRysownica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumerUsuwanejBryły)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -81,8 +77,10 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "Walec",
             "Stożek",
-            "Koło"});
+            "Kula",
+            "Graniastosłup"});
             this.comboBox1.Location = new System.Drawing.Point(13, 13);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(191, 21);
@@ -91,7 +89,7 @@
             // 
             // tbKątNachyleniaBryłyGeometrycznej
             // 
-            this.tbKątNachyleniaBryłyGeometrycznej.Location = new System.Drawing.Point(17, 274);
+            this.tbKątNachyleniaBryłyGeometrycznej.Location = new System.Drawing.Point(20, 248);
             this.tbKątNachyleniaBryłyGeometrycznej.Minimum = 1;
             this.tbKątNachyleniaBryłyGeometrycznej.Name = "tbKątNachyleniaBryłyGeometrycznej";
             this.tbKątNachyleniaBryłyGeometrycznej.Size = new System.Drawing.Size(176, 45);
@@ -101,7 +99,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 248);
+            this.label6.Location = new System.Drawing.Point(19, 222);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(174, 13);
             this.label6.TabIndex = 8;
@@ -109,7 +107,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(19, 216);
+            this.numericUpDown1.Location = new System.Drawing.Point(19, 199);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             20,
             0,
@@ -132,7 +130,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 200);
+            this.label5.Location = new System.Drawing.Point(16, 183);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(166, 13);
             this.label5.TabIndex = 6;
@@ -140,7 +138,8 @@
             // 
             // tbWartośćPromieniu
             // 
-            this.tbWartośćPromieniu.Location = new System.Drawing.Point(17, 152);
+            this.tbWartośćPromieniu.Location = new System.Drawing.Point(15, 135);
+            this.tbWartośćPromieniu.Maximum = 100;
             this.tbWartośćPromieniu.Minimum = 1;
             this.tbWartośćPromieniu.Name = "tbWartośćPromieniu";
             this.tbWartośćPromieniu.Size = new System.Drawing.Size(176, 45);
@@ -150,7 +149,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 126);
+            this.label3.Location = new System.Drawing.Point(14, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 13);
             this.label3.TabIndex = 3;
@@ -159,7 +158,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 61);
+            this.label1.Location = new System.Drawing.Point(14, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 13);
             this.label1.TabIndex = 1;
@@ -167,7 +166,7 @@
             // 
             // tbWysokośćFiguryGeometrycznej
             // 
-            this.tbWysokośćFiguryGeometrycznej.Location = new System.Drawing.Point(15, 77);
+            this.tbWysokośćFiguryGeometrycznej.Location = new System.Drawing.Point(15, 65);
             this.tbWysokośćFiguryGeometrycznej.Maximum = 200;
             this.tbWysokośćFiguryGeometrycznej.Minimum = 20;
             this.tbWysokośćFiguryGeometrycznej.Name = "tbWysokośćFiguryGeometrycznej";
@@ -178,7 +177,7 @@
             // btnDodajNowąBrułę
             // 
             this.btnDodajNowąBrułę.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDodajNowąBrułę.Location = new System.Drawing.Point(13, 325);
+            this.btnDodajNowąBrułę.Location = new System.Drawing.Point(17, 335);
             this.btnDodajNowąBrułę.Name = "btnDodajNowąBrułę";
             this.btnDodajNowąBrułę.Size = new System.Drawing.Size(173, 50);
             this.btnDodajNowąBrułę.TabIndex = 10;
@@ -189,42 +188,46 @@
             // btnKierunekPrawo
             // 
             this.btnKierunekPrawo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnKierunekPrawo.Location = new System.Drawing.Point(12, 381);
+            this.btnKierunekPrawo.Location = new System.Drawing.Point(16, 391);
             this.btnKierunekPrawo.Name = "btnKierunekPrawo";
             this.btnKierunekPrawo.Size = new System.Drawing.Size(173, 50);
             this.btnKierunekPrawo.TabIndex = 11;
             this.btnKierunekPrawo.Text = "Kierunek obwodu w prawo";
             this.btnKierunekPrawo.UseVisualStyleBackColor = true;
+            this.btnKierunekPrawo.Click += new System.EventHandler(this.btnKierunekPrawo_Click);
             // 
             // btnKierunekLewo
             // 
             this.btnKierunekLewo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnKierunekLewo.Location = new System.Drawing.Point(12, 437);
+            this.btnKierunekLewo.Location = new System.Drawing.Point(16, 447);
             this.btnKierunekLewo.Name = "btnKierunekLewo";
             this.btnKierunekLewo.Size = new System.Drawing.Size(173, 50);
             this.btnKierunekLewo.TabIndex = 12;
             this.btnKierunekLewo.Text = "Kierunek obwodu w lewo";
             this.btnKierunekLewo.UseVisualStyleBackColor = true;
+            this.btnKierunekLewo.Click += new System.EventHandler(this.btnKierunekLewo_Click);
             // 
             // btnUstawNoweAtrybuty
             // 
             this.btnUstawNoweAtrybuty.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnUstawNoweAtrybuty.Location = new System.Drawing.Point(12, 493);
+            this.btnUstawNoweAtrybuty.Location = new System.Drawing.Point(16, 503);
             this.btnUstawNoweAtrybuty.Name = "btnUstawNoweAtrybuty";
             this.btnUstawNoweAtrybuty.Size = new System.Drawing.Size(173, 50);
             this.btnUstawNoweAtrybuty.TabIndex = 13;
             this.btnUstawNoweAtrybuty.Text = "Ustaw nowe atrybuty graficzne";
             this.btnUstawNoweAtrybuty.UseVisualStyleBackColor = true;
+            this.btnUstawNoweAtrybuty.Click += new System.EventHandler(this.btnUstawNoweAtrybuty_Click);
             // 
             // btnWylosujNowePołożenie
             // 
             this.btnWylosujNowePołożenie.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnWylosujNowePołożenie.Location = new System.Drawing.Point(13, 549);
+            this.btnWylosujNowePołożenie.Location = new System.Drawing.Point(17, 559);
             this.btnWylosujNowePołożenie.Name = "btnWylosujNowePołożenie";
             this.btnWylosujNowePołożenie.Size = new System.Drawing.Size(173, 50);
             this.btnWylosujNowePołożenie.TabIndex = 14;
             this.btnWylosujNowePołożenie.Text = "Wylosuj nowe położenie";
             this.btnWylosujNowePołożenie.UseVisualStyleBackColor = true;
+            this.btnWylosujNowePołożenie.Click += new System.EventHandler(this.btnWylosujNowePołożenie_Click);
             // 
             // pbRysownica
             // 
@@ -235,6 +238,7 @@
             this.pbRysownica.Size = new System.Drawing.Size(853, 472);
             this.pbRysownica.TabIndex = 15;
             this.pbRysownica.TabStop = false;
+            this.pbRysownica.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbRysownica_MouseClick);
             // 
             // btnUsuńPierwsząDodanąBryłę
             // 
@@ -245,6 +249,7 @@
             this.btnUsuńPierwsząDodanąBryłę.TabIndex = 16;
             this.btnUsuńPierwsząDodanąBryłę.Text = "Usuń pierwszą dodaną brylę";
             this.btnUsuńPierwsząDodanąBryłę.UseVisualStyleBackColor = true;
+            this.btnUsuńPierwsząDodanąBryłę.Click += new System.EventHandler(this.btnUsuńPierwsząDodanąBryłę_Click);
             // 
             // btnUsuńOstatniąDodanąBryłę
             // 
@@ -255,6 +260,7 @@
             this.btnUsuńOstatniąDodanąBryłę.TabIndex = 17;
             this.btnUsuńOstatniąDodanąBryłę.Text = "Usuń ostatnią dodaną brylę";
             this.btnUsuńOstatniąDodanąBryłę.UseVisualStyleBackColor = true;
+            this.btnUsuńOstatniąDodanąBryłę.Click += new System.EventHandler(this.btnUsuńOstatniąDodanąBryłę_Click);
             // 
             // btnUsuńWybranąBryłę
             // 
@@ -265,6 +271,7 @@
             this.btnUsuńWybranąBryłę.TabIndex = 18;
             this.btnUsuńWybranąBryłę.Text = "Usuń wybraną brylę";
             this.btnUsuńWybranąBryłę.UseVisualStyleBackColor = true;
+            this.btnUsuńWybranąBryłę.Click += new System.EventHandler(this.btnUsuńWybranąBryłę_Click);
             // 
             // label2
             // 
@@ -335,6 +342,7 @@
             this.btnWłączSlajderPokazu.TabIndex = 22;
             this.btnWłączSlajderPokazu.Text = "Włącz slajder pokazu";
             this.btnWłączSlajderPokazu.UseVisualStyleBackColor = true;
+            this.btnWłączSlajderPokazu.Click += new System.EventHandler(this.btnWłączSlajderPokazu_Click);
             // 
             // label4
             // 
@@ -380,51 +388,6 @@
             this.btnWyłączSlajderPokazu.Text = "Wyłącz slajder pokazu";
             this.btnWyłączSlajderPokazu.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.rdbObiętość);
-            this.groupBox2.Controls.Add(this.rdbWysokość);
-            this.groupBox2.Location = new System.Drawing.Point(210, 549);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(280, 49);
-            this.groupBox2.TabIndex = 22;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Krzyteria pokazu brył geometrycznych";
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(161, 20);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(105, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Pole powierzchni";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // rdbObiętość
-            // 
-            this.rdbObiętość.AutoSize = true;
-            this.rdbObiętość.Location = new System.Drawing.Point(88, 20);
-            this.rdbObiętość.Name = "rdbObiętość";
-            this.rdbObiętość.Size = new System.Drawing.Size(67, 17);
-            this.rdbObiętość.TabIndex = 1;
-            this.rdbObiętość.TabStop = true;
-            this.rdbObiętość.Text = "Obiętość";
-            this.rdbObiętość.UseVisualStyleBackColor = true;
-            // 
-            // rdbWysokość
-            // 
-            this.rdbWysokość.AutoSize = true;
-            this.rdbWysokość.Location = new System.Drawing.Point(7, 19);
-            this.rdbWysokość.Name = "rdbWysokość";
-            this.rdbWysokość.Size = new System.Drawing.Size(75, 17);
-            this.rdbWysokość.TabIndex = 0;
-            this.rdbWysokość.TabStop = true;
-            this.rdbWysokość.Text = "Wysokość";
-            this.rdbWysokość.UseVisualStyleBackColor = true;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -444,13 +407,28 @@
             this.ZegarObrotu.Interval = 1000;
             this.ZegarObrotu.Tick += new System.EventHandler(this.ZegarObrotu_Tick);
             // 
+            // cmbStylLinii
+            // 
+            this.cmbStylLinii.FormattingEnabled = true;
+            this.cmbStylLinii.Items.AddRange(new object[] {
+            "Solid",
+            "Dash",
+            "Dot",
+            "DashDot",
+            "DashDotDot"});
+            this.cmbStylLinii.Location = new System.Drawing.Point(22, 285);
+            this.cmbStylLinii.Name = "cmbStylLinii";
+            this.cmbStylLinii.Size = new System.Drawing.Size(167, 21);
+            this.cmbStylLinii.TabIndex = 29;
+            this.cmbStylLinii.Text = "Ustaw Styl Linii";
+            // 
             // LaboratoriumNr3_Radovskyi61986
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1304, 615);
+            this.Controls.Add(this.cmbStylLinii);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnWyłączSlajderPokazu);
             this.Controls.Add(this.btnPoprzedni);
             this.Controls.Add(this.btnNastępny);
@@ -489,8 +467,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudNumerUsuwanejBryły)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -529,12 +505,9 @@
         private System.Windows.Forms.Button btnNastępny;
         private System.Windows.Forms.Button btnPoprzedni;
         private System.Windows.Forms.Button btnWyłączSlajderPokazu;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton rdbObiętość;
-        private System.Windows.Forms.RadioButton rdbWysokość;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Timer ZegarObrotu;
+        private System.Windows.Forms.ComboBox cmbStylLinii;
     }
 }
