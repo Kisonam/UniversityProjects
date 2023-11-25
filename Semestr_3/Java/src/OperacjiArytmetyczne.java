@@ -1,23 +1,36 @@
+import java.awt.event.KeyEvent;
 import java.util.Scanner;
 
 public class OperacjiArytmetyczne 
 {
-	public static void main(String[] args) 
+	public static void main(String[] args ) 
 	{
-		
 		Scanner scanner = new Scanner(System.in);
 		double result = 0;
+		
+		System.out.println("HELLO, I'M CALCULATOR :D\nI CAN +,-,*,/ YOUR NUMBERS!\nGOOD LUCK!\n");
+		
 		try {
 		System.out.println("Enter first number: ");
 		result += scanner.nextDouble();
 		}
-		catch (java.util.InputMismatchException e){
-			System.out.println("Wrong number: " + e);
+		catch (java.util.InputMismatchException ex){
+			System.out.println("Wrong number: " + ex);
 			return;
 		}
 		while(true) 
 		{
-			
+			double next_num = 0;
+	        
+	        try {
+	        System.out.println("Enter next number: ");
+	        next_num = scanner.nextDouble(); 
+			}
+	        catch (java.util.InputMismatchException ex)
+	        {
+				System.out.println("Wrong number: " + ex);
+				break;
+	        }
 			
 	        System.out.println("Choose operation (or 'q' to quit):");
 	        System.out.println("1. Addition (+)");
@@ -29,20 +42,9 @@ public class OperacjiArytmetyczne
 	        
 	        if (operator == 'q') 
 	        {
-	        	break; // Exit the loop if 'q' is entered
+	        	break;
 	        }
 	        
-	        double next_num = 0;
-	        
-	        try {
-	        System.out.println("Enter next number: ");
-	        next_num = scanner.nextDouble(); 
-			}
-	        catch (java.util.InputMismatchException e)
-	        {
-				System.out.println("Wrong number: " + e);
-				break;
-	        }
 			
 	        switch (operator) {
             case '+':
