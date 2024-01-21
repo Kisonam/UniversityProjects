@@ -14,10 +14,8 @@ public class ZnakiJava {
             boolean czyNoweSlowo = true;
 
             while ((znak = br.read()) != -1) {
-                // Liczenie wszystkich znaków
                 wyniki[0]++;
 
-                // Liczenie białych znaków
                 if (Character.isWhitespace(znak)) {
                     wyniki[1]++;
                     czyBialyZnak = true;
@@ -25,7 +23,6 @@ public class ZnakiJava {
                     czyBialyZnak = false;
                 }
 
-                // Liczenie słów
                 if (!czyBialyZnak && czyNoweSlowo) {
                     wyniki[2]++;
                     czyNoweSlowo = false;
@@ -40,13 +37,13 @@ public class ZnakiJava {
         return wyniki;
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		 String nazwaPliku = "sciezka/do/twojego/pliku.txt";
-	        int[] wyniki = liczZnakiSlowa(nazwaPliku);
+		String nazwaPliku = "src/sometext.txt";
+        int[] wynik = liczZnakiSlowa(nazwaPliku);
 
-	        System.out.println("Liczba znaków: " + wyniki[0]);
-	        System.out.println("Liczba białych znaków: " + wyniki[1]);
-	        System.out.println("Liczba słów: " + wyniki[2]);
-	}
+        if (wynik != null) {
+            System.out.println("Liczba znaków: " + wynik[0]);
+            System.out.println("Liczba białych znaków: " + wynik[1]);
+            System.out.println("Liczba słów: " + wynik[2]);
+        }
 
-}
+}}
