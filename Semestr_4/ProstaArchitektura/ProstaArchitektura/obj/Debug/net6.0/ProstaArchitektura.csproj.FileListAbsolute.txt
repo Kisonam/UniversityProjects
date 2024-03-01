@@ -1,0 +1,14 @@
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/bin/Debug/net6.0/ProstaArchitektura
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/bin/Debug/net6.0/ProstaArchitektura.deps.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/bin/Debug/net6.0/ProstaArchitektura.runtimeconfig.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/bin/Debug/net6.0/ProstaArchitektura.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/bin/Debug/net6.0/ProstaArchitektura.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/obj/Debug/net6.0/ProstaArchitektura.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/obj/Debug/net6.0/ProstaArchitektura.AssemblyInfoInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/obj/Debug/net6.0/ProstaArchitektura.AssemblyInfo.cs
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/obj/Debug/net6.0/ProstaArchitektura.csproj.CoreCompileInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/obj/Debug/net6.0/ProstaArchitektura.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/obj/Debug/net6.0/refint/ProstaArchitektura.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/obj/Debug/net6.0/ProstaArchitektura.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/obj/Debug/net6.0/ProstaArchitektura.genruntimeconfig.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/ProstaArchitektura/ProstaArchitektura/obj/Debug/net6.0/ref/ProstaArchitektura.dll
