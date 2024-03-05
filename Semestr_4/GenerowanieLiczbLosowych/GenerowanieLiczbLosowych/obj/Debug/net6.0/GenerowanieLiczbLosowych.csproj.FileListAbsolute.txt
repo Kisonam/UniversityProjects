@@ -1,0 +1,14 @@
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/obj/Debug/net6.0/GenerowanieLiczbLosowych.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/obj/Debug/net6.0/GenerowanieLiczbLosowych.AssemblyInfoInputs.cache
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/obj/Debug/net6.0/GenerowanieLiczbLosowych.AssemblyInfo.cs
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/obj/Debug/net6.0/GenerowanieLiczbLosowych.csproj.CoreCompileInputs.cache
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/bin/Debug/net6.0/GenerowanieLiczbLosowych
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/bin/Debug/net6.0/GenerowanieLiczbLosowych.deps.json
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/bin/Debug/net6.0/GenerowanieLiczbLosowych.runtimeconfig.json
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/bin/Debug/net6.0/GenerowanieLiczbLosowych.dll
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/bin/Debug/net6.0/GenerowanieLiczbLosowych.pdb
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/obj/Debug/net6.0/GenerowanieLiczbLosowych.dll
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/obj/Debug/net6.0/refint/GenerowanieLiczbLosowych.dll
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/obj/Debug/net6.0/GenerowanieLiczbLosowych.pdb
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/obj/Debug/net6.0/GenerowanieLiczbLosowych.genruntimeconfig.cache
+/Users/artemradovskyi/Projects/GenerowanieLiczbLosowych/GenerowanieLiczbLosowych/obj/Debug/net6.0/ref/GenerowanieLiczbLosowych.dll

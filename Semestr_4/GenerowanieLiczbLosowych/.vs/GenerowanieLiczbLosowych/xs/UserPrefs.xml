@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{CACA6FDF-F8DD-4D04-9AC2-26CFD69B046F}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.GenerowanieLiczbLosowych PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="GenerowanieLiczbLosowych/Program.cs">
+    <Files>
+      <File FileName="GenerowanieLiczbLosowych/Program.cs" Line="10" Column="24" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="GenerowanieLiczbLosowych" expanded="True" selected="True">
+            <Node name="GenerowanieLiczbLosowych" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
