@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{1E25A149-2169-4ACD-AE5D-98F55D8A58D2}|Default">
+  <MonoDevelop.Ide.ItemProperties.algorymParnych PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="algorymParnych/Program.cs">
+    <Files>
+      <File FileName="algorymParnych/Program.cs" Line="48" Column="41" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="algorymParnych" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

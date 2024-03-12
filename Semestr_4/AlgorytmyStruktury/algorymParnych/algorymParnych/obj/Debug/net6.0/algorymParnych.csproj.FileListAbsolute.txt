@@ -1,0 +1,14 @@
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/bin/Debug/net6.0/algorymParnych
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/bin/Debug/net6.0/algorymParnych.deps.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/bin/Debug/net6.0/algorymParnych.runtimeconfig.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/bin/Debug/net6.0/algorymParnych.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/bin/Debug/net6.0/algorymParnych.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/obj/Debug/net6.0/algorymParnych.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/obj/Debug/net6.0/algorymParnych.AssemblyInfoInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/obj/Debug/net6.0/algorymParnych.AssemblyInfo.cs
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/obj/Debug/net6.0/algorymParnych.csproj.CoreCompileInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/obj/Debug/net6.0/algorymParnych.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/obj/Debug/net6.0/refint/algorymParnych.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/obj/Debug/net6.0/algorymParnych.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/obj/Debug/net6.0/algorymParnych.genruntimeconfig.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/AlgorytmyStruktury/algorymParnych/algorymParnych/obj/Debug/net6.0/ref/algorymParnych.dll

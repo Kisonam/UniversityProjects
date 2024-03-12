@@ -1,0 +1,14 @@
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/bin/Debug/net6.0/FactoryScript
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/bin/Debug/net6.0/FactoryScript.deps.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/bin/Debug/net6.0/FactoryScript.runtimeconfig.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/bin/Debug/net6.0/FactoryScript.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/bin/Debug/net6.0/FactoryScript.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/obj/Debug/net6.0/FactoryScript.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/obj/Debug/net6.0/FactoryScript.AssemblyInfoInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/obj/Debug/net6.0/FactoryScript.AssemblyInfo.cs
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/obj/Debug/net6.0/FactoryScript.csproj.CoreCompileInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/obj/Debug/net6.0/FactoryScript.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/obj/Debug/net6.0/refint/FactoryScript.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/obj/Debug/net6.0/FactoryScript.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/obj/Debug/net6.0/FactoryScript.genruntimeconfig.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/FactoryScript/FactoryScript/obj/Debug/net6.0/ref/FactoryScript.dll
