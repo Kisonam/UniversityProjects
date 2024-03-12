@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">L02_Radovskyi_61986_Kalkulator</string>
+    <string name="txtNumericalSystem">"System Liczbowy z podstawą: "</string>
+    <string name="btnCalculate">Oblicz</string>
+    <string name="txtNumericalSystem10">System Liczbowy z podstawą: 10</string>
+</resources>

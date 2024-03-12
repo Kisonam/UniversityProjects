@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtDeveloper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.042" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/txtNumericalSystem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Spinner
+        android:id="@+id/spinnerBase1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:entries="@array/base"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/inputNumber1"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:digits="0123456789ABCDEF"
+        android:ems="10"
+        android:inputType="text|textCapCharacters"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Spinner
+        android:id="@+id/spinnerOperator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:entries="@array/operators"
+        app:layout_constraintBaseline_toBaselineOf="@+id/inputNumber1"
+        app:layout_constraintStart_toEndOf="@+id/inputNumber1" />
+
+    <EditText
+        android:id="@+id/inputNumber2"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:digits="0123456789ABCDEF"
+        android:ems="10"
+        android:inputType="text|textCapCharacters"
+        app:layout_constraintBaseline_toBaselineOf="@+id/spinnerOperator"
+        app:layout_constraintStart_toEndOf="@+id/spinnerOperator" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="="
+        app:layout_constraintBaseline_toBaselineOf="@+id/inputNumber2"
+        app:layout_constraintStart_toEndOf="@+id/inputNumber2" />
+
+    <TextView
+        android:id="@+id/outputBase1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView3"
+        app:layout_constraintStart_toEndOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="calculate"
+        android:text="@string/btnCalculate"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerOperator"
+        app:toggleCheckedStateOnClick="false" />
+
+    <TextView
+        android:id="@+id/txtNumericalSys10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/txtNumericalSystem10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/txtInputNum1Base10"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumericalSys10" />
+
+    <TextView
+        android:id="@+id/txtOperator10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="&quot;?&quot;"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtInputNum1Base10"
+        app:layout_constraintStart_toEndOf="@+id/txtInputNum1Base10" />
+
+    <TextView
+        android:id="@+id/txtInputNum2Base10"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        android:text="0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtOperator10"
+        app:layout_constraintStart_toEndOf="@+id/txtOperator10" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="="
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtInputNum2Base10"
+        app:layout_constraintStart_toEndOf="@+id/txtInputNum2Base10" />
+
+    <TextView
+        android:id="@+id/txtOutputBase10"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        android:text="0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
+        app:layout_constraintStart_toEndOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/txtNumericalSystem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInputNum1Base10" />
+
+    <Spinner
+        android:id="@+id/spinnerBase2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:entries="@array/base"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
+        app:layout_constraintStart_toEndOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/txtInputNumber1Base2"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/txtInputNumber2Base2"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        android:text="0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
+        app:layout_constraintStart_toEndOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="&quot;?&quot;"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtInputNumber1Base2"
+        app:layout_constraintStart_toEndOf="@+id/txtInputNumber1Base2" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="="
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtInputNumber2Base2"
+        app:layout_constraintStart_toEndOf="@+id/txtInputNumber2Base2" />
+
+    <TextView
+        android:id="@+id/txtOutputBase2"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        android:text="0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView14"
+        app:layout_constraintStart_toEndOf="@+id/textView14" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

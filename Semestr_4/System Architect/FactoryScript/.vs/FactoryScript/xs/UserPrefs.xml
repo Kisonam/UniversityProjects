@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{3AD489BA-AA95-456E-AA24-17E866BDCE73}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FactoryScript/Program.cs">
+    <Files>
+      <File FileName="FactoryScript/Program.cs" Line="15" Column="23" />
+      <File FileName="FactoryScript/Interface/ICar.cs" Line="13" Column="2" />
+      <File FileName="FactoryScript/CarClases/Mazda.cs" Line="28" Column="1" />
+      <File FileName="FactoryScript/CarClases/Tesla.cs" Line="16" Column="10" />
+      <File FileName="FactoryScript/CarClases/Tayota.cs" Line="14" Column="10" NotebookId="1" />
+      <File FileName="FactoryScript/CarFactory.cs" Line="17" Column="18" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FactoryScript" expanded="True">
+            <Node name="FactoryScript">
+              <Node name="CarClases" expanded="True" />
+              <Node name="Interface" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.FactoryScript PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
