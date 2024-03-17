@@ -1,0 +1,14 @@
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/bin/Debug/net6.0/BinarySort
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/bin/Debug/net6.0/BinarySort.deps.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/bin/Debug/net6.0/BinarySort.runtimeconfig.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/bin/Debug/net6.0/BinarySort.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/bin/Debug/net6.0/BinarySort.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/obj/Debug/net6.0/BinarySort.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/obj/Debug/net6.0/BinarySort.AssemblyInfoInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/obj/Debug/net6.0/BinarySort.AssemblyInfo.cs
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/obj/Debug/net6.0/BinarySort.csproj.CoreCompileInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/obj/Debug/net6.0/BinarySort.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/obj/Debug/net6.0/refint/BinarySort.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/obj/Debug/net6.0/BinarySort.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/obj/Debug/net6.0/BinarySort.genruntimeconfig.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/BinarySort/BinarySort/obj/Debug/net6.0/ref/BinarySort.dll
