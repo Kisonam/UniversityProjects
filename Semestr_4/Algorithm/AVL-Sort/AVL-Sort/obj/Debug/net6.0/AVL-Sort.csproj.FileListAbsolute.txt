@@ -1,0 +1,14 @@
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/bin/Debug/net6.0/AVL-Sort
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/bin/Debug/net6.0/AVL-Sort.deps.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/bin/Debug/net6.0/AVL-Sort.runtimeconfig.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/bin/Debug/net6.0/AVL-Sort.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/bin/Debug/net6.0/AVL-Sort.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/obj/Debug/net6.0/AVL-Sort.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/obj/Debug/net6.0/AVL-Sort.AssemblyInfoInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/obj/Debug/net6.0/AVL-Sort.AssemblyInfo.cs
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/obj/Debug/net6.0/AVL-Sort.csproj.CoreCompileInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/obj/Debug/net6.0/AVL-Sort.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/obj/Debug/net6.0/refint/AVL-Sort.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/obj/Debug/net6.0/AVL-Sort.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/obj/Debug/net6.0/AVL-Sort.genruntimeconfig.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AVL-Sort/AVL-Sort/obj/Debug/net6.0/ref/AVL-Sort.dll

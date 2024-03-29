@@ -1,27 +1,27 @@
 ﻿<Properties StartupConfiguration="{28F57BE6-CE07-433B-985F-51B5CA9A4F8F}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.BinarySort PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BinarySort/Node.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BinarySort/BinaryTree.cs">
     <Files>
-      <File FileName="BinarySort/Node.cs" Line="8" Column="27" />
-      <File FileName="BinarySort/BinatyTree.cs" Line="8" Column="28" />
-      <File FileName="BinarySort/Program.cs" Line="4" Column="2" />
+      <File FileName="BinarySort/Node.cs" Line="7" Column="27" />
+      <File FileName="BinarySort/Program.cs" Line="10" Column="1" />
+      <File FileName="BinarySort/BinaryTree.cs" Line="20" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="BinarySort" expanded="True">
+          <Node name="BinarySort">
             <Node name="BinarySort">
-              <Node name="Node.cs" selected="True" />
+              <Node name="BinaryTree.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.BinarySort PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

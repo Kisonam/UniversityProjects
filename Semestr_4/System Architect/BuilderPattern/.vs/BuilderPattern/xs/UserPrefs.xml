@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{8A8E2B7F-B893-45A0-B41F-048085088711}|Default">
+  <MonoDevelop.Ide.ItemProperties.BuilderPattern PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BuilderPattern/UniversalCarBuilder.cs">
+    <Files>
+      <File FileName="BuilderPattern/Program.cs" Line="18" Column="40" />
+      <File FileName="BuilderPattern/ICarBuilder.cs" Line="4" Column="19" />
+      <File FileName="BuilderPattern/Car.cs" Line="9" Column="32" />
+      <File FileName="BuilderPattern/SedanCarBuilder.cs" Line="25" Column="12" />
+      <File FileName="BuilderPattern/CarAsembler.cs" Line="6" Column="41" />
+      <File FileName="BuilderPattern/UniversalCarBuilder.cs" Line="21" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BuilderPattern" expanded="True">
+            <Node name="BuilderPattern" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

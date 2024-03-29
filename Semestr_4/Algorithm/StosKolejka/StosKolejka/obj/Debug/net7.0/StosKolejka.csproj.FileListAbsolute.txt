@@ -1,0 +1,14 @@
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/bin/Debug/net7.0/StosKolejka
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/bin/Debug/net7.0/StosKolejka.deps.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/bin/Debug/net7.0/StosKolejka.runtimeconfig.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/bin/Debug/net7.0/StosKolejka.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/bin/Debug/net7.0/StosKolejka.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/obj/Debug/net7.0/StosKolejka.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/obj/Debug/net7.0/StosKolejka.AssemblyInfoInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/obj/Debug/net7.0/StosKolejka.AssemblyInfo.cs
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/obj/Debug/net7.0/StosKolejka.csproj.CoreCompileInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/obj/Debug/net7.0/StosKolejka.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/obj/Debug/net7.0/refint/StosKolejka.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/obj/Debug/net7.0/StosKolejka.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/obj/Debug/net7.0/StosKolejka.genruntimeconfig.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/StosKolejka/StosKolejka/obj/Debug/net7.0/ref/StosKolejka.dll

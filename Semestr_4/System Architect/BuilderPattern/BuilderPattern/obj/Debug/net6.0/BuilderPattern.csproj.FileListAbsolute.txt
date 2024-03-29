@@ -1,0 +1,14 @@
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/bin/Debug/net6.0/BuilderPattern
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/bin/Debug/net6.0/BuilderPattern.deps.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/bin/Debug/net6.0/BuilderPattern.runtimeconfig.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/bin/Debug/net6.0/BuilderPattern.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/bin/Debug/net6.0/BuilderPattern.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/obj/Debug/net6.0/BuilderPattern.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/obj/Debug/net6.0/BuilderPattern.AssemblyInfoInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/obj/Debug/net6.0/BuilderPattern.AssemblyInfo.cs
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/obj/Debug/net6.0/BuilderPattern.csproj.CoreCompileInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/obj/Debug/net6.0/BuilderPattern.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/obj/Debug/net6.0/refint/BuilderPattern.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/obj/Debug/net6.0/BuilderPattern.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/obj/Debug/net6.0/BuilderPattern.genruntimeconfig.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/System Architect/BuilderPattern/BuilderPattern/obj/Debug/net6.0/ref/BuilderPattern.dll

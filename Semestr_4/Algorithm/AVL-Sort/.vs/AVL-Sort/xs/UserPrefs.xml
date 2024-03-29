@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{79DDA3E4-3A26-47E4-ACC2-68C187E17D3A}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="AVL-Sort/Program.cs">
+    <Files>
+      <File FileName="AVL-Sort/Program.cs" Line="11" Column="24" />
+      <File FileName="AVL-Sort/Node.cs" Line="15" Column="10" />
+      <File FileName="AVL-Sort/BinaryTree.cs" Line="58" Column="15" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AVL-Sort" expanded="True">
+            <Node name="AVL-Sort">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.AVL-Sort PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
