@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">L04_Radovskyi_61986_Sklep</string>
+    <string name="txtViewInfo">Witaj w sklepie Radovskiego</string>
+    <string name="txtViewSurname">"Nazwisko: "</string>
+    <string name="txtViewTown">"Miasto: "</string>
+    <string name="txtViewHowManyItems">"Ile przedmiotów: "</string>
+    <string name="hintSurname">"Nazwisko: "</string>
+    <string name="hintTown">"Miasto: "</string>
+    <string name="btnGoToForm">Do formularza zakupów</string>
+    <string name="btnGoToSummary">Podsumowanie</string>
+    <string name="txtData">Dane:</string>
+    <string name="txtCost">"Koszt: "</string>
+    <string name="hintData">Wpisz Dane</string>
+    <string name="hintCost">Wpisz Koszt</string>
+</resources>

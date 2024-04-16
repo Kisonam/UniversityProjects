@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">L06_Radovskyi_61986_Kol1</string>
+    <string name="txtNameFirst">Imie</string>
+    <string name="txtSurname">Nazwisko</string>
+    <string name="hintFistName">Wpisz imie</string>
+    <string name="hintSurname">Wpisz nazwisko</string>
+    <string name="btnPhoto">ZOBAĆ ZDJĘCIE</string>
+    <string name="btnGame">ZACZNI GRAĆ</string>
+    <string name="btnCalculator">KALKULATOR LICZB</string>
+    <string name="btnGoMain">Na początek</string>
+</resources>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">L04_Radovskyi_61986_Sklep</string>
+    <string name="txtDeveloper" translatable="false">Developer: Artem Radovskyi</string>
+    <string name="txtViewInfo">Welcome to Radovskyi store</string>
+    <string name="txtViewSurname">Surname:</string>
+    <string name="txtViewTown">Town:</string>
+    <string name="txtViewHowManyItems">How many items:</string>
+    <string name="hintSurname">Surname:</string>
+    <string name="hintTown">Town:</string>
+    <string name="btnGoToForm">Go to purchase a form</string>
+
+    <string-array name="items">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string name="btnGoToSummary">Go to summary</string>
+    <string name="txtData">Data:</string>
+    <string name="txtCost">Cost:</string>
+    <string name="hintData">Enter Data</string>
+    <string name="hintCost">Enter Cost</string>
+</resources>

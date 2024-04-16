@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">L05_Radovskyi_61986_ChimpGame</string>
+    <string name="txtDeveloper" translatable="false">Developer Artem Radovskyi</string>
+    <string name="txtGameName">Chimp Game</string>
+    <string name="btnReset">Draw</string>
+    <string name="btnHide">Hide</string>
+    <string name="btnResult">Result</string>
+</resources>

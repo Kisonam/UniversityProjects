@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">L05_Radovskyi_61986_ChimpGame</string>
+    <string name="txtGameName">Gra szympansów</string>
+    <string name="btnReset">Losuj</string>
+    <string name="btnHide">Schowaj</string>
+    <string name="btnResult">Wynik gry</string>
+</resources>

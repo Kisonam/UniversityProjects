@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">L06_Radovskyi_61986_Kol1</string>
+    <string name="txtApp" translatable="false">Radovskyi App</string>
+    <string name="txtNameFirst">First Name</string>
+    <string name="txtSurname">Last Name</string>
+    <string name="hintFistName">First Name</string>
+    <string name="hintSurname">Last Name</string>
+    <string name="btnPhoto">SEE IMAGE</string>
+    <string name="btnGame">START GAME</string>
+    <string name="btnCalculator">COMPLEX NUMBER CALCULATOR</string>
+    <string name="btnGoMain">Go Main</string>
+
+    <string-array name="operators">
+        <item>+</item>
+        <item>*</item>
+        <item>-</item>
+    </string-array>
+</resources>
