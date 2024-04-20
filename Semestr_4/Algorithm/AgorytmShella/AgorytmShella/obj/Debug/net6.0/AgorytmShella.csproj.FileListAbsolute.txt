@@ -1,0 +1,14 @@
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/obj/Debug/net6.0/AgorytmShella.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/obj/Debug/net6.0/AgorytmShella.AssemblyInfoInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/obj/Debug/net6.0/AgorytmShella.AssemblyInfo.cs
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/obj/Debug/net6.0/AgorytmShella.csproj.CoreCompileInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/bin/Debug/net6.0/AgorytmShella
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/bin/Debug/net6.0/AgorytmShella.deps.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/bin/Debug/net6.0/AgorytmShella.runtimeconfig.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/bin/Debug/net6.0/AgorytmShella.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/bin/Debug/net6.0/AgorytmShella.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/obj/Debug/net6.0/AgorytmShella.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/obj/Debug/net6.0/refint/AgorytmShella.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/obj/Debug/net6.0/AgorytmShella.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/obj/Debug/net6.0/AgorytmShella.genruntimeconfig.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/AgorytmShella/AgorytmShella/obj/Debug/net6.0/ref/AgorytmShella.dll

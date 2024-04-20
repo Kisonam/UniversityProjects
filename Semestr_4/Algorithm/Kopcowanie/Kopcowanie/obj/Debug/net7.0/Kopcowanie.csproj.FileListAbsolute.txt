@@ -1,0 +1,14 @@
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/bin/Debug/net7.0/Kopcowanie
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/bin/Debug/net7.0/Kopcowanie.deps.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/bin/Debug/net7.0/Kopcowanie.runtimeconfig.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/bin/Debug/net7.0/Kopcowanie.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/bin/Debug/net7.0/Kopcowanie.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/obj/Debug/net7.0/Kopcowanie.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/obj/Debug/net7.0/Kopcowanie.AssemblyInfoInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/obj/Debug/net7.0/Kopcowanie.AssemblyInfo.cs
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/obj/Debug/net7.0/Kopcowanie.csproj.CoreCompileInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/obj/Debug/net7.0/Kopcowanie.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/obj/Debug/net7.0/refint/Kopcowanie.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/obj/Debug/net7.0/Kopcowanie.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/obj/Debug/net7.0/Kopcowanie.genruntimeconfig.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/Kopcowanie/Kopcowanie/obj/Debug/net7.0/ref/Kopcowanie.dll
