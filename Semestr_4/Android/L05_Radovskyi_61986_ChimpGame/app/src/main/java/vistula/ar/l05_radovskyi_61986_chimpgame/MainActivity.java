@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.Console;
+
 public class MainActivity extends AppCompatActivity {
 
     int[] numbers;
@@ -18,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
     int[] PlayerNumbers;
     Button[][] buttons;
     int[][] buttonsID;
-    int sideButtons, left, top, totalButtons, result, currentButton;
+    int sideButtons, left, top, result;
+    int currentButton, totalButtons;
 
     ConstraintLayout constraintLayout;
     ConstraintLayout.LayoutParams params;
@@ -30,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        InitializeButtons();
+//        InitializeButtons();
     }
 
 
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void InitializeButtons() {
         sideButtons = 3;
-        int totalButtons = sideButtons * sideButtons;
+        totalButtons = sideButtons * sideButtons;
         constraintLayout = (ConstraintLayout) findViewById(R.id.constraintLayout);
 
         left = 120;
@@ -135,11 +138,11 @@ public class MainActivity extends AppCompatActivity {
                 button = (Button)findViewById(buttonsID[i][j]);
                 String strNumber = button.getText().toString();
                 PlayerNumbers[i* sideButtons +j] = Integer.parseInt(strNumber);
-                result += (PlayerNumbers[i* sideButtons +j] == NumbersAfterPermutation[i* sideButtons +j])?1:0;
+                result += (PlayerNumbers[i * sideButtons +j] == NumbersAfterPermutation[i* sideButtons +j])?1:0;
             }
         }
         TextView textViewResult = (TextView)findViewById(R.id.txtResultId);
-        textViewResult.setText(Integer.toString(result));
+//        textViewResult.setText(Integer.toString(result));
 
 
         for (int i = 0; i< sideButtons; i++){
