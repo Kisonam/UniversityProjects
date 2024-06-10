@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">L12_Radovskyi_61986_Kol12</string>
+    <string name="txtAppInfo">App Kol 3</string>
+    <string name="txtName">"Imię: "</string>
+    <string name="txtSurname">"Nazwisko: "</string>
+    <string name="hintName">"Imię: "</string>
+    <string name="hintSurname">"Nazwisko: "</string>
+    <string name="btnRates">SPRAWDZ KURS</string>
+    <string name="btnGoToExchange">DO WYMIANY</string>
+    <string name="btnSaveChanges">ZAPISZ KUSRY</string>
+    <string name="btnGoToConvert">DO KONVERTORA</string>
+    <string name="txtBank">KURSY WYMIANY BANKÓW</string>
+</resources>

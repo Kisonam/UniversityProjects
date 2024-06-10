@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">L09_Radovskyi_61986_ReadWrite</string>
+    <string name="txtIn" translatable="false">Text In</string>
+    <string name="txtOut" translatable="false">Text Out</string>
+    <string name="btnTextIn" translatable="false">Text In</string>
+    <string name="btnTextOut" translatable="false">Text Out</string>
+    <string name="hintEnterTxt" translatable="false">Enter text</string>
+</resources>

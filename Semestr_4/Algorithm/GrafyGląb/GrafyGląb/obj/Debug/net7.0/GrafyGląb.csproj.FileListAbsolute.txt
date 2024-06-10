@@ -1,0 +1,14 @@
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/bin/Debug/net7.0/GrafyGląb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/bin/Debug/net7.0/GrafyGląb.deps.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/bin/Debug/net7.0/GrafyGląb.runtimeconfig.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/bin/Debug/net7.0/GrafyGląb.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/bin/Debug/net7.0/GrafyGląb.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/obj/Debug/net7.0/GrafyGląb.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/obj/Debug/net7.0/GrafyGląb.AssemblyInfoInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/obj/Debug/net7.0/GrafyGląb.AssemblyInfo.cs
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/obj/Debug/net7.0/GrafyGląb.csproj.CoreCompileInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/obj/Debug/net7.0/GrafyGląb.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/obj/Debug/net7.0/refint/GrafyGląb.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/obj/Debug/net7.0/GrafyGląb.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/obj/Debug/net7.0/GrafyGląb.genruntimeconfig.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyGląb/GrafyGląb/obj/Debug/net7.0/ref/GrafyGląb.dll

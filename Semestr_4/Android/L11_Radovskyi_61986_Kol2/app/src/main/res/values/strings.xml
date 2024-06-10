@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">L11_Radovskyi_61986_Kol2</string>
+    <string name="txtDevAR">Radovskyi Midterm 2 Kol</string>
+    <string name="hintNameAR">Your name:</string>
+    <string name="hintSurnameAR">Your Surname:</string>
+    <string name="txtNameAR">Your Name:</string>
+    <string name="txtSurnameAR">Surname:</string>
+
+
+    <string-array name="towns">
+        <item>Warszawa</item>
+        <item>Kraków</item>
+        <item>Wrocław</item>
+    </string-array>
+
+    <string-array name="temperature">
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+    </string-array>
+
+    <string name="txtTownAR">Town:</string>
+    <string name="btnSaveAR" translatable="false">"Save To Memory "</string>
+    <string name="btnToImageAR">"Go To Image "</string>
+    <string name="txtMainAR">Main</string>
+    <string name="txtConvertorAR" translatable="false">Convertor</string>
+    <string name="txtMemoryAR">Memory</string>
+    <string name="txtConvertor">Temperature Convertor</string>
+    <string name="txtTempetaturaText">Temperature</string>
+    <string name="hintTemp">Temperature:</string>
+    <string name="txtCelsius" translatable="false">Celsius:</string>
+    <string name="txtKelvin" translatable="false">Kelvin:</string>
+    <string name="txtFahrenheit" translatable="false">Fahrenheit:</string>
+    <string name="btnConvert">Convert</string>
+    <string name="btnGoBack">Go Back</string>
+    <string name="txtFile" translatable="false">Work With Memory - File System</string>
+</resources>

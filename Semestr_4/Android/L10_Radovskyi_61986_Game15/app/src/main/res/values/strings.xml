@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">L10_Radovskyi_61986_Game15</string>
+    <string name="txtDev" translatable="false">Radovskyi 15 puzzle game</string>
+    <string name="btnNewGame">New Game</string>
+    <string name="txtScore">"Score: "</string>
+    <string name="txtSwipes">Current Move:</string>
+</resources>

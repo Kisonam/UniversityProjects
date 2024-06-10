@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">L13_Fedoryka_62632_Kol4</string>
+    <string name="btnGoMain">Wróć na początek</string>
+    <string name="hintName">Imię:</string>
+    <string name="hintSurname">"Nazwisko: "</string>
+    <string name="txtName">Imię:</string>
+    <string name="txtSurname">"Nazwisko: "</string>
+    <string name="txtApp">Aplikacja kol 4</string>
+</resources>

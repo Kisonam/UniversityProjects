@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">L11_Radovskyi_61986_Kol2</string>
+    <string name="txtDevAR">Radovskyi Kolokwium 2</string>
+    <string name="hintNameAR">"Imię: "</string>
+    <string name="hintSurnameAR">"Nazwisko: "</string>
+    <string name="txtNameAR">Imię:</string>
+    <string name="txtSurnameAR">"Nazwisko: "</string>
+    <string name="txtTownAR">"Miasto: "</string>
+    <string name="btnToImageAR">Do Obrazku</string>
+    <string name="txtMainAR">Głowna</string>
+    <string name="txtMemoryAR">Pamęć</string>
+    <string name="txtConvertor">Convertor Temperatury</string>
+    <string name="txtTempetaturaText">Temperatura</string>
+    <string name="hintTemp">Temperatura:</string>
+    <string name="btnConvert">Convertowanie</string>
+    <string name="btnGoBack">Powrót</string>
+</resources>

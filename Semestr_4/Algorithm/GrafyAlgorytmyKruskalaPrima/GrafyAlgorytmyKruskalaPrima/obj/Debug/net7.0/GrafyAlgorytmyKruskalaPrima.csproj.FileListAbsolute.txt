@@ -1,0 +1,14 @@
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/bin/Debug/net7.0/GrafyAlgorytmyKruskalaPrima
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/bin/Debug/net7.0/GrafyAlgorytmyKruskalaPrima.deps.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/bin/Debug/net7.0/GrafyAlgorytmyKruskalaPrima.runtimeconfig.json
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/bin/Debug/net7.0/GrafyAlgorytmyKruskalaPrima.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/bin/Debug/net7.0/GrafyAlgorytmyKruskalaPrima.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/obj/Debug/net7.0/GrafyAlgorytmyKruskalaPrima.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/obj/Debug/net7.0/GrafyAlgorytmyKruskalaPrima.AssemblyInfoInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/obj/Debug/net7.0/GrafyAlgorytmyKruskalaPrima.AssemblyInfo.cs
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/obj/Debug/net7.0/GrafyAlgorytmyKruskalaPrima.csproj.CoreCompileInputs.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/obj/Debug/net7.0/GrafyAlgorytmyKruskalaPrima.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/obj/Debug/net7.0/refint/GrafyAlgorytmyKruskalaPrima.dll
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/obj/Debug/net7.0/GrafyAlgorytmyKruskalaPrima.pdb
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/obj/Debug/net7.0/GrafyAlgorytmyKruskalaPrima.genruntimeconfig.cache
+/Users/artemradovskyi/Skripts/C#/UniversityProjects/Semestr_4/Algorithm/GrafyAlgorytmyKruskalaPrima/GrafyAlgorytmyKruskalaPrima/obj/Debug/net7.0/ref/GrafyAlgorytmyKruskalaPrima.dll

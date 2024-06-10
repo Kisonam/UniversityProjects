@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">L14_Kuchynska_61914_Kol4</string>
+    <string name="appDeveloperAK" translatable="false">Developed by Kuchynska Anna</string>
+    <string name="txtName">Your Name:</string>
+    <string name="appMid4">Kuchynska Cinema</string>
+    <string name="txtNumber">Number of Tickets:</string>
+    <string name="txtHintNumber">Number of Tickets:</string>
+    <string name="hintName">Your Name</string>
+    <string name="btnDraw">Draw</string>
+    <string name="btnMain">Go Main</string>
+    <string name="btnSecond">Second Activity</string>
+    <string name="btnThird">Third Activity</string>
+    <string name="btnForth">Forth Activity</string>
+    <string name="btnFifth">Fifth Activity</string>
+    <string name="txtPic2">Sound in the cinema hall is provided by an advanced audio system, which includes speakers placed around the room to deliver a surround sound effect.</string>
+    <string name="txtPic1">A cinema hall is a room designed for movie screenings.</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">L13_Kuchynska_61914_Kol4</string>
+    <string name="appDeveloperAK" translatable="false">Developed by Kuchynska</string>
+    <string name="txtName">Your Name:</string>
+    <string name="txtSurname">Your Surname:</string>
+    <string name="appMid4">App mid 4</string>
+</resources>

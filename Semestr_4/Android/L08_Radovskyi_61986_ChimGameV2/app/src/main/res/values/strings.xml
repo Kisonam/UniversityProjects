@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">L08_Radovskyi_61986_ChimGameV2</string>
+    <string name="txtDeveloper" translatable="false">Developer Artem Radovskyi</string>
+    <string name="txtGameName">Chimp Game V2</string>
+    <string name="btnReset">Draw</string>
+    <string name="btnHide">Hide</string>
+    <string name="btnResult">Result</string>
+    <string name="btnNewGame">New game</string>
+    <string name="txtAddRow">Rows:</string>
+    <string name="txtColunt">Column:</string>
+
+    <string-array name="nums">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">L14_Kuchynska_61914_Kol4</string>
+    <string name="txtName">"Imię: "</string>
+    <string name="appMid4">Kuchynska Kinoteatr</string>
+    <string name="txtNumber">ilosć biletu:</string>
+    <string name="txtHintNumber">ilosć biletu:</string>
+    <string name="hintName">Imię:</string>
+    <string name="btnDraw">Losuj</string>
+    <string name="btnMain">Na początek</string>
+    <string name="btnSecond">Druga Aktywność</string>
+    <string name="btnThird">Trzecie aktywność</string>
+    <string name="btnForth">Czwarta aktywność</string>
+    <string name="btnFifth">Piąta aktywnosć</string>
+    <string name="txtPic1">Sala kinowa to pomieszczenie przeznaczone do projekcji filmów.</string>
+    <string name="txtPic2">"Dźwięk w sali kinowej jest dostarczany przez zaawansowany system nagłośnienia, który obejmuje głośniki rozmieszczone wokół sali, aby zapewnić przestrzenny efekt dźwiękowy. "</string>
+</resources>

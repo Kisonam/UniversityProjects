@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">L13_Fedoryka_62632_Kol4</string>
+    <string name="txtDev" translatable="false">Developer Fedoryka</string>
+    <string name="btnGoMain">Go Main</string>
+    <string name="hintName">Your Name:</string>
+    <string name="hintSurname">Your Surname:</string>
+    <string name="txtName">Your Name:</string>
+    <string name="txtSurname">Your Surname:</string>
+
+    <string-array name="nums">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string name="txtApp">Application mid 4</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">L14_Fedoryka_62632_Kol4</string>
+    <string name="btnGoMain">Wróć na początek</string>
+    <string name="hintName">Imię:</string>
+    <string name="txtName">Imię:</string>
+    <string name="txtIdStudent">"ID Studenta: "</string>
+    <string name="txtApp">Fedoryka Universytet</string>
+    <string name="txtNumerId">"ID Studenta: "</string>
+    <string name="btnDraw">Losuj</string>
+    <string name="btnGoSecond">Druga Aktywność</string>
+    <string name="btnGoThird">Trzecia Akrywność</string>
+    <string name="btnForth">Czwarta Aktywność</string>
+    <string name="hintIdStudent">"Id studenta: "</string>
+    <string name="btnGoFifth">Piąta Aktywność</string>
+    <string name="txtInfoSudent">"Uniwersytety są instytucjami edukacyjnymi oferującymi wyższe wykształcenie i badania naukowe. "</string>
+    <string name="txtinfoUnver">"Studenci to osoby uczęszczające do instytucji edukacyjnych, takich jak uniwersytety, aby zdobyć wiedzę i umiejętności w wybranej dziedzinie. "</string>
+</resources>

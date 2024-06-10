@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">L13_Kuchynska_61914_Kol4</string>
+    <string name="txtName">"Imię: "</string>
+    <string name="txtSurname">"Nazwisko: "</string>
+    <string name="appMid4">App kol 4</string>
+</resources>

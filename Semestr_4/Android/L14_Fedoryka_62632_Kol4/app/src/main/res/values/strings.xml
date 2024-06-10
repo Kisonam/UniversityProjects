@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">L14_Fedoryka_62632_Kol4</string>
+    <string name="txtDev" translatable="false">Developer Fedoryka Rostyslav</string>
+    <string name="btnGoMain">Go Main</string>
+    <string name="hintName">Your Name:</string>
+    <string name="txtName">Your Name:</string>
+    <string name="txtIdStudent">Your ID:</string>
+
+    <string-array name="nums">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string name="txtApp">Fedoryka University</string>
+    <string name="txtNumerId">Your ID:</string>
+    <string name="btnDraw">Draw</string>
+    <string name="btnGoSecond">Go Second Activity</string>
+    <string name="btnGoThird">Go Thirsd Activity</string>
+    <string name="btnForth">Go Forth Activity</string>
+    <string name="hintIdStudent">Your Id:</string>
+    <string name="btnGoFifth">Go Fifth Activity</string>
+    <string name="txtInfoSudent">Universities are educational institutions that offer higher education and research opportunities.</string>
+    <string name="txtinfoUnver">Students are individuals attending educational institutions like universities to acquire knowledge and skills in their chosen field.</string>
+</resources>

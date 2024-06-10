@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">L08_Radovskyi_61986_ChimGameV2</string>
+    <string name="txtGameName">Gra szympansów V2</string>
+    <string name="btnReset">Losuj</string>
+    <string name="btnHide">Schowaj</string>
+    <string name="btnResult">Wynik gry</string>
+    <string name="btnNewGame">Nowa gra</string>
+    <string name="txtAddRow">"Rzęd: "</string>
+    <string name="txtColunt">"Columny: "</string>
+</resources>

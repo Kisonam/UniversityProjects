@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">L12_Radovskyi_61986_Kol12</string>
+    <string name="txtDeveloper" translatable="false">Developed by Radovskyi 61986</string>
+    <string name="txtAppInfo">App Mid 3</string>
+    <string name="txtName">Your Name:</string>
+    <string name="txtSurname">Your Surname:</string>
+    <string name="hintName">Your Name:</string>
+    <string name="hintSurname">Your Surname:</string>
+    <string name="btnRates">SEE EXCHANGE RATES</string>
+    <string name="btnGoToExchange">GO TO EXCHANGE</string>
+    <string name="txtUSD" translatable="false">USD</string>
+    <string name="txtJPY" translatable="false">JPY</string>
+    <string name="txtGPB" translatable="false">GPB</string>
+    <string name="btnSaveChanges">SAVE RATES</string>
+    <string name="btnGoToConvert">GO TO CONVERTOR</string>
+    <string name="txtBank">BANK EXCHANGE RATES</string>
+</resources>
