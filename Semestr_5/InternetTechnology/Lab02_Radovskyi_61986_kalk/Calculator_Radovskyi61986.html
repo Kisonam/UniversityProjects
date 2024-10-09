@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title></title>
+    </head>
+    <body>
+        <div class="center-div">
+            <h1>Radovskyi 61986 - Calculator</h1>
+            <input type="number" id="liczba1">
+            <select id="dzialanie">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="number" id="liczba2">
+            <button onclick="oblicz()">=</button>
+            <input type="number" id="wynik" readonly onmouseover="oblicz()">
+            <script>
+                function oblicz() {
+                    let liczba1 = parseInt(document.getElementById("liczba1").value);
+                    let liczba2 = parseInt(document.getElementById("liczba2").value);
+                    let operator = document.getElementById("dzialanie").value;
+                    let wynik;
+                    switch (operator) {
+                        case "+":
+                            wynik = liczba1 + liczba2;
+                            break;
+                        case "-":
+                            wynik = liczba1 - liczba2;
+                            break;
+                        case "*":
+                            wynik = liczba1 * liczba2;
+                            break;
+                        case "/":
+                            wynik = liczba1 / liczba2;
+                            break;
+                        case "%":
+                            wynik = liczba1 % liczba2;
+                            break;
+                        default:
+                            wynik = "Błąd!";
+                    }
+                    document.getElementById("wynik").value = wynik;
+                }
+            </script>
+            
+        </div>
+    </body>
+</html>

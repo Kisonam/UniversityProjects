@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+
+<body>
+    <div class="center-div">
+        <h1>Wybierz napis</h1>
+        <h2 id="txt"></h2>
+        
+        <button onclick="setSurname()">Nazwisko</button>
+        <button onclick="setName()">Imię</button>
+        <button onclick="setIndex()">Numer indeksu</button>
+        
+        <br><label>Surname:</label>
+        <input type="text" id="surname">
+        
+        <br><label>Name:</label>
+        <input type="text" id="name">
+        
+        <br><label>Index:</label>
+        <input type="text" id="index">
+
+        <a href="radovskyi_index.html"><button>NEXT PAGE</button></a>   
+    </div>
+    
+    
+    <script>
+        function setSurname() {
+            let nazwisko = document.getElementById("surname").value;
+            document.getElementById("txt").innerHTML = nazwisko ? nazwisko : "Radovskyi";
+        }
+        
+        function setName() {
+            let imie = document.getElementById("name").value;
+            document.getElementById("txt").innerHTML = imie ? imie : "Artem";
+        }
+        
+        function setIndex() {
+            let indeks = document.getElementById("index").value;
+            document.getElementById("txt").innerHTML = indeks ? indeks : "61986";
+        }
+    </script>
+</body>
+
+</html>
