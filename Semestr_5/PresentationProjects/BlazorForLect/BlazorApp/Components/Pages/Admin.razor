@@ -1,0 +1,95 @@
+@rendermode InteractiveServer
+@page "/admin"
+@using BlazorApp.Components.Models
+@inject HttpClient Http
+
+<h3>Admin Panel</h3>
+
+<input type="text" @bind="firstName" placeholder="First Name" />
+<input type="text" @bind="lastName" placeholder="Last Name" />
+<input type="text" @bind="studentNumber" placeholder="Student ID" />
+<button @onclick="AddStudent">Add Student</button>
+
+<ul>
+    @foreach (var student in students)
+    {
+
+        @if (editingStudent?.Id == student.Id)
+        {
+            <input type="text" @bind="editingStudent.FirstName" placeholder="First Name" />
+            <input type="text" @bind="editingStudent.LastName" placeholder="Last Name" />
+            <input type="text" @bind="editingStudent.StudentNumber" placeholder="Student ID" />
+            <button @onclick="() => SaveChanges(student.Id)">Save</button>
+            <button @onclick="CancelEdit">Cancel</button>
+        }
+        else
+        {
+            <div class="card-body">
+                <div class="business-card-salat">
+                <p><strong>Imię i Nazwisko:</strong> @student.FirstName @student.LastName</p>
+                <p><strong>ID Studenta:</strong> @student.StudentNumber</p>
+                <button class="btn btn-info" @onclick="() => EditStudent(student)">Edit</button>
+                <button class="btn btn-danger" @onclick="() => DeleteStudent(student.Id)">Delete</button>
+            </div>
+            </div>
+        }
+    }
+</ul>
+
+@code {
+    private List<Student> students = new();
+    private string firstName;
+    private string lastName;
+    private string studentNumber;
+    private Student? editingStudent;
+
+    protected override async Task OnInitializedAsync()
+    {
+        students = await Http.GetFromJsonAsync<List<Student>>("api/students");
+    }
+
+    private async Task AddStudent()
+    {
+        var newStudent = new Student
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                StudentNumber = studentNumber
+            };
+        await Http.PostAsJsonAsync("api/students", newStudent);
+        students = await Http.GetFromJsonAsync<List<Student>>("api/students");
+        firstName = lastName = studentNumber = string.Empty;
+    }
+
+    private async Task DeleteStudent(int id)
+    {
+        await Http.DeleteAsync($"api/students/{id}");
+        students = await Http.GetFromJsonAsync<List<Student>>("api/students");
+    }
+
+    private void EditStudent(Student student)
+    {
+        editingStudent = new Student
+            {
+                Id = student.Id,
+                FirstName = student.FirstName,
+                LastName = student.LastName,
+                StudentNumber = student.StudentNumber
+            };
+    }
+
+    private async Task SaveChanges(int id)
+    {
+        if (editingStudent != null)
+        {
+            await Http.PutAsJsonAsync($"api/students/{id}", editingStudent);
+            students = await Http.GetFromJsonAsync<List<Student>>("api/students");
+            editingStudent = null;
+        }
+    }
+
+    private void CancelEdit()
+    {
+        editingStudent = null;
+    }
+}

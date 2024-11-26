@@ -1,0 +1,49 @@
+/* Centering styles for the main content */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif; /* Optional: Set a nice font */
+    background-color: #f9f9f9; /* Optional: Light background color */
+}
+
+h2 {
+    margin-bottom: 15px; /* Spacing below the title */
+}
+
+/* Styles for the canvas */
+#canvas_AR61986 {
+    border: 2px solid #4CAF50; /* Green border for the canvas */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #ffffff; /* White background for the canvas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin: 20px 0; /* Spacing above and below the canvas */
+}
+
+/* Navigation button styles */
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0; /* Spacing around the navigation */
+}
+
+nav button {
+    background: linear-gradient(90deg, #4CAF50, #81C784); /* Gradient background */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded buttons */
+    padding: 10px 20px; /* Padding inside buttons */
+    margin: 0 10px; /* Spacing between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+    font-size: 16px; /* Button font size */
+}
+
+nav button:hover {
+    background: linear-gradient(90deg, #388E3C, #66BB6A); /* Darker gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+

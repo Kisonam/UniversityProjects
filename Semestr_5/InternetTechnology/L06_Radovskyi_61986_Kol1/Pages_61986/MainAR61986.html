@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klub Samochodowy - AR61986</title>
+    <link rel="stylesheet" href="../CSS_61986/main.css">
+    <script src="../JavaSkript_61986/SkriptAR61986.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="MainAR61986.html"><img src="../PhotoAR61986/carLogoAR61986.png" alt="Logo" id="logo_AR61986"></a>  
+        <div id="headerText_AR61986">
+            <h1>Klub Samochodowy</h1>
+        </div>
+    </header>
+    <main>
+        <section id="inputData_AR61986">
+            <h2>Rejestracja klienta</h2>
+            <input type="text" id="clientName_AR61986" placeholder="Imię klienta">
+            <button onclick="registerClient_AR61986()">Zarejestruj klienta</button>
+        </section>
+    
+        <section id="clientData_AR61986" style="display: none;">
+            <h2>Dane klienta</h2>
+            <p id="registeredClient_AR61986"></p>
+            <nav>
+                <ul class="button-nav">
+                    <li><a class="nav-button" href="KontextAr61986.html">Kontekst 2D</a></li>
+                    <li><a class="nav-button" href="ObrazekAR61986.html">Obrazki i Audio</a></li>
+                    <li><a class="nav-button" href="GraAR61986.html">Gra</a></li>
+                </ul>
+            </nav>
+            <button onclick="editClient_AR61986()">Edytuj klienta</button>
+        </section>
+    </main>
+   
+    <footer>
+        <p>Imię: Artem Radovskyi, ID: 61986</p>
+    </footer>
+</body>
+</html>

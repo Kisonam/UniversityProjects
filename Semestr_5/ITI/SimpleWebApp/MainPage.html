@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>CarTrans - Podróże</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">CarTrans</div>
+        <ul>
+            <li><a href="MainPage.html">Strona główna</a></li>
+            <li><a href="about.html">O autorze</a></li>
+            <li><a href="admin.html">Panel administracyjny</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Nasze podróże</h1>
+        <div id="trips-container">
+            <!-- Trips will be dynamically added here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 CarTrans - Wszystkie prawa zastrzeżone</p>
+    </footer>
+
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Rezerwacja podróży</h2>
+            <form id="booking-form">
+                <input type="text" placeholder="Imię" required>
+                <input type="text" placeholder="Nazwisko" required>
+                <input type="tel" placeholder="Numer telefonu" required>
+                <button type="submit">Wyślij</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

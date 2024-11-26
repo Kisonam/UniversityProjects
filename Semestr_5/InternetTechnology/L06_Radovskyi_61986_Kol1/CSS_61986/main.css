@@ -1,0 +1,109 @@
+/* General body styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif; /* Use a clean font */
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 15px;
+}
+
+#logo_AR61986 {
+    width: 200px;
+    height: auto;
+    margin-right: 15px;
+}
+
+@media (max-width: 600px) {
+    #logo_AR61986 {
+        width: 100px; /* Responsive logo size */
+    }
+}
+
+#headerText_AR61986 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main section styles */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    padding: 20px; /* Padding around the main content */
+}
+
+/* Input section styling */
+#inputData_AR61986 {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding inside the section */
+    margin: 20px 0; /* Space above and below */
+    width: 300px; /* Fixed width for uniformity */
+    text-align: center; /* Center text */
+}
+
+/* Input styling */
+#clientName_AR61986 {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px; /* Inner padding */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Space below input */
+}
+
+/* Button styling */
+button {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 15px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+    transition: background 0.3s ease; /* Smooth background change */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Client data section */
+#clientData_AR61986 {
+    display: none; /* Hidden by default */
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding inside the section */
+    margin: 20px 0; /* Space above and below */
+    width: 300px; /* Fixed width for uniformity */
+    text-align: center; /* Center text */
+}
+
+footer {
+    display: flex;
+    justify-content: center; /* Center footer text */
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 15px;
+    width: 100%; /* Full width */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 16px; /* Font size */
+}

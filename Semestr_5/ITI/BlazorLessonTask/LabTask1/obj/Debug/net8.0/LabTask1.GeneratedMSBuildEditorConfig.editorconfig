@@ -1,0 +1,59 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = LabTask1
+build_property.RootNamespace = LabTask1
+build_property.ProjectDir = /Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/Components/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db3VudGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ib21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/Components/Pages/UserTxt.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Vc2VyVHh0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/Components/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9XZWF0aGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9fSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-x8qcymejjk
+
+[/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-9hhdedwb67

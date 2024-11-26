@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Wycieczka do Krakowa",
+        "from": "Warszawa",
+        "to": "Kraków",
+        "hours": 4,
+        "description": "Zwiedzanie historycznego centrum miasta",
+        "price": 250
+    },
+    {
+        "name": "Nad morze",
+        "from": "Poznań", 
+        "to": "Gdańsk",
+        "hours": 6,
+        "description": "Relaks nad Bałtykiem",
+        "price": 300
+    }
+
+]

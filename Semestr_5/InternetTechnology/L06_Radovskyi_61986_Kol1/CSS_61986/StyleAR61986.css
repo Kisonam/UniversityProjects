@@ -1,0 +1,128 @@
+header {
+    display: flex;
+    align-items: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+}
+
+#logo_AR61986 {
+    width: 200px;
+    height: auto;
+    margin-right: 15px;
+}
+
+@media (max-width: 600px) {
+    #logo_AR61986 {
+        width: 100px;
+    }
+}
+
+#headerText_AR61986 {
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.button-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+.nav-button {
+    display: inline-block;
+    background: linear-gradient(25deg, #000000, hsl(207, 100%, 50%));
+    color: white;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 20%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.nav-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, hsl(207, 100%, 50%), #000000);
+}
+
+/* Image gallery container */
+.image-gallery {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center images horizontally */
+    margin: 20px 0; /* Margin above and below gallery */
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+}
+
+/* Individual image card */
+.image-card {
+    background: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin: 15px; /* Space between cards */
+    padding: 10px; /* Padding inside the card */
+    text-align: center; /* Center text */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+    width: 200px; /* Fixed width for uniformity */
+    height: 250px; /* Fixed height for uniformity */
+    display: flex; /* Use flexbox to center image and text */
+    flex-direction: column; /* Arrange image and text in a column */
+    justify-content: center; /* Center content vertically */
+}
+
+/* Image styling */
+.image {
+    width: 100%; /* Full width */
+    height: 150px; /* Fixed height for uniformity */
+    object-fit: cover; /* Cover the card area */
+    border-radius: 10px; /* Slightly rounded corners for images */
+}
+
+/* Image card hover effect */
+.image-card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}

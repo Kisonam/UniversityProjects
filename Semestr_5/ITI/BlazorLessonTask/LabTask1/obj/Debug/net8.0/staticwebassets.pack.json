@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/obj/Debug/net8.0/scopedcss/projectbundle/LabTask1.bundle.scp.css",
+      "PackagePath": "staticwebassets/LabTask1.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/ITI/BlazorLessonTask/LabTask1/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.LabTask1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.LabTask1.props",
+      "PackagePath": "build\\LabTask1.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.LabTask1.props",
+      "PackagePath": "buildMultiTargeting\\LabTask1.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.LabTask1.props",
+      "PackagePath": "buildTransitive\\LabTask1.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/PresentationProjects/BlazorForLect/BlazorApp/obj/Debug/net8.0/scopedcss/projectbundle/BlazorApp.bundle.scp.css",
+      "PackagePath": "staticwebassets/BlazorApp.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/PresentationProjects/BlazorForLect/BlazorApp/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/PresentationProjects/BlazorForLect/BlazorApp/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/PresentationProjects/BlazorForLect/BlazorApp/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/artemradovskyi/Skripts/CSharp/UniversityProjects/Semestr_5/PresentationProjects/BlazorForLect/BlazorApp/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.BlazorApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.BlazorApp.props",
+      "PackagePath": "build\\BlazorApp.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.BlazorApp.props",
+      "PackagePath": "buildMultiTargeting\\BlazorApp.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.BlazorApp.props",
+      "PackagePath": "buildTransitive\\BlazorApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

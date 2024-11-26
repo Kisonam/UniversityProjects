@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Radovskyi Audio & Image</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="page_headerRadovskyi">
+        <h1>RADOVSKYI 61986 in JavaScript World</h1>
+        <h3>Lab 3</h3>
+        <h5>Audio and Images - example</h5>
+    </header>
+
+    <section id="startRadovskyi">
+        <p>RADOVSKYI</p>
+        <button onclick="changeAnimalRandomRadovskyi()">Losowa zmiana zwierzęcia</button><br>
+        <button onclick="changeOnlyPhotoRadovskyi()">Zmiana zdjęcia</button><br>
+        <button onclick="changeOnlyMusicRadovskyi()">Zmiana muzyki</button><br>
+        <button onclick="showResultRadovskyi()">Result</button><br>
+        <img id="animalXY" src="Img/smilecat.jpg" title="smilecat" onclick="changeAnimalRandomRadovskyi()">
+    </section>
+
+    <section class="musicsRadovskyi">
+        <audio controls id="musicRadovskyi" autoplay hidden loop>
+            <source id="myMusicRadovskyi" src="Audio/smilecat.mp3" type="audio/mpeg">
+        </audio>
+    </section>
+
+    <section id="endRadovskyi">
+        <br>
+        <label id="test1"></label><br>
+        <label id="test2"></label><br>
+        <label id="test3"></label><br>
+        <label id="messageRadovskyi"></label><br>
+        <label id="recordRadovskyi"></label><br>
+        <label id="resultRadovskyi"></label><br> 
+    </section>
+
+    <footer id="page_footerRadovskyi">
+        ARTEM RADOVSKYI 61986
+    </footer>
+
+    <script>
+        let recordCount = 0;
+        let currentStreak = 0;
+        let totalMatches = 0;  
+
+        function changeAnimalRandomRadovskyi(){
+            let number = Math.floor(Math.random() * 3);
+            let who = "";
+            switch (number) {
+                case 0:
+                    who = "smilecat";
+                    break;
+                case 1:
+                    who = "zapzap";
+                    break;
+                case 2:
+                    who = "humster";
+                    break;
+            }
+            let whoJpg = "Img/" + who + ".jpg";
+            document.getElementById("animalXY").src = whoJpg;
+            document.getElementById("animalXY").title = who;
+            changeMusicRadovskyi();
+            checkMatchRadovskyi();
+        }
+
+        function changeOnlyPhotoRadovskyi(){
+            let number = Math.floor(Math.random() * 3);
+            let who = "";
+            switch (number) {
+                case 0:
+                    who = "smilecat";
+                    break;
+                case 1:
+                    who = "zapzap";
+                    break;
+                case 2:
+                    who = "humster";
+                    break;
+            }
+            let whoJpg = "Img/" + who + ".jpg";
+            document.getElementById("animalXY").src = whoJpg;
+            document.getElementById("animalXY").title = who;
+            checkMatchRadovskyi(); 
+        }
+
+        function changeOnlyMusicRadovskyi(){
+            let number = Math.floor(Math.random() * 3);
+            let who = "";
+            switch (number) {
+                case 0:
+                    who = "smilecat";
+                    break;
+                case 1:
+                    who = "zapzap";
+                    break;
+                case 2:
+                    who = "humster";
+                    break;
+            }
+            let music = "Audio/" + who + ".mp3";
+            document.getElementById("myMusicRadovskyi").src = music;
+            document.getElementById("musicRadovskyi").load();
+            checkMatchRadovskyi(); 
+        }
+
+        function changeMusicRadovskyi(){
+            let who = document.getElementById("animalXY").title;
+            let music = "";
+            switch (who) {
+                case "smilecat":
+                    music = "Audio/smilecat.mp3";
+                    break;
+                case "zapzap":
+                    music = "Audio/zapzap.mp3";
+                    break;
+                case "humster":
+                    music = "Audio/humster.mp3";
+                    break;
+            }
+            document.getElementById("myMusicRadovskyi").src = music;
+            document.getElementById("musicRadovskyi").load();
+        }
+
+        function checkMatchRadovskyi(){
+            let imageTitle = document.getElementById("animalXY").title;
+            let musicSrc = document.getElementById("myMusicRadovskyi").src;
+            
+            if (musicSrc.includes(imageTitle)) {
+                document.getElementById("messageRadovskyi").innerHTML = "Zgadza sie!";
+                currentStreak++;
+                totalMatches++;
+            } else {
+                document.getElementById("messageRadovskyi").innerHTML = "";
+                currentStreak = 0;  
+                recordCount = 0;    
+                document.getElementById("recordRadovskyi").innerHTML = "Record: " + recordCount;
+            }
+
+            if (currentStreak > recordCount) {
+                recordCount = currentStreak;
+            }
+            if (recordCount > 0) {
+                document.getElementById("recordRadovskyi").innerHTML = "Result: " + recordCount;
+            }
+        }
+
+        function showResultRadovskyi() {
+            document.getElementById("resultRadovskyi").innerHTML = "Result: " + totalMatches;
+            totalMatches = 0; 
+        }
+    </script>
+</body>
+</html>

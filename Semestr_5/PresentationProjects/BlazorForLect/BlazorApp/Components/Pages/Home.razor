@@ -1,0 +1,28 @@
+﻿@page "/"
+@using BlazorApp.Components.Models
+@inject HttpClient Http
+@rendermode InteractiveServer
+
+<h3>Students</h3>
+<div>
+    @foreach(var student in students){
+        <div class="business-card">
+        <div class="card-header">
+            <h4>Wizytówka Studenta</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Imię i Nazwisko:</strong> @student.FirstName @student.LastName</p>
+            <p><strong>ID Studenta:</strong> @student.StudentNumber</p>
+        </div>
+    </div>
+    }
+</div>
+
+@code {
+    private List<Student> students = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        students = await Http.GetFromJsonAsync<List<Student>>("api/students");
+    }
+}

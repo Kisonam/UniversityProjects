@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrazki i Audio - AR61986</title>
+    <link rel="stylesheet" href="../CSS_61986/StyleAR61986.css">
+    <link rel="stylesheet" href="../CSS_61986/Kontext.css">
+    <script src="../JavaSkript_61986/SkriptAR61986.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="MainAR61986.html"> <img src="../PhotoAR61986/carLogoAR61986.png" alt="Logo" id="logo_AR61986"></a>  
+        <div id="headerText_AR61986">
+            <h1>Klub Samochodowy</h1>
+        </div>
+    </header>
+    <main>
+        <h2>Obrazki związane z Klubem</h2>
+        <div class="image-gallery">
+            <div class="image-card">
+                <img src="../PhotoAR61986/destrojCarAR61986.webp" alt="Car Image" class="image"
+                    onclick=" playAudioCarBroken_AR61986()">
+                <p class="image-description">Stare samochody</p>
+            </div>
+            <div class="image-card">
+                <img src="../PhotoAR61986/carImgAR61986.jpg" alt="Car Image" class="image"
+                    onclick="playAudio_AR61986()">
+                <p class="image-description">Samochód w akcji</p>
+            </div>
+            <div class="image-card">
+                <img src="../PhotoAR61986/YellowCarAR61986.png" alt="Car Image" class="image"
+                    onclick="playAudio_AR61986()">
+                <p class="image-description">Nowe samochody</p>
+            </div>
+        </div>
+      
+        <div style="display: flex; justify-content: center; margin: 20px 0;">
+            <audio id="audio_AR61986" controls style="border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
+                <source src="../Audio_61986/carSoundAR61986.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div style="display: flex; justify-content: center; margin: 20px 0;">
+            <audio id="audioBroken_AR61986" controls style="border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">
+                <source src="../Audio_61986/carBrokenAR61986.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <nav>
+            <ul class="button-nav">
+                <li><a href="MainAR61986.html" class="nav-button">Strona Główna</a></li>
+                <li><a href="KontextAr61986.html" class="nav-button">Kontekst 2D</a></li>
+                <li><a href="GraAR61986.html" class="nav-button">Gra</a></li>
+            </ul>
+        </nav>
+    </main>
+
+    <footer style="text-align: center; font-weight: bold; padding: 10px 0;">
+        <p>Imię: Artem Radovskyi, ID: 61986</p>
+    </footer>
+</body>
+
+</html>

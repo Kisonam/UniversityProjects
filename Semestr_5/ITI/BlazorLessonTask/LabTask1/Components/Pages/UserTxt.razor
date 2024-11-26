@@ -1,0 +1,57 @@
+@page "/text-user"
+@rendermode InteractiveServer
+
+@using System.Timers
+
+<h3>Tekst:</h3>
+<div>
+    <h1>@DisplayedText</h1>
+</div>
+
+<hr />
+
+<div>
+    <button @onclick="StartDisplayingWords">Start</button>
+</div>
+
+@code {
+    private string Text = "To jest przykład tekstu w języku polskim, który będzie wyświetlany po jednym słowie.";
+    private string[] Words = Array.Empty<string>();
+    private string DisplayedText = string.Empty;
+    private int CurrentWordIndex = 0;
+    private Timer? wordTimer;
+
+    private void StartDisplayingWords()
+    {
+        // Rozdzielamy tekst na słowa
+        Words = Text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        DisplayedText = string.Empty;
+        CurrentWordIndex = 0;
+
+        // Uruchamiamy timer
+        wordTimer?.Stop(); // Zatrzymujemy poprzedni timer, jeśli istnieje
+        wordTimer = new Timer(500); // Timer co 500 ms
+        wordTimer.Elapsed += OnTimerElapsed;
+        wordTimer.Start();
+    }
+
+    private void OnTimerElapsed(object? sender, ElapsedEventArgs e)
+    {
+        if (CurrentWordIndex < Words.Length)
+        {
+            DisplayedText += (DisplayedText.Length > 0 ? " " : "") + Words[CurrentWordIndex];
+            CurrentWordIndex++;
+            InvokeAsync(StateHasChanged); // Odświeżenie interfejsu użytkownika
+        }
+        else
+        {
+            wordTimer?.Stop(); // Zatrzymujemy timer po wyświetleniu wszystkich słów
+        }
+    }
+
+    // Czyszczenie zasobów (na wypadek, gdy komponent zostanie usunięty)
+    public void Dispose()
+    {
+        wordTimer?.Dispose();
+    }
+}
