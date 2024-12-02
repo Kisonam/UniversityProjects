@@ -1,6 +1,7 @@
-package com.example.bookstore.repository;
+package com.example.bookstore;
 
 import com.example.bookstore.model.Author;
+import com.example.bookstore.repository.AuthorRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;

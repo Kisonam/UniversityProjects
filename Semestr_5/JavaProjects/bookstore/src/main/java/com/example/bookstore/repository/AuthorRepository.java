@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AuthorRepository extends JpaRepository<Author, Long> {
+
+    // Перевірка, чи існує автор з таким ім'ям та прізвищем
+    boolean existsByNameAndSurname(String name, String surname);
 }
