@@ -1,6 +1,5 @@
 package com.example.bookstore.model;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -15,7 +14,7 @@ public class Author {
     private String surname;
 
     @OneToMany(mappedBy = "author")
-    @JsonIgnore  // Додаємо цю анотацію, щоб не серіалізувати список книг
+    @JsonManagedReference  // Змінили на @JsonManagedReference для зворотнього зв'язку з книгою
     private List<Book> books;
 
     // Конструктори, геттери та сеттери

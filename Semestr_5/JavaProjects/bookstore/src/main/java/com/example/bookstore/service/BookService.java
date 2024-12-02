@@ -1,6 +1,8 @@
 package com.example.bookstore.service;
 
+import com.example.bookstore.model.Author;
 import com.example.bookstore.model.Book;
+import com.example.bookstore.repository.AuthorRepository;
 import com.example.bookstore.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,11 @@ public class BookService {
 
     @Autowired
     private BookRepository bookRepository;
+
+    // Метод для отримання книг по автору
+    public List<Book> getBooksByAuthor(Author author) {
+        return bookRepository.findByAuthor(author);
+    }
 
     public List<Book> getAllBooks() {
         return bookRepository.findAll();

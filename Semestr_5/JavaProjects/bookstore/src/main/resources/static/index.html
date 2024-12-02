@@ -1,33 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Додати автора і книжку</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Dodaj autora i książkę</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>Додати автора</h1>
-<form id="add-author-form">
-    <input type="text" id="author-name" placeholder="Ім'я автора" required>
-    <input type="text" id="author-surname" placeholder="Прізвище автора" required>
-    <button type="submit">Додати автора</button>
+<h1>Dodaj autora i książkę</h1>
+<form id="authorBookForm">
+    <div>
+        <label for="authorName">Imię autora:</label>
+        <input type="text" id="authorName" required>
+    </div>
+    <div>
+        <label for="authorSurname">Nazwisko autora:</label>
+        <input type="text" id="authorSurname" required>
+    </div>
+    <div>
+        <button type="button" onclick="addAuthor()">Dodaj autora</button>
+    </div>
 </form>
 
-<h1>Додати книжку</h1>
-<form id="add-book-form">
-    <input type="text" id="book-title" placeholder="Назва книжки" required>
-    <input type="text" id="book-genre" placeholder="Жанр" required>
-    <input type="number" id="publication-year" placeholder="Рік публікації" required>
-    <select id="author-id" required>
-        <option value="">Оберіть автора</option>
-        <!-- Сюди будуть додаватись автори -->
-    </select>
-    <button type="submit">Додати книжку</button>
+<hr>
+
+<form id="bookForm">
+    <div>
+        <label for="bookTitle">Tytuł książki:</label>
+        <input type="text" id="bookTitle" required>
+    </div>
+    <div>
+        <label for="bookGenre">Gatunek książki:</label>
+        <input type="text" id="bookGenre" required>
+    </div>
+    <div>
+        <label for="bookYear">Rok publikacji:</label>
+        <input type="number" id="bookYear" required>
+    </div>
+    <div>
+        <label for="bookAuthor">Wybierz autora:</label>
+        <select id="bookAuthor" required></select>
+    </div>
+    <div>
+        <button type="button" onclick="addBook()">Dodaj książkę</button>
+    </div>
 </form>
-
-<a href="authors.html">Переглянути авторів та їх книжки</a>
-
-<script src="js/scripts.js"></script>
+<button onclick="window.location.href='authorsBooks.html'">Przejdź do autorów i książek</button>
+<script src="js/script.js"></script>
 </body>
 </html>
