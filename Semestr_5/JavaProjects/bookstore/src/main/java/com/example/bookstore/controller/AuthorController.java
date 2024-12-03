@@ -29,6 +29,12 @@ public class AuthorController {
 
     @PostMapping
     public ResponseEntity<?> createAuthor(@RequestBody Author author) {
+        // Перевірка на валідність даних автора
+        if (author.getName() == null || author.getName().isBlank() ||
+                author.getSurname() == null || author.getSurname().isBlank()) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Invalid author details!");
+        }
+
         try {
             Author savedAuthor = authorService.saveAuthor(author);
             return ResponseEntity.status(HttpStatus.CREATED).body(savedAuthor);
@@ -37,6 +43,7 @@ public class AuthorController {
             return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
         }
     }
+
 
     @PutMapping("/{id}")
     public Author updateAuthor(@PathVariable Long id, @RequestBody Author author) {
