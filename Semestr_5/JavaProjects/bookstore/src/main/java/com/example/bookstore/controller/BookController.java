@@ -51,6 +51,7 @@ public class BookController {
 
     @PutMapping("/{id}")
     public Book updateBook(@PathVariable Long id, @RequestBody Book book) {
+        book.setTitle("abc");
         return bookService.saveBook(book);
     }
 
