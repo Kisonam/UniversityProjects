@@ -30,6 +30,9 @@ public class BookService {
     }
 
     public Book saveBook(Book book) {
+        if (book.getAuthor() == null) {
+            throw new IllegalArgumentException("Author is required");
+        }
         return bookRepository.save(book);
     }
 

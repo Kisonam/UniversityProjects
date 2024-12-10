@@ -23,16 +23,20 @@ public class AuthorController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Author> getAuthorById(@PathVariable Long id) {
-        return authorService.getAuthorById(id);
+    public ResponseEntity<Author> getAuthorById(@PathVariable Long id) {
+        Optional<Author> author = authorService.getAuthorById(id);
+        if (author.isPresent()) {
+            return ResponseEntity.ok(author.get());
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
 
     @PostMapping
-    public ResponseEntity<?> createAuthor(@RequestBody Author author) {
+    public ResponseEntity<Author> createAuthor(@RequestBody Author author) {
         // Перевірка на валідність даних автора
         if (author.getName() == null || author.getName().isBlank() ||
                 author.getSurname() == null || author.getSurname().isBlank()) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Invalid author details!");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
 
         try {
@@ -40,18 +44,24 @@ public class AuthorController {
             return ResponseEntity.status(HttpStatus.CREATED).body(savedAuthor);
         } catch (IllegalArgumentException e) {
             // Якщо автор з таким іменем і прізвищем вже існує
-            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
         }
     }
 
-
     @PutMapping("/{id}")
-    public Author updateAuthor(@PathVariable Long id, @RequestBody Author author) {
-        return authorService.saveAuthor(author);
+    public ResponseEntity<Author> updateAuthor(@PathVariable Long id, @RequestBody Author author) {
+        if (author.getName() == null || author.getName().isBlank() ||
+                author.getSurname() == null || author.getSurname().isBlank()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+
+        Author updatedAuthor = authorService.saveAuthor(author);
+        return ResponseEntity.ok(updatedAuthor);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteAuthor(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteAuthor(@PathVariable Long id) {
         authorService.deleteAuthor(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

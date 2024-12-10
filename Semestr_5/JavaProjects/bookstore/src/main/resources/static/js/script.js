@@ -117,7 +117,7 @@ async function deleteBook(bookId) {
     }
 }
 
-// Ładowanie autorów i dodawanie przycisków usuwania
+// Ładowanie autorów i dodawanie przycisków edycji/usuwania
 async function loadAuthorsAndBooks() {
     try {
         const authorsResponse = await fetch(`${apiUrl}/authors`);
@@ -130,18 +130,25 @@ async function loadAuthorsAndBooks() {
             authors.forEach(author => {
                 const authorBlock = document.createElement("div");
                 authorBlock.classList.add("author-block");
+                authorBlock.dataset.id = author.id;
 
-                // Dodawanie informacji o autorze
+                // Informacje o autorze
                 const authorInfo = document.createElement("span");
                 authorInfo.textContent = `${author.name} ${author.surname}`;
                 authorInfo.onclick = () => loadBooks(author);
 
-                // Dodawanie przycisku usuwania
+                // Przycisk edycji
+                const editButton = document.createElement("button");
+                editButton.textContent = "Edytuj autora";
+                editButton.onclick = () => showEditAuthorForm(author);
+
+                // Przycisk usuwania
                 const deleteButton = document.createElement("button");
                 deleteButton.textContent = "Usuń autora";
                 deleteButton.onclick = () => deleteAuthor(author.id);
 
                 authorBlock.appendChild(authorInfo);
+                authorBlock.appendChild(editButton);
                 authorBlock.appendChild(deleteButton);
                 authorList.appendChild(authorBlock);
             });
@@ -153,28 +160,34 @@ async function loadAuthorsAndBooks() {
     }
 }
 
-// Ładowanie książek i dodawanie przycisków usuwania
+// Ładowanie książek z przyciskami edycji/usuwania
 function loadBooks(author) {
     try {
         const bookList = document.getElementById("bookList");
         bookList.innerHTML = ""; // Czyszczenie listy książek
 
-        // Jeśli autor ma książki
         if (author.books && Array.isArray(author.books) && author.books.length > 0) {
             author.books.forEach(book => {
                 const bookBlock = document.createElement("div");
                 bookBlock.classList.add("book-block");
+                bookBlock.dataset.id = book.id;
 
-                // Dodawanie informacji o książce
+                // Informacje o książce
                 const bookInfo = document.createElement("div");
                 bookInfo.innerHTML = `<strong>${book.title}</strong><br>Gatunek: ${book.genre}<br>Rok: ${book.publicationYear}`;
 
-                // Dodawanie przycisku usuwania
+                // Przycisk edycji
+                const editButton = document.createElement("button");
+                editButton.textContent = "Edytuj książkę";
+                editButton.onclick = () => showEditBookForm(book, author.id);
+
+                // Przycisk usuwania
                 const deleteButton = document.createElement("button");
                 deleteButton.textContent = "Usuń książkę";
                 deleteButton.onclick = () => deleteBook(book.id);
 
                 bookBlock.appendChild(bookInfo);
+                bookBlock.appendChild(editButton);
                 bookBlock.appendChild(deleteButton);
                 bookList.appendChild(bookBlock);
             });
@@ -186,8 +199,98 @@ function loadBooks(author) {
     }
 }
 
-// Ładowanie danych przy załadowaniu strony
-document.addEventListener("DOMContentLoaded", function() {
-    loadAuthorsAndBooks(); // Ładowanie autorów i książek
-    loadAuthors(); // Ładowanie autorów do rozwijanej listy
-});
+// Formularz edycji autora
+function showEditAuthorForm(author) {
+    const authorBlock = document.querySelector(`.author-block[data-id="${author.id}"]`);
+    const editForm = document.createElement("div");
+    editForm.classList.add("edit-author-form");
+
+    // Wstawienie formularza edycji
+    editForm.innerHTML = `
+        <input type="text" id="editAuthorName-${author.id}" value="${author.name}" placeholder="Imię">
+        <input type="text" id="editAuthorSurname-${author.id}" value="${author.surname}" placeholder="Nazwisko">
+        <button onclick="updateAuthor(${author.id})">Zapisz zmiany</button>
+        <button onclick="cancelEdit(this)">Anuluj</button>
+    `;
+
+    authorBlock.appendChild(editForm);
+}
+
+// Aktualizacja autora
+async function updateAuthor(authorId) {
+    const name = document.getElementById(`editAuthorName-${authorId}`).value;
+    const surname = document.getElementById(`editAuthorSurname-${authorId}`).value;
+
+    try {
+        const response = await fetch(`${apiUrl}/authors/${authorId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ id: authorId, name, surname }),
+        });
+
+        if (response.ok) {
+            alert("Autor został pomyślnie zaktualizowany!");
+            loadAuthorsAndBooks();
+        } else {
+            alert("Błąd podczas aktualizacji autora.");
+        }
+    } catch (error) {
+        console.error("Błąd podczas aktualizacji autora", error);
+    }
+}
+
+// Formularz edycji książki
+function showEditBookForm(book, authorId) {
+    const bookBlock = document.querySelector(`.book-block[data-id="${book.id}"]`);
+    const editForm = document.createElement("div");
+    editForm.classList.add("edit-book-form");
+
+    // Wstawienie formularza edycji
+    editForm.innerHTML = `
+        <input type="text" id="editBookTitle-${book.id}" value="${book.title}" placeholder="Tytuł">
+        <input type="text" id="editBookGenre-${book.id}" value="${book.genre}" placeholder="Gatunek">
+        <input type="text" id="editBookYear-${book.id}" value="${book.publicationYear}" placeholder="Rok wydania">
+        <button onclick="updateBook(${book.id}, ${authorId})">Zapisz zmiany</button>
+        <button onclick="cancelEdit(this)">Anuluj</button>
+    `;
+
+    bookBlock.appendChild(editForm);
+}
+
+// Aktualizacja książki
+async function updateBook(bookId, authorId) {
+    const title = document.getElementById(`editBookTitle-${bookId}`).value;
+    const genre = document.getElementById(`editBookGenre-${bookId}`).value;
+    const publicationYear = document.getElementById(`editBookYear-${bookId}`).value;
+
+    try {
+        const response = await fetch(`${apiUrl}/books/${bookId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ id: bookId, title, genre, publicationYear, author: { id: authorId } }),
+        });
+
+        if (response.ok) {
+            alert("Książka została pomyślnie zaktualizowana!");
+            loadAuthorsAndBooks();
+        } else {
+            alert("Błąd podczas aktualizacji książki.");
+        }
+    } catch (error) {
+        console.error("Błąd podczas aktualizacji książki", error);
+    }
+}
+
+// Anulowanie edycji
+function cancelEdit(button) {
+    const editForm = button.parentElement;
+    editForm.remove();
+}
+
+// Inicjalizacja
+loadAuthors();
+loadAuthorsAndBooks();

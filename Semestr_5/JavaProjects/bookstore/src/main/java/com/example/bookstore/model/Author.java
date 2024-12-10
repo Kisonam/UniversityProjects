@@ -1,4 +1,5 @@
 package com.example.bookstore.model;
+
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
@@ -14,13 +15,11 @@ public class Author {
     private String surname;
 
     @OneToMany(mappedBy = "author")
-    @JsonManagedReference  // Змінили на @JsonManagedReference для зворотнього зв'язку з книгою
+    @JsonManagedReference  // Для серіалізації зворотного зв'язку з Book
     private List<Book> books;
 
     // Конструктори, геттери та сеттери
-
-    public Author() {
-    }
+    public Author() {}
 
     public Author(String name, String surname) {
         this.name = name;

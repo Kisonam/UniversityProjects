@@ -15,14 +15,12 @@ public class Book {
     private int publicationYear;
 
     @ManyToOne
-    @JoinColumn(name = "author_id")
-    @JsonBackReference  // Додаємо цю анотацію, щоб уникнути рекурсії
+    @JoinColumn(name = "author_id",referencedColumnName = "id")
+    @JsonBackReference // Уникнення рекурсії для серіалізації
     private Author author;
 
     // Конструктори, геттери та сеттери
-
-    public Book() {
-    }
+    public Book() {}
 
     public Book(String title, String genre, int publicationYear, Author author) {
         this.title = title;
