@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма з перекритим текстом</title>
+    <style>
+        /* Стилі для фону та основної структури */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .container {
+            position: relative;
+            padding: 20px;
+            width: 70%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Стилі для тексту, який є на сторінці, але поки перекритий формою */
+        .text {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0.5; /* Зробимо текст трохи прозорим */
+            transition: opacity 0.3s ease;
+            margin-top: 150px; /* Додаємо відступ, щоб текст не йшов впритул до верху */
+        }
+
+        /* Стилі для форми, яка завжди по центру */
+        .form {
+            position: fixed; /* Фіксоване позиціонування */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Центрування по горизонталі та вертикалі */
+            background-color: #fff;
+            padding: 100px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .form button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Стилі для контейнера тексту, щоб його можна було прокручувати */
+        .scrollable-text {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Текст, який перекривається формою і прокручується -->
+    <div class="text scrollable-text" id="text">
+        <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Hac sem suspendisse dapibus ad himenaeos aliquam placerat. Praesent tellus a donec sollicitudin netus scelerisque, quam orci. Tempor volutpat commodo aptent tristique metus; euismod justo. Venenatis dictum sem libero risus posuere efficitur class commodo diam. Mi commodo condimentum libero scelerisque iaculis porttitor potenti. Parturient sollicitudin condimentum tristique in maximus.
+
+            Purus dictum egestas ipsum turpis morbi pulvinar. Ridiculus faucibus egestas feugiat potenti aptent congue. Adipiscing varius dictum leo habitant aliquet lacinia. Sagittis arcu posuere felis, erat pulvinar egestas quisque. Conubia condimentum congue nulla fringilla dapibus posuere fames tristique. Iaculis mauris lacus litora varius in pretium sem at! Proin ultricies facilisis curae ornare at libero justo. Libero eleifend dis conubia lobortis hendrerit; ipsum diam? Laoreet imperdiet finibus tempor ex in odio vel laoreet vulputate? Cubilia sagittis elementum venenatis malesuada natoque placerat, egestas ridiculus.
+            
+            Dapibus convallis mollis etiam ultrices finibus posuere suscipit sem dictum. Etiam maximus lectus a duis tincidunt dapibus suspendisse! Eleifend curabitur porttitor pellentesque ipsum facilisi taciti diam ultricies. Ut sapien pulvinar praesent habitant feugiat potenti eleifend. Habitasse tristique tincidunt dictum aliquet eros dolor. Habitant et consequat sagittis libero velit ipsum montes gravida? Accumsan sit natoque purus rutrum at nunc nostra proin.
+            
+            Suspendisse augue pulvinar class quisque non facilisis elementum. Nullam nostra accumsan taciti ultricies laoreet luctus. Tempus dis pretium habitant felis nullam laoreet ridiculus. Duis pulvinar non ipsum libero leo vulputate eu laoreet. Ornare duis mollis eget class id efficitur a. Volutpat eu at erat habitasse integer habitant cubilia fames. Venenatis pulvinar class a semper nibh neque maximus sollicitudin. Amet integer proin urna luctus sollicitudin cubilia.
+            
+            Vehicula nunc vel auctor nam sollicitudin convallis suspendisse libero. Viverra ipsum auctor penatibus hac ullamcorper vel ornare dis. Litora feugiat senectus id pretium adipiscing dis placerat pulvinar senectus. Pharetra tempus aptent ac condimentum posuere potenti mi vehicula. Erat proin aenean sit quisque himenaeos dignissim fringilla montes. Justo ipsum posuere efficitur integer curabitur ornare lacus. Class vitae diam at hac condimentum bibendum. Dolor per facilisis phasellus erat facilisi consequat facilisis aliquam.
+            
+            Turpis dictumst justo dolor eleifend dapibus ad gravida volutpat. Suspendisse semper volutpat congue porta conubia. Turpis magnis interdum tempor taciti viverra tortor pretium. Vitae consequat varius purus vehicula faucibus semper himenaeos malesuada. Integer morbi in, cursus tortor ornare platea. Rhoncus finibus nulla etiam sed ante ultrices.
+            
+            Consectetur dignissim nulla dolor inceptos massa at viverra in.</p>
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Hac sem suspendisse dapibus ad himenaeos aliquam placerat. Praesent tellus a donec sollicitudin netus scelerisque, quam orci. Tempor volutpat commodo aptent tristique metus; euismod justo. Venenatis dictum sem libero risus posuere efficitur class commodo diam. Mi commodo condimentum libero scelerisque iaculis porttitor potenti. Parturient sollicitudin condimentum tristique in maximus.
+
+                Purus dictum egestas ipsum turpis morbi pulvinar. Ridiculus faucibus egestas feugiat potenti aptent congue. Adipiscing varius dictum leo habitant aliquet lacinia. Sagittis arcu posuere felis, erat pulvinar egestas quisque. Conubia condimentum congue nulla fringilla dapibus posuere fames tristique. Iaculis mauris lacus litora varius in pretium sem at! Proin ultricies facilisis curae ornare at libero justo. Libero eleifend dis conubia lobortis hendrerit; ipsum diam? Laoreet imperdiet finibus tempor ex in odio vel laoreet vulputate? Cubilia sagittis elementum venenatis malesuada natoque placerat, egestas ridiculus.
+                
+                Dapibus convallis mollis etiam ultrices finibus posuere suscipit sem dictum. Etiam maximus lectus a duis tincidunt dapibus suspendisse! Eleifend curabitur porttitor pellentesque ipsum facilisi taciti diam ultricies. Ut sapien pulvinar praesent habitant feugiat potenti eleifend. Habitasse tristique tincidunt dictum aliquet eros dolor. Habitant et consequat sagittis libero velit ipsum montes gravida? Accumsan sit natoque purus rutrum at nunc nostra proin.
+                
+                Suspendisse augue pulvinar class quisque non facilisis elementum. Nullam nostra accumsan taciti ultricies laoreet luctus. Tempus dis pretium habitant felis nullam laoreet ridiculus. Duis pulvinar non ipsum libero leo vulputate eu laoreet. Ornare duis mollis eget class id efficitur a. Volutpat eu at erat habitasse integer habitant cubilia fames. Venenatis pulvinar class a semper nibh neque maximus sollicitudin. Amet integer proin urna luctus sollicitudin cubilia.
+                
+                Vehicula nunc vel auctor nam sollicitudin convallis suspendisse libero. Viverra ipsum auctor penatibus hac ullamcorper vel ornare dis. Litora feugiat senectus id pretium adipiscing dis placerat pulvinar senectus. Pharetra tempus aptent ac condimentum posuere potenti mi vehicula. Erat proin aenean sit quisque himenaeos dignissim fringilla montes. Justo ipsum posuere efficitur integer curabitur ornare lacus. Class vitae diam at hac condimentum bibendum. Dolor per facilisis phasellus erat facilisi consequat facilisis aliquam.
+                
+                Turpis dictumst justo dolor eleifend dapibus ad gravida volutpat. Suspendisse semper volutpat congue porta conubia. Turpis magnis interdum tempor taciti viverra tortor pretium. Vitae consequat varius purus vehicula faucibus semper himenaeos malesuada. Integer morbi in, cursus tortor ornare platea. Rhoncus finibus nulla etiam sed ante ultrices.
+                
+                Consectetur dignissim nulla dolor inceptos massa at viverra in.</p>
+    </div>
+
+    <!-- Форма, що перекриває текст -->
+    <div class="form" id="form">
+        <button onclick="hideForm()">Zobacz tekst</button>
+    </div>
+</div>
+
+<script>
+    // Функція для приховування форми і відновлення видимості тексту
+    function hideForm() {
+        document.getElementById('form').style.display = 'none'; // Приховуємо форму
+        document.getElementById('text').style.opacity = '1'; // Збільшуємо непрозорість тексту
+    }
+</script>
+
+</body>
+</html>
