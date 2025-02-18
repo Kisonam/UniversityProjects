@@ -81,6 +81,7 @@ public class BookController {
     }
 
     @PutMapping("/{id}")
+<<<<<<< HEAD
     public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book book) {
         Optional<Book> existingBook = bookService.getBookById(id);
         if (existingBook.isPresent()) {
@@ -89,6 +90,10 @@ public class BookController {
             return ResponseEntity.ok(updatedBook);  // Повертаємо оновлену книгу зі статусом 200 OK
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();  // Якщо книга не знайдена, повертаємо 404
+=======
+    public Book updateBook(@PathVariable Long id, @RequestBody Book book) {
+        return bookService.saveBook(book);
+>>>>>>> 1601e430ea51704dca7871fc5aec86189838b283
     }
 
     @DeleteMapping("/{id}")
